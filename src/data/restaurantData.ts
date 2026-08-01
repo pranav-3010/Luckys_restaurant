@@ -1,7 +1,9 @@
 import type { MenuItem, Review, FAQItem } from '../types';
+import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
+import realTandooriImg from '../assets/real_tandoori_starter.jpg';
+import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
+import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
 import heroImg from '../assets/co_rajahmundry_hero.jpg';
-import cookerPulaoImg from '../assets/co_rajahmundry_cooker_pulao.jpg';
-import aritakuFishImg from '../assets/co_rajahmundry_aritaku_fish.jpg';
 
 export const RESTAURANT_INFO = {
   name: "C/o Rajahmundry Kitchen and Bar",
@@ -26,14 +28,14 @@ export const MENU_ITEMS: MenuItem[] = [
   // SIGNATURE COOKER PULAO
   {
     id: "p1",
-    name: "Rajahmundry Mutton Cooker Pulao",
-    description: "Our #1 best-selling signature dish! Tender tenderloin mutton pieces cooked in a pressure cooker with ghee, green chilies, and aromatic Godavari spices.",
+    name: "Rajahmundry Mutton Cooker Pulao & Curry",
+    description: "Our #1 best-selling signature dish! Tender tenderloin mutton cooked in a pressure cooker with ghee, green chilies, and aromatic Godavari spices, served with Biryani & Salan.",
     price: 460,
     category: "cooker-pulao",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true,
-    image: cookerPulaoImg
+    image: realBiryaniImg
   },
   {
     id: "p2",
@@ -45,37 +47,18 @@ export const MENU_ITEMS: MenuItem[] = [
     isSpicy: true,
     isChefSpecial: true
   },
-  {
-    id: "p3",
-    name: "Gongura Royyala (Prawns) Cooker Pulao",
-    description: "Tangy sorrel leaves (Gongura) blended with juicy fresh prawns cooked in traditional cooker style.",
-    price: 480,
-    category: "cooker-pulao",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "p4",
-    name: "Kaju Paneer Cooker Pulao",
-    description: "Golden fried cottage cheese cubes and whole cashews cooked in fragrant ghee rice.",
-    price: 340,
-    category: "cooker-pulao",
-    isVeg: true,
-    isChefSpecial: false
-  },
 
   // SEAFOOD STARTERS
   {
     id: "s1",
-    name: "Aritaku Chepala Fry (Full Fish in Banana Leaf)",
-    description: "Whole Korrameenu fish marinated in spicy Andhra red masala, wrapped tightly in toasted banana leaf and pan grilled.",
+    name: "Aritaku Chepala Fry (Banana Leaf Fish Parcels)",
+    description: "Fresh Korrameenu fish marinated in spicy Andhra red masala, wrapped tightly in toasted banana leaf parcels and pan grilled.",
     price: 520,
     category: "seafood",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true,
-    image: aritakuFishImg
+    image: realFishImg
   },
   {
     id: "s2",
@@ -86,25 +69,17 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     isSpicy: true
   },
-  {
-    id: "s3",
-    name: "Apollo Fish Fry",
-    description: "Classic Hyderabadi boneless fish fillets tossed in spicy yogurt chili glaze.",
-    price: 420,
-    category: "seafood",
-    isVeg: false,
-    isChefSpecial: true
-  },
 
   // APPETIZERS & STARTERS
   {
     id: "a1",
-    name: "Tandoori Whole Chicken (Half / Full)",
-    description: "Charcoal roasted chicken marinated in Kashmiri chili, ginger garlic paste, and hung curd.",
+    name: "Tandoori Chicken Leg Starter",
+    description: "Charcoal grilled juicy chicken leg marinated in roasted spices, served with fresh green mint chutney and onion slice on a custom ceramic plate.",
     price: 360,
     category: "starters",
     isVeg: false,
-    isChefSpecial: true
+    isChefSpecial: true,
+    image: realTandooriImg
   },
   {
     id: "a2",
@@ -115,62 +90,17 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     isChefSpecial: true
   },
-  {
-    id: "a3",
-    name: "Kodi Vepudu (Andhra Chicken Fry)",
-    description: "Fiery dry chicken fry made with crushed peppercorns and roasted coriander seeds.",
-    price: 380,
-    category: "starters",
-    isVeg: false,
-    isSpicy: true
-  },
-  {
-    id: "a4",
-    name: "Paneer Tikka Charcoal Grill",
-    description: "Thick cottage cheese slabs marinated in spicy tikka marinade and flame roasted.",
-    price: 320,
-    category: "starters",
-    isVeg: true
-  },
-
-  // CURRIES & BREADS
-  {
-    id: "c1",
-    name: "Bagara Rice with Andhra Chicken Curry Combo",
-    description: "Aromatic Bagara rice served with authentic spicy Godavari chicken curry and gravy.",
-    price: 380,
-    category: "curries",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "c2",
-    name: "Natukodi Pulusu (Country Chicken Gravy)",
-    description: "Country chicken cooked in traditional spicy tamarind & shallot coconut gravy.",
-    price: 450,
-    category: "curries",
-    isVeg: false,
-    isSpicy: true
-  },
-  {
-    id: "c3",
-    name: "Paneer Butter Masala",
-    description: "Soft paneer cubes in a rich tomato, butter, and cashew gravy.",
-    price: 310,
-    category: "curries",
-    isVeg: true
-  },
 
   // BAR & COCKTAILS
   {
     id: "b1",
-    name: "Godavari Sunset Cocktail",
-    description: "Signature dark rum blended with fresh tender coconut water, pineapple juice, and chili lime rim.",
+    name: "C/o Rajahmundry Layered Craft Cocktail",
+    description: "Signature rooftop cocktail featuring layered tropical citrus, spiced rum, hibiscus foam, and dehydrated orange garnish.",
     price: 450,
     category: "bar-specialties",
     isVeg: true,
-    isChefSpecial: true
+    isChefSpecial: true,
+    image: realCocktailImg
   },
   {
     id: "b2",
@@ -179,15 +109,6 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 220,
     category: "bar-specialties",
     isVeg: true
-  },
-  {
-    id: "b3",
-    name: "Whiskey Sour & Smoked Chili Twist",
-    description: "Bourbon whiskey, fresh lemon juice, egg white foam, and a touch of smoked Andhra chili syrup.",
-    price: 480,
-    category: "bar-specialties",
-    isVeg: true,
-    isChefSpecial: true
   },
 
   // DESSERTS
@@ -199,14 +120,6 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "desserts",
     isVeg: true,
     isChefSpecial: true
-  },
-  {
-    id: "d2",
-    name: "Matka Kulfi",
-    description: "Traditional saffron rabri kulfi served in an authentic earthen pot.",
-    price: 140,
-    category: "desserts",
-    isVeg: true
   }
 ];
 
@@ -247,21 +160,11 @@ export const FAQS: FAQItem[] = [
   {
     id: "f1",
     question: "Where is C/o Rajahmundry Kitchen and Bar located?",
-    answer: "We are located on the 5th Floor, Santa Sriram Estates, Kompally, Hyderabad, Telangana 500067 (Near Santa Sriram Junction)."
+    answer: "We are located on the 5th Floor, Santa Sriram Estates, Kompally, Hyderabad, Telangana 500067."
   },
   {
     id: "f2",
     question: "Do you serve alcohol and craft cocktails?",
     answer: "Yes! We operate a full-service bar featuring signature cocktails, spirits, chilled beers, and non-alcoholic mocktails on our 5th-floor rooftop lounge."
-  },
-  {
-    id: "f3",
-    question: "What are your signature dishes?",
-    answer: "Our diners rave about our Rajahmundry Mutton Cooker Pulao, Aritaku Chepala Fry (Banana Leaf Fish), Bagara Rice & Chicken Curry, Mutton Marag, and Apricot Delight!"
-  },
-  {
-    id: "f4",
-    question: "Can I reserve a table for weekend dining?",
-    answer: "Yes, table reservations can be made directly via our website or by calling 082228 66693 to guarantee seating during weekend rush hours."
   }
 ];
