@@ -23,6 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
     { id: 'home', label: 'Home' },
     { id: 'menu', label: 'Menu & Bar' },
     { id: 'about', label: 'About' },
+    { id: 'gallery', label: 'Gallery' },
     { id: 'reviews', label: 'Reviews' },
     { id: 'reservation', label: 'Reserve Table' },
     { id: 'contact', label: 'Location' },
@@ -74,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
           </button>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-7">
+          <div className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <button
                 key={link.id}

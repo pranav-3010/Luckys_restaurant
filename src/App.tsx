@@ -4,6 +4,7 @@ import { HeroSection } from './components/HeroSection';
 import { CategoryHighlightsSection } from './components/CategoryHighlightsSection';
 import { MenuSection } from './components/MenuSection';
 import { AboutSection } from './components/AboutSection';
+import { GallerySection } from './components/GallerySection';
 import { ReviewsSection } from './components/ReviewsSection';
 import { ReservationSection } from './components/ReservationSection';
 import { ContactSection } from './components/ContactSection';
@@ -46,6 +47,8 @@ export function App() {
         />
 
         <AboutSection />
+
+        <GallerySection />
 
         <ReviewsSection />
 
