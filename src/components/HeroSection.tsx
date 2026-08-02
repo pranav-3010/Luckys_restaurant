@@ -5,7 +5,6 @@ import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
 import realTandooriImg from '../assets/real_tandoori_starter.jpg';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
 import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
-import { RESTAURANT_INFO } from '../data/restaurantData';
 import { useLanguage } from '../context/LanguageContext';
 
 interface HeroProps {
@@ -13,7 +12,7 @@ interface HeroProps {
   onReserveTable: () => void;
 }
 
-export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onReserveTable }) => {
+export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
   const { language, toggleLanguage } = useLanguage();
 
   const slides = [
@@ -72,7 +71,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onReserveTable
           />
         </AnimatePresence>
 
-        {/* Minimal gradient text backdrop strips */}
+        {/* Minimal gradient text backdrop strips for legibility */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
       </div>
@@ -88,43 +87,20 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onReserveTable
         </button>
       </div>
 
-      {/* CENTER TYPOGRAPHY ONLY (TEXT-ONLY OVERLAY IN MIDDLE OF FIRST PAGE) */}
+      {/* CENTER RESTAURANT NAME ONLY (NO CONTAINER BOX, NO BUTTONS) */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 my-auto">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          className="space-y-4 p-6 sm:p-10 rounded-3xl bg-black/65 backdrop-blur-md border border-white/20 shadow-[0_0_60px_rgba(0,0,0,0.8)] max-w-3xl flex flex-col items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-2"
         >
-          {/* Authentic Stylized Typography (ONLY TEXT) */}
-          <div className="space-y-1">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-tight font-black">
-              c/O Rajahmundry
-            </h1>
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-[#F6E27A] drop-shadow-md pt-1">
-              k i t c h e n &nbsp; a n d &nbsp; b a r
-            </p>
-          </div>
-
-          <p className="text-xs sm:text-base font-light text-[#E6DAD0] max-w-xl leading-relaxed">
-            {language === 'EN' ? RESTAURANT_INFO.taglineEN : RESTAURANT_INFO.taglineTE}
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-serif tracking-tight text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.95)] leading-tight font-black">
+            c/O Rajahmundry
+          </h1>
+          <p className="text-xs sm:text-lg md:text-xl font-bold uppercase tracking-[0.4em] text-[#F6E27A] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] pt-2">
+            k i t c h e n &nbsp; a n d &nbsp; b a r
           </p>
-
-          {/* Action Pill Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full sm:w-auto">
-            <button
-              onClick={onExploreMenu}
-              className="w-full sm:w-auto px-8 py-3 rounded-full orange-btn-bg text-white font-bold text-xs uppercase tracking-widest shadow-xl hover:scale-105 transition-transform"
-            >
-              View Menu & Drinks
-            </button>
-            <button
-              onClick={onReserveTable}
-              className="w-full sm:w-auto px-8 py-3 rounded-full border border-[#D4AF37] bg-white/10 text-white font-bold text-xs uppercase tracking-widest backdrop-blur-md hover:bg-white/20 transition-all"
-            >
-              Book 5th Floor Table
-            </button>
-          </div>
         </motion.div>
       </div>
 
