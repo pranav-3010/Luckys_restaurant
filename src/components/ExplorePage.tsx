@@ -111,8 +111,8 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         onClearCart={handleClearCart}
       />
 
-      {/* 1. TOP ROAST BLACK NAVBAR - STICKY TOP */}
-      <header className="sticky top-0 z-50 bg-[#161312] text-white py-3 sm:py-4 px-3 sm:px-8 shadow-xl border-b border-white/10">
+      {/* 1. TOP MAROON NAVBAR - STICKY TOP */}
+      <header className="sticky top-0 z-50 bg-[#58111A] text-white py-3 sm:py-4 px-3 sm:px-8 shadow-xl border-b border-white/15">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
 
           {/* Left: Single Brand Logo Wordmark */}
@@ -233,7 +233,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
       </header>
 
       {/* Mobile Sticky Navigation Tabs */}
-      <div className="flex md:hidden bg-[#161312] border-b border-white/10 px-2 py-2 justify-around overflow-x-auto text-[10px] sm:text-[11px] font-black uppercase tracking-wider sticky top-[53px] z-40 shadow-sm">
+      <div className="flex md:hidden bg-[#58111A] border-b border-white/15 px-2 py-2 justify-around overflow-x-auto text-[10px] sm:text-[11px] font-black uppercase tracking-wider sticky top-[53px] z-40 shadow-sm">
         {navTabs.map((tab) => {
           const isActive = activeTab === tab.id;
           return (

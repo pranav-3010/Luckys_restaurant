@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateToExplore }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 select-none font-sans ${
         isScrolled
-          ? 'bg-[#161312]/95 backdrop-blur-md shadow-2xl py-3 border-b border-white/10'
+          ? 'bg-[#58111A]/95 backdrop-blur-md shadow-2xl py-3 border-b border-white/15'
           : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5'
       }`}
     >
