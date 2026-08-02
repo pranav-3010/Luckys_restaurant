@@ -65,196 +65,187 @@ export const RESTAURANT_INFO = {
 };
 
 export const MENU_CATEGORIES = [
-  { id: 'all', labelEN: 'All Rajahmundry Taluka', labelTE: 'అన్నీ' },
-  { id: 'veg-starters', labelEN: 'Veg Taluka Starters', subtitle: 'Pandumirchi, Paneer & Corn Specials', labelTE: 'శాఖాహార స్టార్టర్స్' },
-  { id: 'kodi-specials', labelEN: 'Kodi Rekkalu & Chicken Starters', subtitle: 'Vistaraku Potlam & Kara Kara Chicken', labelTE: 'కోడి డిష్‌లు' },
-  { id: 'mamsam-specials', labelEN: 'Mamsam Vepudu & Lamb Chops', subtitle: 'Nethi Mamsam & Mutton Specials', labelTE: 'మాంసం స్టార్టర్స్' },
-  { id: 'seafood', labelEN: 'Godavari Chepala Swargam', subtitle: 'Aritaku Fish Fry & Korramenu Specials', labelTE: 'చేపలు & రొయ్యలు' },
+  { id: 'all', labelEN: 'All Items', labelTE: 'అన్నీ' },
+  { id: 'rajahmundry-taluka', labelEN: 'C/o Rajahmundry Taluka', subtitle: 'Authentic Rajahmundry Starters & Specials', labelTE: 'రాజమండ్రి తాలూకా' },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
-  // VEG TALUKA STARTERS
+  // C/O RAJAHMUNDRY TALUKA (ALL 19 OFFICIAL ITEMS)
   {
-    id: "v1",
+    id: "t1",
     name: "MOKAJONNA WADA",
     description: "Crispy golden sweet corn vadas spiced with fresh green chilies, ginger & curry leaves. Served with spicy Andhra tomato chutney.",
     price: 379.00,
-    category: "veg-starters",
+    category: "rajahmundry-taluka",
     isVeg: true,
     isChefSpecial: true,
     image: realTandooriImg
   },
   {
-    id: "v2",
+    id: "t2",
     name: "PANDUMIRCHI VEG STICKS",
     description: "Crispy fried vegetable sticks coated in fiery red Pandumirchi paste and aromatic Godavari spices.",
     price: 379.00,
-    category: "veg-starters",
+    category: "rajahmundry-taluka",
     isVeg: true,
     isSpicy: true
   },
   {
-    id: "v3",
+    id: "t3",
     name: "ELLIPAYA KARAM CORN",
     description: "Crispy wok-tossed sweet corn kernels coated in pungent garlic chili oil & crushed curry leaf karam.",
     price: 399.00,
-    category: "veg-starters",
+    category: "rajahmundry-taluka",
     isVeg: true,
     isSpicy: true
   },
   {
-    id: "v4",
+    id: "t4",
     name: "KOTHIMEERA PUTTAGODUGULU",
     description: "Plump button mushrooms tossed in rich coriander green paste, pepper & roasted cumin masala.",
     price: 399.00,
-    category: "veg-starters",
+    category: "rajahmundry-taluka",
     isVeg: true
   },
   {
-    id: "v5",
+    id: "t5",
     name: "CORN CHEESE ROLLS",
     description: "Golden fried crispy rolls stuffed with creamy mozzarella, sweet corn & aromatic herbs.",
     price: 399.00,
-    category: "veg-starters",
+    category: "rajahmundry-taluka",
     isVeg: true
   },
   {
-    id: "v6",
+    id: "t6",
     name: "POTLAM PANEER",
     description: "Fresh cottage cheese cubes marinated in spicy red chili masala, sealed inside a leaf parcel and pan-roasted.",
     price: 429.00,
-    category: "veg-starters",
+    category: "rajahmundry-taluka",
     isVeg: true,
     isChefSpecial: true
   },
   {
-    id: "v7",
+    id: "t7",
     name: "TAMALAPAKU PANEER",
     description: "Tandoori grilled paneer cubes infused with fresh betel leaf (Tamalapaku) aromatics and charcoal smoked.",
     price: 429.00,
-    category: "veg-starters",
+    category: "rajahmundry-taluka",
     isVeg: true,
     isChefSpecial: true
   },
-
-  // KODI SPECIALS (CHICKEN STARTERS)
   {
-    id: "k1",
+    id: "t8",
     name: "VISTARAKU POTLAM KODI VEPUDU",
     description: "Tender chicken pieces tossed in Guntur chili masala, wrapped inside a traditional vistaraku leaf parcel and slow-roasted.",
     price: 459.00,
-    category: "kodi-specials",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true,
     image: realBiryaniImg
   },
   {
-    id: "k2",
+    id: "t9",
     name: "KARA KARA CHICKEN",
     description: "Ultra-crunchy fried chicken morsels seasoned with fiery spicy Godavari karam & fried curry leaves.",
     price: 459.00,
-    category: "kodi-specials",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isSpicy: true
   },
   {
-    id: "k3",
+    id: "t10",
     name: "RAJAHMUNDRY KODI REKKALU",
     description: "Crispy chicken wings tossed in Rajahmundry special sweet & spicy chili garlic glaze.",
     price: 459.00,
-    category: "kodi-specials",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true
   },
   {
-    id: "k4",
+    id: "t11",
     name: "BALISINA KODI KEBAB",
     description: "Succulent boneless chicken thighs marinated in cream, cashew paste, green chili & malai tandoori smoked.",
     price: 479.00,
-    category: "kodi-specials",
+    category: "rajahmundry-taluka",
     isVeg: false
   },
   {
-    id: "k5",
+    id: "t12",
     name: "POTLAM KODI KABAB",
     description: "Charcoal grilled chicken kebabs wrapped in leaf parcels with rich ghee & green chili marinade.",
     price: 479.00,
-    category: "kodi-specials",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true
   },
-
-  // MAMSAM SPECIALS (MUTTON & LAMB STARTERS)
   {
-    id: "m1",
+    id: "t13",
     name: "VISTARAKU POTLAM MAMSAM VEPUDU",
     description: "Slow-cooked tender mutton chunks tossed in roasted spice masala, wrapped in vistaraku leaf and pan-seared in pure ghee.",
     price: 569.00,
-    category: "mamsam-specials",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true
   },
   {
-    id: "m2",
+    id: "t14",
     name: "NETHI MAMSAM VEPUDU",
     description: "Boneless mutton cooked in rich pure buffalo ghee with shallots, crushed pepper & Godavari karam.",
     price: 579.00,
-    category: "mamsam-specials",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true
   },
   {
-    id: "m3",
+    id: "t15",
     name: "LAMB CHOPS",
     description: "Charcoal grilled tender lamb ribs marinated in crushed black pepper, cloves, and ginger garlic masala.",
     price: 569.00,
-    category: "mamsam-specials",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isChefSpecial: true
   },
-
-  // SEAFOOD STARTERS
   {
-    id: "f1",
+    id: "t16",
     name: "ARITAKU FISH FRY",
     description: "Fresh river fish slathered in spicy Andhra chili masala, wrapped in banana leaf and shallow fried to perfection.",
     price: 549.00,
-    category: "seafood",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true,
     image: realFishImg
   },
   {
-    id: "f2",
+    id: "t17",
     name: "RAJAHMUNDRY FISH FRY B/L",
     description: "Boneless fish fillets marinated in home-ground spice paste and crispy fried till golden brown.",
     price: 549.00,
-    category: "seafood",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isSpicy: true
   },
   {
-    id: "f3",
+    id: "t18",
     name: "GODAVARI ROYYALA VEPUDU",
     description: "Fresh Godavari river prawns wok-tossed with caramelized onions, curry leaves & black pepper roast.",
     price: 569.00,
-    category: "seafood",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true
   },
   {
-    id: "f4",
+    id: "t19",
     name: "TANDOORI KORRAMENU",
     description: "Whole fresh Korrameenu fish marinated in royal tandoori spices and charcoal roasted in the clay oven.",
     price: 899.00,
-    category: "seafood",
+    category: "rajahmundry-taluka",
     isVeg: false,
     isChefSpecial: true,
     image: realCocktailImg
