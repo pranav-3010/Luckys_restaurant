@@ -55,7 +55,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
     <div className="min-h-screen bg-[#F5EBE0] text-[#1F1919] select-none font-sans">
 
       {/* 1. TOP ROAST BLACK NAVBAR */}
-      <header className="sticky top-0 z-50 bg-[#1A1615] text-white py-3.5 px-4 sm:px-8 shadow-md border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-[#161312] text-white py-4 px-4 sm:px-8 shadow-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
 
           {/* Left: Single Brand Logo Wordmark */}
@@ -71,42 +71,53 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white uppercase font-sans leading-none">
                 C/O Rajahmundry
               </h1>
-              <span className="text-[9px] font-bold text-gray-300 tracking-widest uppercase block mt-0.5">
+              <span className="text-[9px] font-bold text-gray-400 tracking-widest uppercase block mt-0.5">
                 Kitchen & Bar
               </span>
             </div>
           </div>
 
-          {/* Middle: Tab Navigation Links */}
+          {/* Middle: Tab Navigation Links with Active Sage Green Text & Green Underline */}
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => { setActiveTab('menu'); setSelectedSubCategory('all'); }}
-              className={`text-xs font-bold uppercase tracking-widest transition-all cursor-pointer py-1 ${
-                activeTab === 'menu' ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
+              className={`text-xs font-black uppercase tracking-[0.2em] transition-all cursor-pointer py-1 relative ${
+                activeTab === 'menu'
+                  ? 'text-[#7DCE9F] drop-shadow-sm border-b-2 border-[#7DCE9F] pb-1'
+                  : 'text-white/90 hover:text-white'
               }`}
             >
               MENU
             </button>
+
             <button
               onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('all'); }}
-              className={`text-xs font-bold uppercase tracking-widest transition-all cursor-pointer py-1 ${
-                activeTab === 'cocktails' ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
+              className={`text-xs font-black uppercase tracking-[0.2em] transition-all cursor-pointer py-1 relative ${
+                activeTab === 'cocktails'
+                  ? 'text-[#7DCE9F] drop-shadow-sm border-b-2 border-[#7DCE9F] pb-1'
+                  : 'text-white/90 hover:text-white'
               }`}
             >
               COCKTAILS & BAR
             </button>
+
             <button
               onClick={() => setActiveTab('reservations')}
-              className={`text-xs font-bold uppercase tracking-widest transition-all cursor-pointer py-1 ${
-                activeTab === 'reservations' ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
+              className={`text-xs font-black uppercase tracking-[0.2em] transition-all cursor-pointer py-1 relative ${
+                activeTab === 'reservations'
+                  ? 'text-[#7DCE9F] drop-shadow-sm border-b-2 border-[#7DCE9F] pb-1'
+                  : 'text-white/90 hover:text-white'
               }`}
             >
               RESERVATIONS
             </button>
+
             <button
               onClick={() => setActiveTab('locations')}
-              className={`text-xs font-bold uppercase tracking-widest transition-all cursor-pointer py-1 ${
-                activeTab === 'locations' ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
+              className={`text-xs font-black uppercase tracking-[0.2em] transition-all cursor-pointer py-1 relative ${
+                activeTab === 'locations'
+                  ? 'text-[#7DCE9F] drop-shadow-sm border-b-2 border-[#7DCE9F] pb-1'
+                  : 'text-white/90 hover:text-white'
               }`}
             >
               LOCATIONS
@@ -122,7 +133,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                 placeholder="Search menu or drinks..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 pr-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs text-white placeholder-gray-400 focus:outline-none focus:border-white w-36 sm:w-44 transition-all"
+                className="pl-9 pr-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs text-white placeholder-gray-400 focus:outline-none focus:border-[#7DCE9F] w-36 sm:w-44 transition-all"
               />
             </div>
 
@@ -133,7 +144,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             <button className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-wider cursor-pointer transition-all">
               <ShoppingBag className="w-4 h-4" />
               <span>CART</span>
-              <span className="w-4 h-4 rounded-full bg-white text-[#1A1615] text-[10px] flex items-center justify-center font-bold">
+              <span className="w-4 h-4 rounded-full bg-[#7DCE9F] text-[#161312] text-[10px] flex items-center justify-center font-bold">
                 {cartCount}
               </span>
             </button>
@@ -141,6 +152,34 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
         </div>
       </header>
+
+      {/* Mobile Tab Bar for Small Screens */}
+      <div className="flex md:hidden bg-[#1A1615] border-b border-white/10 px-4 py-2 justify-around overflow-x-auto text-[11px] font-black uppercase tracking-wider">
+        <button
+          onClick={() => { setActiveTab('menu'); setSelectedSubCategory('all'); }}
+          className={`py-1 ${activeTab === 'menu' ? 'text-[#7DCE9F] border-b-2 border-[#7DCE9F]' : 'text-white/70'}`}
+        >
+          MENU
+        </button>
+        <button
+          onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('all'); }}
+          className={`py-1 ${activeTab === 'cocktails' ? 'text-[#7DCE9F] border-b-2 border-[#7DCE9F]' : 'text-white/70'}`}
+        >
+          COCKTAILS
+        </button>
+        <button
+          onClick={() => setActiveTab('reservations')}
+          className={`py-1 ${activeTab === 'reservations' ? 'text-[#7DCE9F] border-b-2 border-[#7DCE9F]' : 'text-white/70'}`}
+        >
+          RESERVATIONS
+        </button>
+        <button
+          onClick={() => setActiveTab('locations')}
+          className={`py-1 ${activeTab === 'locations' ? 'text-[#7DCE9F] border-b-2 border-[#7DCE9F]' : 'text-white/70'}`}
+        >
+          LOCATIONS
+        </button>
+      </div>
 
       {/* 2. TAB VIEW CONTENT */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
