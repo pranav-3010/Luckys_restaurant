@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
-import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { TickerBanner } from './components/TickerBanner';
 import { FeatureGridSection } from './components/FeatureGridSection';
@@ -17,7 +16,7 @@ import { Footer } from './components/Footer';
 import type { MenuItem } from './types';
 
 export function App() {
-  const [activeSection, setActiveSection] = useState('home');
+  const [, setActiveSection] = useState('home');
   const [selectedMenuCategory, setSelectedMenuCategory] = useState<string>('all');
   const [selectedOrderItem, setSelectedOrderItem] = useState<MenuItem | null>(null);
 
@@ -32,8 +31,6 @@ export function App() {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-[#FAF6F0] text-[#1F1919]">
-        <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-
         <main>
           <HeroSection
             onExploreMenu={() => scrollToSection('menu')}
