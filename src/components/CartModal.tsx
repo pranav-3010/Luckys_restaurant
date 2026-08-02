@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Plus, Minus, ShoppingBag, ArrowRight, CheckCircle, Tag } from 'lucide-react';
+import { X, Plus, Minus, ShoppingBag, ArrowRight, CheckCircle, Tag, ArrowLeft } from 'lucide-react';
 import type { MenuItem } from '../types';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
@@ -85,20 +85,31 @@ Please confirm my order and share payment link!`;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-sm select-none">
+      {/* Outer Backdrop Overlay - Clicking outside drawer closes cart */}
+      <div
+        className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-sm select-none cursor-pointer"
+        onClick={onClose}
+      >
+        {/* Drawer Container - stop propagation so clicking inside doesn't close */}
         <motion.div
+          onClick={(e) => e.stopPropagation()}
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="w-full max-w-md bg-[#FAF5ED] h-full shadow-2xl flex flex-col justify-between border-l border-[#E6DBC5] font-sans"
+          className="w-full max-w-md bg-[#FAF5ED] h-full shadow-2xl flex flex-col justify-between border-l border-[#E6DBC5] font-sans cursor-default"
         >
           {/* Cart Drawer Header */}
           <div className="p-5 bg-[#161312] text-white flex items-center justify-between shadow-md">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#7DCE9F]/20 text-[#7DCE9F] flex items-center justify-center font-bold">
-                <ShoppingBag className="w-5 h-5" />
-              </div>
+              <button
+                type="button"
+                onClick={onClose}
+                className="p-1.5 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-all cursor-pointer mr-1"
+                title="Back to Menu"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
               <div>
                 <h2 className="text-lg font-black font-sans uppercase tracking-wider text-white leading-none">
                   Your Order Cart
@@ -110,8 +121,10 @@ Please confirm my order and share payment link!`;
             </div>
 
             <button
+              type="button"
               onClick={onClose}
               className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-all cursor-pointer"
+              title="Close Cart"
             >
               <X className="w-5 h-5" />
             </button>
@@ -130,16 +143,38 @@ Please confirm my order and share payment link!`;
                 </p>
               </div>
             ) : cartItems.length === 0 ? (
-              <div className="h-full flex flex-col items-center justify-center text-center space-y-3 py-16 text-gray-400">
-                <ShoppingBag className="w-16 h-16 stroke-1 text-gray-300" />
+              <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-16">
+                <ShoppingBag className="w-16 h-16 stroke-1 text-gray-400" />
                 <h3 className="text-lg font-bold font-sans text-[#1F1919] uppercase">Your Cart is Empty</h3>
-                <p className="text-xs text-[#6E5C5C] font-light">Add delicious starters, pulaos & drinks from our menu!</p>
+                <p className="text-xs text-[#6E5C5C] font-light max-w-xs">
+                  Add delicious starters, pulaos & drinks from our menu!
+                </p>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="mt-4 px-6 py-3 bg-[#161312] hover:bg-[#7B1E1E] text-white font-bold text-xs uppercase tracking-widest rounded-full transition-all cursor-pointer shadow-md"
+                >
+                  Explore Menu
+                </button>
               </div>
             ) : (
               <>
+                {/* Back to Menu Quick Pill */}
+                <div className="flex items-center justify-between pb-2 border-b border-[#E6DBC5]">
+                  <button
+                    type="button"
+                    onClick={onClose}
+                    className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#7B1E1E] hover:underline cursor-pointer"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    <span>Back to Menu / Add More Items</span>
+                  </button>
+                </div>
+
                 {/* Delivery / Takeaway Toggle */}
                 <div className="grid grid-cols-2 gap-2 bg-white p-1 border border-[#E6DBC5] rounded-none">
                   <button
+                    type="button"
                     onClick={() => setOrderType('delivery')}
                     className={`py-2 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                       orderType === 'delivery'
@@ -150,6 +185,7 @@ Please confirm my order and share payment link!`;
                     🛵 Home Delivery
                   </button>
                   <button
+                    type="button"
                     onClick={() => setOrderType('takeaway')}
                     className={`py-2 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                       orderType === 'takeaway'
@@ -185,6 +221,7 @@ Please confirm my order and share payment link!`;
                       {/* Quantity Stepper */}
                       <div className="flex items-center gap-2 bg-[#FAF5ED] border border-[#E6DBC5] px-2 py-1">
                         <button
+                          type="button"
                           onClick={() => onUpdateQuantity(item.id, -1)}
                           className="p-1 hover:text-[#7B1E1E] transition-colors cursor-pointer"
                         >
@@ -194,6 +231,7 @@ Please confirm my order and share payment link!`;
                           {quantity}
                         </span>
                         <button
+                          type="button"
                           onClick={() => onUpdateQuantity(item.id, 1)}
                           className="p-1 hover:text-[#7B1E1E] transition-colors cursor-pointer"
                         >
@@ -273,13 +311,24 @@ Please confirm my order and share payment link!`;
                 </div>
               </div>
 
-              <button
-                onClick={handleCheckout}
-                className="w-full py-4 bg-[#161312] hover:bg-[#7B1E1E] text-[#7DCE9F] font-black text-xs uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01]"
-              >
-                <span>PLACE ORDER VIA WHATSAPP</span>
-                <ArrowRight className="w-4 h-4 text-[#7DCE9F]" />
-              </button>
+              <div className="grid grid-cols-1 gap-2 pt-1">
+                <button
+                  type="button"
+                  onClick={handleCheckout}
+                  className="w-full py-4 bg-[#161312] hover:bg-[#7B1E1E] text-[#7DCE9F] font-black text-xs uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01]"
+                >
+                  <span>PLACE ORDER VIA WHATSAPP</span>
+                  <ArrowRight className="w-4 h-4 text-[#7DCE9F]" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="w-full py-2.5 bg-gray-100 hover:bg-gray-200 text-[#1F1919] font-bold text-xs uppercase tracking-widest transition-colors cursor-pointer text-center"
+                >
+                  Close & Continue Shopping
+                </button>
+              </div>
             </div>
           )}
         </motion.div>
