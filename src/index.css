@@ -19,12 +19,12 @@
   }
 }
 
-/* ROAST Signature Headline Typography (Poppins Black 900) */
+/* ROAST Signature Headline Typography (Poppins Black 900 with generous line spacing) */
 .roast-display-heading {
   font-family: 'Poppins', sans-serif;
   font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
 /* Small Uppercase Eyebrow Text (Inter Medium 500 with 0.4em spacing) */
