@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, User, ShoppingBag, MapPin, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, User, ShoppingBag, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { MENU_CATEGORIES, MENU_ITEMS } from '../data/restaurantData';
 import { ReservationSection } from './ReservationSection';
 import { ContactSection } from './ContactSection';
@@ -42,7 +42,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
     <div className="min-h-screen bg-[#F5EBE0] text-[#1F1919] select-none font-sans">
 
       {/* 1. TOP ROAST BLACK NAVBAR */}
-      <header className="sticky top-0 z-50 bg-[#1A1615] text-white py-3.5 px-4 sm:px-8 shadow-md">
+      <header className="sticky top-0 z-50 bg-[#1A1615] text-white py-3.5 px-4 sm:px-8 shadow-md border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
 
           {/* Left: Single Brand Logo Wordmark */}
@@ -56,9 +56,9 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             </button>
             <div>
               <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white uppercase font-sans leading-none">
-                C/o Rajahmundry
+                C/O Rajahmundry
               </h1>
-              <span className="text-[9px] font-bold text-[#E67E22] tracking-widest uppercase block mt-0.5">
+              <span className="text-[9px] font-bold text-gray-300 tracking-widest uppercase block mt-0.5">
                 Kitchen & Bar
               </span>
             </div>
@@ -69,7 +69,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             <button
               onClick={() => { setActiveTab('menu'); setSelectedSubCategory('all'); }}
               className={`text-xs font-bold uppercase tracking-widest transition-all cursor-pointer py-1 ${
-                activeTab === 'menu' ? 'text-white border-b-2 border-[#E67E22]' : 'text-gray-400 hover:text-white'
+                activeTab === 'menu' ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
               }`}
             >
               MENU
@@ -77,7 +77,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             <button
               onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('all'); }}
               className={`text-xs font-bold uppercase tracking-widest transition-all cursor-pointer py-1 ${
-                activeTab === 'cocktails' ? 'text-white border-b-2 border-[#E67E22]' : 'text-gray-400 hover:text-white'
+                activeTab === 'cocktails' ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
               }`}
             >
               COCKTAILS
@@ -85,7 +85,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             <button
               onClick={() => setActiveTab('reservations')}
               className={`text-xs font-bold uppercase tracking-widest transition-all cursor-pointer py-1 ${
-                activeTab === 'reservations' ? 'text-white border-b-2 border-[#E67E22]' : 'text-gray-400 hover:text-white'
+                activeTab === 'reservations' ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
               }`}
             >
               RESERVATIONS
@@ -93,7 +93,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             <button
               onClick={() => setActiveTab('locations')}
               className={`text-xs font-bold uppercase tracking-widest transition-all cursor-pointer py-1 ${
-                activeTab === 'locations' ? 'text-white border-b-2 border-[#E67E22]' : 'text-gray-400 hover:text-white'
+                activeTab === 'locations' ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
               }`}
             >
               LOCATIONS
@@ -109,7 +109,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                 placeholder="Search dishes..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 pr-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs text-white placeholder-gray-400 focus:outline-none focus:border-[#E67E22] w-36 sm:w-44 transition-all"
+                className="pl-9 pr-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs text-white placeholder-gray-400 focus:outline-none focus:border-white w-36 sm:w-44 transition-all"
               />
             </div>
 
@@ -120,7 +120,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             <button className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-wider cursor-pointer transition-all">
               <ShoppingBag className="w-4 h-4" />
               <span>CART</span>
-              <span className="w-4 h-4 rounded-full bg-[#E67E22] text-white text-[10px] flex items-center justify-center font-bold">
+              <span className="w-4 h-4 rounded-full bg-white text-[#1A1615] text-[10px] flex items-center justify-center font-bold">
                 {cartCount}
               </span>
             </button>
@@ -129,31 +129,14 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         </div>
       </header>
 
-      {/* 2. SUB-BAR: LOCATION INFO */}
-      <div className="bg-[#FAF5ED] border-b border-[#E6DBC5] py-2 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs text-[#4A3E3E]">
-          <div className="flex items-center gap-1.5 font-medium cursor-pointer">
-            <MapPin className="w-3.5 h-3.5 text-[#E67E22]" />
-            <span className="font-bold">5th Floor, Santa Sriram Estates, Kompally</span>
-          </div>
-
-          <div className="flex md:hidden items-center gap-3 overflow-x-auto text-[11px] font-bold uppercase">
-            <button onClick={() => { setActiveTab('menu'); setSelectedSubCategory('all'); }} className={activeTab === 'menu' ? 'text-[#E67E22]' : 'text-gray-600'}>Menu</button>
-            <button onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('all'); }} className={activeTab === 'cocktails' ? 'text-[#E67E22]' : 'text-gray-600'}>Cocktails</button>
-            <button onClick={() => setActiveTab('reservations')} className={activeTab === 'reservations' ? 'text-[#E67E22]' : 'text-gray-600'}>Reservations</button>
-            <button onClick={() => setActiveTab('locations')} className={activeTab === 'locations' ? 'text-[#E67E22]' : 'text-gray-600'}>Locations</button>
-          </div>
-        </div>
-      </div>
-
-      {/* 3. TAB VIEW CONTENT */}
+      {/* 2. TAB VIEW CONTENT */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         {/* --- VIEW 1: MENU & COCKTAILS VIEW --- */}
         {(activeTab === 'menu' || activeTab === 'cocktails') && (
           <div className="space-y-12">
-            {/* Sticky Category Quick-Jump Pill Slider */}
-            <div className="sticky top-[60px] z-40 bg-[#FAF5ED]/95 backdrop-blur-md p-2.5 rounded-xl border border-[#E6DBC5] shadow-md flex items-center gap-2 overflow-x-auto scrollbar-none">
+            {/* Sticky Category Quick-Jump Pill Slider (Clean Off-White Background) */}
+            <div className="sticky top-[60px] z-40 bg-white/95 backdrop-blur-md p-2.5 rounded-xl border border-[#E6DBC5] shadow-md flex items-center gap-2 overflow-x-auto scrollbar-none">
               <button className="p-1 rounded-full text-gray-400 hover:text-[#1F1919] shrink-0">
                 <ChevronLeft className="w-4 h-4" />
               </button>
@@ -163,7 +146,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                 className={`px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                   selectedSubCategory === 'all'
                     ? 'bg-[#1A1615] text-white shadow-md'
-                    : 'bg-white/80 text-[#4A3E3E] hover:bg-white'
+                    : 'bg-[#F5EBE0] text-[#4A3E3E] hover:bg-white'
                 }`}
               >
                 All Categories
@@ -176,7 +159,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                   className={`px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                     selectedSubCategory === cat.id
                       ? 'bg-[#1A1615] text-white shadow-md'
-                      : 'bg-white/80 text-[#4A3E3E] hover:bg-white'
+                      : 'bg-[#F5EBE0] text-[#4A3E3E] hover:bg-white'
                   }`}
                 >
                   {cat.labelEN}
@@ -204,7 +187,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                       {category.labelEN}
                     </h2>
                     {category.subtitle && (
-                      <p className="text-xs text-[#E67E22] font-bold uppercase tracking-widest mt-1">
+                      <p className="text-xs text-[#7B1E1E] font-bold uppercase tracking-widest mt-1">
                         {category.subtitle}
                       </p>
                     )}
