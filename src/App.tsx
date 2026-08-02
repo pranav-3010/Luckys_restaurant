@@ -4,6 +4,7 @@ import { HeroSection } from './components/HeroSection';
 import { TickerBanner } from './components/TickerBanner';
 import { FeatureGridSection } from './components/FeatureGridSection';
 import { BrandStorySplitSection } from './components/BrandStorySplitSection';
+import { StoryCalloutBannerSection } from './components/StoryCalloutBannerSection';
 import { CategoryHighlightsSection } from './components/CategoryHighlightsSection';
 import { MenuSection } from './components/MenuSection';
 import { AboutSection } from './components/AboutSection';
@@ -43,6 +44,8 @@ export function App() {
           <FeatureGridSection />
 
           <BrandStorySplitSection />
+
+          <StoryCalloutBannerSection />
 
           <CategoryHighlightsSection
             onSelectCategory={(category) => {
