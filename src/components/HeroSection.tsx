@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Globe } from 'lucide-react';
 import luckysMandiPlatterImg from '../assets/luckys_mandi_platter.jpg';
+import luckysBiryaniFeastImg from '../assets/luckys_biryani_feast.jpg';
 import luckysStarterDishImg from '../assets/luckys_starter_dish.jpg';
 import realTandooriImg from '../assets/real_tandoori_starter.jpg';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
@@ -21,6 +22,11 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
       image: luckysMandiPlatterImg,
       taglineEN: "Lucky's Signature Arabian Mandi Platter Suchitra",
       taglineTE: 'లక్కీస్ సిగ్నేచర్ అరేబియన్ మండి ప్లాటర్',
+    },
+    {
+      image: luckysBiryaniFeastImg,
+      taglineEN: "Lucky's Special Hyderabadi Dum & Fry Piece Biryani Feast",
+      taglineTE: 'లక్కీస్ స్పెషల్ హైదరాబాదీ దమ్ & ఫ్రై పీస్ బిర్యానీ',
     },
     {
       image: realTandooriImg,
@@ -62,13 +68,13 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
 
   return (
     <section id="home" className="relative h-screen w-screen flex flex-col justify-between overflow-hidden bg-black select-none font-sans">
-      {/* 100% Real, Full-Screen, Crisp Mandi & Starter Dish Photography Image */}
+      {/* 100% Real, Full-Screen, Crisp Mandi & Biryani Photography Image */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.img
             key={currentSlide}
             src={slides[currentSlide].image}
-            alt="Lucky's Restaurant Suchitra Dish Photography"
+            alt="Lucky's Restaurant Suchitra Biryani & Mandi Platter"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
