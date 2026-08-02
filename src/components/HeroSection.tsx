@@ -87,7 +87,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
         </button>
       </div>
 
-      {/* CENTER RESTAURANT NAME ONLY (NO CONTAINER BOX, NO BUTTONS) */}
+      {/* CENTER RESTAURANT NAME ONLY WITH CAPITAL C (NO BOX, NO BUTTONS) */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 my-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -96,7 +96,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
           className="space-y-2"
         >
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-serif tracking-tight text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.95)] leading-tight font-black">
-            c/O Rajahmundry
+            C/O Rajahmundry
           </h1>
           <p className="text-xs sm:text-lg md:text-xl font-bold uppercase tracking-[0.4em] text-[#F6E27A] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] pt-2">
             k i t c h e n &nbsp; a n d &nbsp; b a r
