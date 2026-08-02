@@ -4,8 +4,7 @@ import { ChevronDown, Globe } from 'lucide-react';
 import luckysMandiPlatterImg from '../assets/luckys_mandi_platter.jpg';
 import luckysBiryaniFeastImg from '../assets/luckys_biryani_feast.jpg';
 import luckysStarterDishImg from '../assets/luckys_starter_dish.jpg';
-import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
-import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
+import luckysAngaraChickenPlatterImg from '../assets/luckys_angara_chicken_platter.jpg';
 import { useLanguage } from '../context/LanguageContext';
 
 interface HeroProps {
@@ -33,14 +32,9 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
       taglineTE: 'లక్కీస్ స్పెషల్ స్పైసీ చికెన్ స్టార్టర్స్',
     },
     {
-      image: realFishImg,
-      taglineEN: 'Traditional Aritaku Fish Fry & Andhra Starters',
-      taglineTE: 'అరిటాకు చేపల ఫ్రై',
-    },
-    {
-      image: realCocktailImg,
-      taglineEN: 'Rooftop Bar Cocktails & Refreshing Irani Chai',
-      taglineTE: 'రూఫ్‌టాప్ బార్ అండ్ ఇరానీ చాయ్',
+      image: luckysAngaraChickenPlatterImg,
+      taglineEN: "Lucky's Signature Smoky Angara Chicken Kabab Platter",
+      taglineTE: 'లక్కీస్ సిగ్నేచర్ అంగారా చికెన్ కబాబ్స్',
     },
   ];
 
@@ -62,13 +56,13 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
 
   return (
     <section id="home" className="relative h-screen w-screen flex flex-col justify-between overflow-hidden bg-black select-none font-sans">
-      {/* 100% Real, Full-Screen, Crisp Mandi & Biryani Photography Image */}
+      {/* 100% Real, Full-Screen, Crisp Mandi, Biryani & Kabab Photography Image */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.img
             key={currentSlide}
             src={slides[currentSlide].image}
-            alt="Lucky's Restaurant Suchitra Biryani & Mandi Platter"
+            alt="Lucky's Restaurant Suchitra Culinary Specials"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
