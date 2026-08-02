@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Building2 } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
+import real3dWallLogo from '../assets/real_3d_wall_logo.jpg';
 
 export const AboutSection: React.FC = () => {
   const pillars = [
@@ -12,14 +13,14 @@ export const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 relative bg-[#FAF6F0] border-t border-b border-[#D4AF37]/30">
+    <section id="about" className="py-24 relative bg-[#FAF6F0] border-t border-b border-[#D4AF37]/30 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[11px] font-bold uppercase tracking-widest text-[#E67E22] block mb-1">
+          <span className="eyebrow-text block mb-1">
             About C/o Rajahmundry
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black uppercase font-serif-heading gold-heading-text tracking-tight mb-3">
+          <h2 className="text-3xl sm:text-5xl roast-display-heading text-[#1F1919] mb-3">
             Kitchen and Bar
           </h2>
           <div className="w-20 h-1 bg-[#E67E22] mx-auto rounded-full mt-4" />
@@ -42,7 +43,7 @@ export const AboutSection: React.FC = () => {
               Where Traditional Godavari Spices Meet Modern Rooftop Hospitality
             </h3>
 
-            <p className="text-[#4A3E3E] text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-[#4A3E3E] text-sm sm:text-base leading-relaxed font-light font-sans">
               Located on the 5th floor of Santa Sriram Estates in Kompally, <strong className="text-[#7B1E1E] font-semibold">C/o Rajahmundry Kitchen and Bar</strong> brings the authentic culinary legacy of East and West Godavari to Hyderabad. From sizzling Mutton Cooker Pulaos and banana-leaf roasted Aritaku Fish to artisanal cocktails, every moment here is crafted for unforgettable family gatherings and nightouts.
             </p>
 
@@ -58,23 +59,36 @@ export const AboutSection: React.FC = () => {
             </div>
           </motion.div>
 
+          {/* Right Column: 3D Backlit Logo Wall Image ABOVE the Rooftop Dining Image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="space-y-6"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#D4AF37]/40 aspect-[4/3]">
+            {/* Top Image: Official 3D Backlit C/o Rajahmundry Logo Wall */}
+            <div className="relative rounded-none overflow-hidden shadow-2xl border border-[#D4AF37]/50 aspect-[16/11]">
+              <img
+                src={real3dWallLogo}
+                alt="C/o Rajahmundry Kitchen & Bar 3D Wall Logo"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute bottom-4 left-4 right-4 p-3 glass-dark-panel rounded-none border border-white/40">
+                <span className="block text-xs font-bold text-[#1F1919] uppercase tracking-wider">Official C/o Rajahmundry 3D Wall Landmark</span>
+              </div>
+            </div>
+
+            {/* Second Image: Rooftop Dining View */}
+            <div className="relative rounded-none overflow-hidden shadow-xl border border-[#D4AF37]/30 aspect-[16/10]">
               <img
                 src={RESTAURANT_INFO.heroImage}
                 alt="C/o Rajahmundry Rooftop Dining Experience"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 glass-dark-panel rounded-2xl border border-white/40">
-                <span className="block text-sm font-bold text-[#1F1919] font-serif-heading">5th Floor Santa Sriram Estates Lounge</span>
-                <span className="block text-xs text-[#7B1E1E]">Hyderabad's Premier Andhra Kitchen & Bar</span>
+              <div className="absolute bottom-4 left-4 right-4 p-3 glass-dark-panel rounded-none border border-white/40">
+                <span className="block text-xs font-bold text-[#1F1919] uppercase tracking-wider">5th Floor Santa Sriram Estates Lounge</span>
               </div>
             </div>
           </motion.div>
@@ -89,15 +103,15 @@ export const AboutSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="spice-card p-6 rounded-2xl border border-gray-200 bg-white hover:border-[#E67E22] transition-all"
+              className="spice-card p-6 rounded-none border border-gray-200 bg-white hover:border-[#E67E22] transition-all"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#E67E22]/15 border border-[#E67E22]/30 flex items-center justify-center mb-4 text-[#E67E22]">
+              <div className="w-10 h-10 rounded-none bg-[#E67E22]/15 border border-[#E67E22]/30 flex items-center justify-center mb-4 text-[#E67E22]">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
               <h4 className="text-base font-bold font-serif-heading text-[#1F1919] mb-2 uppercase">
                 {item.title}
               </h4>
-              <p className="text-xs text-[#6E5C5C] leading-relaxed font-light">
+              <p className="text-xs text-[#6E5C5C] leading-relaxed font-light font-sans">
                 {item.desc}
               </p>
             </motion.div>
