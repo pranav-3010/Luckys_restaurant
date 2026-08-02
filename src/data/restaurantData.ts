@@ -67,10 +67,11 @@ export const RESTAURANT_INFO = {
 export const MENU_CATEGORIES = [
   { id: 'all', labelEN: 'All Items', labelTE: 'అన్నీ' },
   { id: 'rajahmundry-taluka', labelEN: 'C/o Rajahmundry Taluka', subtitle: 'Authentic Rajahmundry Starters & Specials', labelTE: 'రాజమండ్రి తాలూకా' },
+  { id: 'yekadaina-yeppudaina', labelEN: 'Yekadaina Yeppudaina', subtitle: 'Evergreen Anytime Favorites & Snacks', labelTE: 'ఎక్కడైనా ఎప్పుడైనా' },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
-  // C/O RAJAHMUNDRY TALUKA (ALL 19 OFFICIAL ITEMS)
+  // 1. C/O RAJAHMUNDRY TALUKA (19 ITEMS)
   {
     id: "t1",
     name: "MOKAJONNA WADA",
@@ -249,6 +250,169 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     isChefSpecial: true,
     image: realCocktailImg
+  },
+
+  // 2. YEKADAINA YEPPUDAINA (18 ITEMS)
+  {
+    id: "y1",
+    name: "MOKKAJONNA VEPUDU",
+    description: "Crunchy stir-fried sweet corn seasoned with crushed green chilies & roasted cumin.",
+    price: 379.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "y2",
+    name: "KARA KARA PANEER",
+    description: "Crispy fried cottage cheese cubes coated in fiery Andhra red chili karam and curry leaves.",
+    price: 429.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: true,
+    isSpicy: true
+  },
+  {
+    id: "y3",
+    name: "PANEER TIKKA 4 WAYS",
+    description: "Four assorted tandoori paneer skewers: Achari, Malai, Hariyali & Peri-Peri smoked in clay oven.",
+    price: 449.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "y4",
+    name: "MALAI BROCCOLI",
+    description: "Tender broccoli florets marinated in rich cream, cashew paste & cardamom, charcoal roasted.",
+    price: 429.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: true
+  },
+  {
+    id: "y5",
+    name: "KALCHINA APPLE",
+    description: "Tandoori smoked spiced apple wedges served with mint dip & tangy chaat masala.",
+    price: 379.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "y6",
+    name: "CHILLY EGG/EGG 65",
+    description: "Boiled egg quarters wok-tossed in Indo-Chinese chili garlic sauce or spicy Andhra 65 masala.",
+    price: 369.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "y7",
+    name: "KODI APPADALU",
+    description: "Crispy chicken appadam rolls stuffed with minced spiced chicken & fried crunchy.",
+    price: 459.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "y8",
+    name: "NETHI KODI VEPUDU",
+    description: "Tender chicken cooked in pure buffalo ghee with shallots, crushed black pepper & curry leaves.",
+    price: 459.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "y9",
+    name: "CHINCHINADA KODI PAKODI",
+    description: "Traditional Chinchinada village style crispy fried chicken pakodas with bone.",
+    price: 459.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "y10",
+    name: "KOTHIMEERA KODI VEPUDU",
+    description: "Succulent chicken morsels tossed in fresh coriander leaf paste & roasted aromatics.",
+    price: 459.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false
+  },
+  {
+    id: "y11",
+    name: "TANDOORI DRUMSTICKS",
+    description: "Juicy chicken drumsticks marinated in spicy yogurt & tandoori masala, charcoal grilled.",
+    price: 459.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "y12",
+    name: "PANDUMIRCHI KODI KEBAB",
+    description: "Boneless chicken kebabs marinated in red Pandumirchi chili paste & smoked in clay tandoor.",
+    price: 459.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "y13",
+    name: "MIRYALA MAMSAM VEPUDU",
+    description: "Tender mutton chunks wok-roasted with crushed black pepper (Miryalu) & ghee.",
+    price: 569.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "y14",
+    name: "GONGURA MAMSAM VEPUDU",
+    description: "Mutton roast infused with tangy sour sorrel leaves (Gongura) & red chili masala.",
+    price: 569.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "y15",
+    name: "PACHI CHINTAKAYA FISH KEBAB",
+    description: "Fresh fish fillets marinated in raw green tamarind (Pachi Chintakaya) paste & charcoal grilled.",
+    price: 539.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "y16",
+    name: "APOLLO FISH",
+    description: "Crispy fried boneless fish fillets tossed in spicy garlic soy sauce & fried curry leaves.",
+    price: 539.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "y17",
+    name: "NALLAKARAM ROYYALA VEPUDU",
+    description: "Fresh river prawns tossed in dark roasted black chili powder (Nallakaram) & curry leaves.",
+    price: 569.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "y18",
+    name: "LOOSE PRAWNS",
+    description: "Crispy batter-fried prawns tossed with finely chopped garlic, green chilies & spring onions.",
+    price: 569.00,
+    category: "yekadaina-yeppudaina",
+    isVeg: false
   }
 ];
 

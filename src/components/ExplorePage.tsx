@@ -26,7 +26,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
     let items = MENU_ITEMS;
 
     if (activeTab === 'cocktails') {
-      items = items.filter(item => item.category === 'bar-specialties' || item.category === 'seafood');
+      items = items.filter(item => item.category === 'seafood' || item.isChefSpecial);
     } else if (selectedSubCategory !== 'all') {
       items = items.filter(item => item.category === selectedSubCategory);
     }
@@ -47,11 +47,11 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
   return (
     <div className="min-h-screen bg-[#F5EBE0] text-[#1F1919] select-none font-sans">
 
-      {/* 1. TOP ROAST BLACK NAVBAR */}
+      {/* 1. TOP ROAST BLACK NAVBAR (SINGLE BRAND WORDMARK) */}
       <header className="sticky top-0 z-50 bg-[#1A1615] text-white py-3.5 px-4 sm:px-8 shadow-md">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
 
-          {/* Left: Brand Logo Wordmark */}
+          {/* Left: Single Brand Logo Wordmark */}
           <div className="flex items-center gap-4">
             <button
               onClick={onBackToHome}
@@ -138,12 +138,12 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         </div>
       </header>
 
-      {/* 2. SUB-BAR: LOCATION SELECTOR & MOBILE TABS */}
+      {/* 2. SUB-BAR: LOCATION INFO */}
       <div className="bg-[#FAF5ED] border-b border-[#E6DBC5] py-2 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs text-[#4A3E3E]">
           <div className="flex items-center gap-1.5 font-medium cursor-pointer">
             <MapPin className="w-3.5 h-3.5 text-[#E67E22]" />
-            <span className="font-bold">C/o Rajahmundry • Kompally, 5th Floor</span>
+            <span className="font-bold">5th Floor, Santa Sriram Estates, Kompally</span>
           </div>
 
           {/* Mobile Tab Links */}
@@ -162,7 +162,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         {/* --- VIEW 1: MENU & COCKTAILS VIEW ONLY --- */}
         {(activeTab === 'menu' || activeTab === 'cocktails') && (
           <div className="space-y-8">
-            {/* Category Pill Slider (Matching ROAST Category Bar) */}
+            {/* Category Pill Slider (C/o Rajahmundry Taluka & Yekadaina Yeppudaina) */}
             <div className="relative bg-[#FAF5ED] p-2 rounded-xl border border-[#E6DBC5] shadow-sm flex items-center gap-2 overflow-x-auto scrollbar-none">
               <button className="p-1 rounded-full text-gray-400 hover:text-[#1F1919] shrink-0">
                 <ChevronLeft className="w-4 h-4" />
@@ -176,7 +176,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                     : 'bg-white/80 text-[#4A3E3E] hover:bg-white'
                 }`}
               >
-                C/o Rajahmundry Taluka
+                All Items
               </button>
 
               {MENU_CATEGORIES.filter(c => c.id !== 'all').map((cat) => (
@@ -201,7 +201,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             {/* Section Heading */}
             <div>
               <h2 className="text-3xl sm:text-5xl font-black font-sans uppercase text-[#1F1919] tracking-tight">
-                {activeTab === 'cocktails' ? 'ROOFTOP CRAFT COCKTAILS & BAR' : 'C/O RAJAHMUNDRY TALUKA'}
+                {activeTab === 'cocktails' ? 'ROOFTOP CRAFT COCKTAILS & BAR' : (selectedSubCategory === 'all' ? 'DIGITAL MENU & BAR CARD' : MENU_CATEGORIES.find(c => c.id === selectedSubCategory)?.labelEN)}
               </h2>
             </div>
 
