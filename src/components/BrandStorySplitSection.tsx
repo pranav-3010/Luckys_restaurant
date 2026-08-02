@@ -8,7 +8,7 @@ export const BrandStorySplitSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-          {/* Left Column (Slightly Bigger 58% width on Desktop): Aritaku Fish Photo */}
+          {/* Left Column (58% width on Desktop): Aritaku Fish Photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -36,8 +36,8 @@ export const BrandStorySplitSection: React.FC = () => {
               WHERE GODAVARI HERITAGE MEETS HYDERABAD NIGHTLIFE
             </span>
 
-            {/* Big Bold Headline using Marquee Sans-Serif Font */}
-            <h2 className="text-3xl sm:text-5xl font-black uppercase font-sans text-[#1F1919] tracking-tighter leading-[1.05]">
+            {/* Big Bold Headline using Sans-Serif Title Case (Mixed Capital & Small Letters) */}
+            <h2 className="text-3xl sm:text-5xl font-black font-sans text-[#1F1919] tracking-tight leading-[1.05]">
               Experience Hyderabad's Premier Rajahmundry Kitchen & Rooftop Bar
             </h2>
 
