@@ -70,6 +70,7 @@ export const MENU_CATEGORIES = [
   { id: 'yekadaina-yeppudaina', labelEN: 'Yekadaina Yeppudaina', subtitle: 'Evergreen Anytime Favorites & Snacks', labelTE: 'ఎక్కడైనా ఎప్పుడైనా' },
   { id: 'vedigha-ghatugha', labelEN: 'Vedigha Ghatugha', subtitle: 'Hot & Spicy Soups, Rasam & Mutton Marag', labelTE: 'వేడిగా ఘాటుగా' },
   { id: 'nuvva-nena', labelEN: 'Nuvva-Nena', subtitle: 'Authentic Godavari Rice & Bandi Style Noodles', labelTE: 'నువ్వా-నేనా' },
+  { id: 'rajahmundry-re-remix', labelEN: 'Rajahmundry Re-Remix', subtitle: 'Signature Non-Veg Rice Combos & Chepala Pulusu', labelTE: 'రాజమండ్రి రీ-రీమిక్స్' },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -474,7 +475,7 @@ export const MENU_ITEMS: MenuItem[] = [
     image: realBiryaniImg
   },
 
-  // 4. NUVVA-NENA (6 RICE & BANDI NOODLES ITEMS)
+  // 4. NUVVA-NENA (6 ITEMS)
   {
     id: "nn1",
     name: "ANNAM (PLAIN/GHEE/PERUGU)",
@@ -529,6 +530,60 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true
+  },
+
+  // 5. RAJAHMUNDRY RE-REMIX (5 NON-VEG COMBOS & CHEPALA PULUSU ITEMS)
+  {
+    id: "rrr1",
+    name: "BAGARA ANNAM (CHICKEN / MUTTON DALCHA / NATUKODI)",
+    description: "Aromatic Bagara rice served with rich choice of spicy Telangana chicken curry, slow-cooked Mutton Dalcha or country Natukodi pulusu.",
+    price: 449.00,
+    category: "rajahmundry-re-remix",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true,
+    image: realBiryaniImg
+  },
+  {
+    id: "rrr2",
+    name: "GODAVARI SPL FRIED RICE (VEG / CHICKEN)",
+    description: "Chef's signature Godavari spiced special fried rice loaded with caramelized onions, cashews & choice of veg or chicken.",
+    price: 449.00,
+    category: "rajahmundry-re-remix",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rrr3",
+    name: "RAGI SANGATI (CHICKEN / NATUKODI / MUTTON)",
+    description: "Traditional hot ragi sangati served with fiery spicy country Natukodi chicken, spicy mutton gravy or chicken fry.",
+    price: 449.00,
+    category: "rajahmundry-re-remix",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rrr4",
+    name: "PAPPU CHARU ANNAM (CHICKEN FRY / MUTTON FRY)",
+    description: "Comforting Pappucharu rice & ghee served alongside crispy Guntur Chicken Fry or spicy Mutton Fry.",
+    price: 419.00,
+    category: "rajahmundry-re-remix",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rrr5",
+    name: "GHEE RICE WITH CHEPALA PULUSU",
+    description: "Steaming hot pure cow ghee rice served with authentic sour & spicy Godavari tamarind river fish curry (Chepala Pulusu).",
+    price: 449.00,
+    category: "rajahmundry-re-remix",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true,
+    image: realFishImg
   }
 ];
 
