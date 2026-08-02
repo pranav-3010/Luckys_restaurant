@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import luckysBiryaniMenuCardImg from '../assets/luckys_biryani_menu_card.jpg';
-import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
+import luckysMandiPlatterImg from '../assets/luckys_mandi_platter.jpg';
 import realReservationInteriorImg from '../assets/real_reservation_interior.jpg';
 import luckysFacadeImg from '../assets/luckys_exterior_facade.jpg';
 
@@ -52,26 +52,26 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
             </div>
           </motion.div>
 
-          {/* Card 2: Events & Bar */}
+          {/* Card 2: Arabian Mandi - Official Arabian Mandi Platter Photo */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            onClick={() => scrollToSection('events')}
+            onClick={() => scrollToSection('menu')}
             className="md:col-span-5 group relative rounded-none overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-square bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
-              src={realCocktailImg}
-              alt="Events & Bar"
+              src={luckysMandiPlatterImg}
+              alt="Arabian Mandi Specials"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-10">
               <h3 className="text-3xl sm:text-5xl font-black font-sans text-white tracking-tight leading-none mb-2">
-                Events & Bar
+                Arabian Mandi
               </h3>
               <p className="text-xs sm:text-sm text-[#E6DAD0] font-light mb-4 uppercase tracking-wider">
-                Live IPL, Music & Craft Cocktails
+                Juicy Mutton & Fried Chicken Mandi Specials
               </p>
               <div className="inline-flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>EXPLORE &rarr;</span>
