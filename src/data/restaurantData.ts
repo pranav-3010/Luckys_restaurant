@@ -69,6 +69,7 @@ export const MENU_CATEGORIES = [
   { id: 'rajahmundry-taluka', labelEN: 'C/o Rajahmundry Taluka', subtitle: 'Authentic Rajahmundry Starters & Specials', labelTE: 'రాజమండ్రి తాలూకా' },
   { id: 'yekadaina-yeppudaina', labelEN: 'Yekadaina Yeppudaina', subtitle: 'Evergreen Anytime Favorites & Snacks', labelTE: 'ఎక్కడైనా ఎప్పుడైనా' },
   { id: 'vedigha-ghatugha', labelEN: 'Vedigha Ghatugha', subtitle: 'Hot & Spicy Soups, Rasam & Mutton Marag', labelTE: 'వేడిగా ఘాటుగా' },
+  { id: 'nuvva-nena', labelEN: 'Nuvva-Nena', subtitle: 'Authentic Godavari Rice & Bandi Style Noodles', labelTE: 'నువ్వా-నేనా' },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -416,7 +417,7 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: false
   },
 
-  // 3. VEDIGHA GHATUGHA (6 SOUPS & RASAM ITEMS)
+  // 3. VEDIGHA GHATUGHA (6 ITEMS)
   {
     id: "vg1",
     name: "BROWN GARLIC SOUP",
@@ -471,6 +472,63 @@ export const MENU_ITEMS: MenuItem[] = [
     isSpicy: true,
     isChefSpecial: true,
     image: realBiryaniImg
+  },
+
+  // 4. NUVVA-NENA (6 RICE & BANDI NOODLES ITEMS)
+  {
+    id: "nn1",
+    name: "ANNAM (PLAIN/GHEE/PERUGU)",
+    description: "Steamed Sona Masoori rice served choice of plain, aromatic pure cow ghee, or soothing fresh curd with mango pickle.",
+    price: 159.00,
+    category: "nuvva-nena",
+    isVeg: true
+  },
+  {
+    id: "nn2",
+    name: "PAPPUCHARU ANNAM",
+    description: "Homestyle Godavari Pappucharu (spiced lentil stew) mixed with hot rice & ghee, served with fried chili.",
+    price: 249.00,
+    category: "nuvva-nena",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "nn3",
+    name: "AVAKAI MUDDAPAPPU ANNAM",
+    description: "Iconic combination of thick yellow lentil dahl (Mudda Pappu), fiery spicy Andhra mango pickle (Avakai) & pure ghee rice.",
+    price: 249.00,
+    category: "nuvva-nena",
+    isVeg: true,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "nn4",
+    name: "RAGI SANGATI / BAGARA ANNAM",
+    description: "Nutritious finger millet ball (Ragi Sangati) or aromatic tempered mint & spice Bagara rice.",
+    price: 249.00,
+    category: "nuvva-nena",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "nn5",
+    name: "FRIED RICE / NOODLES (REGULAR / BANDI STYLE)",
+    description: "Wok-tossed street bandi style or regular fried rice/noodles with choice of Veg, Egg, Chicken or Mix.",
+    price: 369.00,
+    category: "nuvva-nena",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "nn6",
+    name: "AVAKAI FRIED RICE / NOODLES",
+    description: "Fiery wok-tossed fried rice or noodles flavored with spicy Andhra Avakai pickle paste & choice of Veg, Chicken or Mix.",
+    price: 379.00,
+    category: "nuvva-nena",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
   }
 ];
 
