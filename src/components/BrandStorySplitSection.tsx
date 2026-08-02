@@ -38,7 +38,7 @@ export const BrandStorySplitSection: React.FC = () => {
 
             {/* Big Bold Headline (Matching ROAST typography) */}
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black font-serif-heading text-[#1F1919] tracking-tight leading-[1.1]">
-              Experience Hyderabad's Premier Godavari Kitchen & Rooftop Bar
+              Experience Hyderabad's Premier Rajahmundry Kitchen & Rooftop Bar
             </h2>
 
             {/* Body Text Paragraph 1 */}
