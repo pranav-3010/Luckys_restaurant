@@ -36,8 +36,8 @@ export const BrandStorySplitSection: React.FC = () => {
               WHERE GODAVARI HERITAGE MEETS HYDERABAD NIGHTLIFE
             </span>
 
-            {/* Big Bold Headline using Sans-Serif Title Case (Mixed Capital & Small Letters) */}
-            <h2 className="text-3xl sm:text-5xl font-black font-sans text-[#1F1919] tracking-tight leading-[1.05]">
+            {/* ROAST Signature Heavy Extended Headline Typography */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl roast-display-heading text-[#1F1919] max-w-xl">
               Experience Hyderabad's Premier Rajahmundry Kitchen & Rooftop Bar
             </h2>
 

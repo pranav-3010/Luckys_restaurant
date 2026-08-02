@@ -34,7 +34,7 @@ export const FeatureGridSection: React.FC = () => {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-10">
-              <h3 className="text-4xl sm:text-6xl font-black font-sans text-white tracking-tight leading-none mb-2">
+              <h3 className="text-3xl sm:text-5xl roast-display-heading text-white mb-2">
                 Menu
               </h3>
               <p className="text-xs sm:text-sm text-[#E6DAD0] font-light mb-4 uppercase tracking-wider">
@@ -61,7 +61,7 @@ export const FeatureGridSection: React.FC = () => {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-10">
-              <h3 className="text-4xl sm:text-6xl font-black font-sans text-white tracking-tight leading-none mb-2">
+              <h3 className="text-3xl sm:text-5xl roast-display-heading text-white mb-2">
                 Events & Bar
               </h3>
               <p className="text-xs sm:text-sm text-[#E6DAD0] font-light mb-4 uppercase tracking-wider">
@@ -91,7 +91,7 @@ export const FeatureGridSection: React.FC = () => {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-8">
-              <h3 className="text-3xl sm:text-5xl font-black font-sans text-white tracking-tight leading-none mb-2">
+              <h3 className="text-2xl sm:text-4xl roast-display-heading text-white mb-2">
                 Reservation
               </h3>
               <p className="text-xs text-[#E6DAD0] font-light mb-3 uppercase tracking-wider">
@@ -118,13 +118,13 @@ export const FeatureGridSection: React.FC = () => {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-8">
-              <h3 className="text-3xl sm:text-5xl font-black font-sans text-white tracking-tight leading-none mb-2">
+              <h3 className="text-2xl sm:text-4xl roast-display-heading text-white mb-2">
                 Visit Us
               </h3>
               <p className="text-xs text-[#E6DAD0] font-light mb-3 uppercase tracking-wider">
                 5th Floor, Santa Sriram Estates, Kompally
               </p>
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
+              <div className="inline-flex items-center gap-2 text-xs font-bold text-[#F6E27A] uppercase tracking-widest border-b-2 border-[#F6E27A] pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>FIND LOCATION &rarr;</span>
               </div>
             </div>

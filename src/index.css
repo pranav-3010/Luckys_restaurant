@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800;900&family=Unbounded:wght@700;800;900&display=swap');
 
 @layer base {
   body {
@@ -10,12 +10,26 @@
   }
 
   h1, h2, h3, h4, .font-serif-heading {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
   }
 
   .font-cinzel {
     font-family: 'Cinzel', serif;
   }
+
+  .font-marquee {
+    font-family: 'Syne', sans-serif;
+    font-weight: 900;
+  }
+}
+
+/* ROAST Signature Heavy Extended Headline Typography */
+.roast-display-heading {
+  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
 }
 
 /* Custom Scrollbar */
