@@ -60,15 +60,12 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
   const totalCartCount = cartItems.reduce((sum, ci) => sum + ci.quantity, 0);
 
-  const isBarCategory = (catId: string) => {
-    return ['signature-cocktails', 'wines', 'vodka-spirits', 'beers', 'whisky-rum'].includes(catId);
-  };
 
   const getVisibleCategories = () => {
     if (activeTab === 'cocktails') {
-      return MENU_CATEGORIES.filter(c => c.id !== 'all' && isBarCategory(c.id));
+      return MENU_CATEGORIES.filter(c => c.id === 'mandi-specials');
     }
-    return MENU_CATEGORIES.filter(c => c.id !== 'all' && !isBarCategory(c.id));
+    return MENU_CATEGORIES.filter(c => c.id !== 'all' && c.id !== 'mandi-specials');
   };
 
   const visibleCategories = getVisibleCategories();
