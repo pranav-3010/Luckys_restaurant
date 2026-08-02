@@ -71,6 +71,11 @@ export const MENU_CATEGORIES = [
   { id: 'vedigha-ghatugha', labelEN: 'Vedigha Ghatugha', subtitle: 'Hot & Spicy Soups, Rasam & Mutton Marag', labelTE: 'వేడిగా ఘాటుగా' },
   { id: 'nuvva-nena', labelEN: 'Nuvva-Nena', subtitle: 'Authentic Godavari Rice & Bandi Style Noodles', labelTE: 'నువ్వా-నేనా' },
   { id: 'rajahmundry-re-remix', labelEN: 'Rajahmundry Re-Remix', subtitle: 'Signature Non-Veg Rice Combos & Chepala Pulusu', labelTE: 'రాజమండ్రి రీ-రీమిక్స్' },
+  { id: 'raju-gari-vindhuri', labelEN: 'Raju Gari Vindhuri', subtitle: 'Royal Biryanis, Chittimutyalu & Potlam Pulaos', labelTE: 'రాజు గారి విందురి' },
+  { id: 'mattikunda-rottelu', labelEN: 'Mattikunda Rottelu', subtitle: 'Tandoori Roti, Naan & Malabar Parotas', labelTE: 'మట్టికుండ రొట్టెలు' },
+  { id: 'asalusisilina', labelEN: 'Asalusisalina', subtitle: 'Authentic Andhra Curries, Gravies & Guthi Vankaya', labelTE: 'అసలుసిసలైన' },
+  { id: 'teepi-teepigha', labelEN: 'Teepi Teepigha', subtitle: 'Matka Junnu, Bobbatlu & Pootharekulu Sweets', labelTE: 'తీపి తీపిగా' },
+  { id: 'jathagha', labelEN: 'Jathagha', subtitle: 'Coolers, Nimma Soda & Refreshing Beverages', labelTE: 'జతగా' },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -532,7 +537,7 @@ export const MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true
   },
 
-  // 5. RAJAHMUNDRY RE-REMIX (5 NON-VEG COMBOS & CHEPALA PULUSU ITEMS)
+  // 5. RAJAHMUNDRY RE-REMIX (5 ITEMS)
   {
     id: "rrr1",
     name: "BAGARA ANNAM (CHICKEN / MUTTON DALCHA / NATUKODI)",
@@ -584,6 +589,417 @@ export const MENU_ITEMS: MenuItem[] = [
     isSpicy: true,
     isChefSpecial: true,
     image: realFishImg
+  },
+
+  // 6. RAJU GARI VINDHURI (18 BIRYANI & PULAO ITEMS)
+  {
+    id: "rgv1",
+    name: "VEG PULAV (ULAVACHARU / AVAKAYA)",
+    description: "Fragrant rice cooked with mixed vegetables in rich Ulavacharu (horsegram broth) or fiery Avakaya mango pickle.",
+    price: 369.00,
+    category: "raju-gari-vindhuri",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv2",
+    name: "PANEER PULAV (PACHI MIRCHI / PANDU MIRCHI)",
+    description: "Soft cottage cheese cubes cooked with aromatic long-grain rice and choice of raw green chili or red Pandumirchi paste.",
+    price: 419.00,
+    category: "raju-gari-vindhuri",
+    isVeg: true,
+    isSpicy: true
+  },
+  {
+    id: "rgv3",
+    name: "MASALA VANKAYA PULAV",
+    description: "Traditional Godavari style stuffed baby brinjal (Gutthi Vankaya) cooked with fragrant spiced pulao rice & ghee.",
+    price: 419.00,
+    category: "raju-gari-vindhuri",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv4",
+    name: "CHICKEN BIRYANI / FRY PIECE",
+    description: "Hyderabadi Dum Chicken Biryani or spicy Rajahmundry fried chicken piece layered over dum spiced rice.",
+    price: 419.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isChefSpecial: true,
+    image: realBiryaniImg
+  },
+  {
+    id: "rgv5",
+    name: "ULAVACHARU KODI PULAV / BIRYANI",
+    description: "Signature combination of horsegram broth (Ulavacharu) infused spiced chicken pulao or dum biryani.",
+    price: 429.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv6",
+    name: "AVAKAI KODI PULAV / BIRYANI",
+    description: "Fiery spicy Andhra mango pickle (Avakai) infused tender chicken pulao or dum biryani.",
+    price: 449.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "rgv7",
+    name: "KODI PULAV (PACHIMIRCHI / PANDUMIRCHI)",
+    description: "Juicy bone-in chicken cooked in choice of fresh raw green chili or spicy red Pandumirchi paste & ghee pulao rice.",
+    price: 449.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv8",
+    name: "REDDY GARI REKKA BIRYANI",
+    description: "Royal Rayalaseema style crispy fried chicken wings (Rekkalu) layered over fiery spiced dum biryani rice.",
+    price: 479.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv9",
+    name: "MUTTON FRY PIECE PULAV / BIRYANI",
+    description: "Tender bone-in mutton fry pieces cooked in roasted spices & ghee layered with aromatic pulao or biryani rice.",
+    price: 539.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv10",
+    name: "GONGURA MAMSAM PULAV",
+    description: "Tender mutton cooked with tangy sorrel leaves (Gongura) and pure cow ghee pulao rice.",
+    price: 549.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "rgv11",
+    name: "NALLI GOSHT",
+    description: "Royal slow-cooked mutton shank (Nalli) in rich marrow gravy served over royal spiced biryani rice.",
+    price: 699.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv12",
+    name: "VISTARAKU POTLAM PULAV (CHICKEN / MUTTON / PRAWN)",
+    description: "Fragrant pulao cooked with choice of Chicken, Mutton or Prawns, wrapped and steamed in traditional vistaraku leaf parcel.",
+    price: 459.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv13",
+    name: "ARITAKU POTLAM KHEEMA PULAV",
+    description: "Spicy minced mutton kheema pulao wrapped in toasted banana leaf parcel with ghee & caramelized onions.",
+    price: 559.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv14",
+    name: "RAVULAPALEM ROYYALA PULAV / BIRYANI",
+    description: "Fresh Ravulapalem Godavari river prawns wok-tossed with crushed pepper and dum biryani rice.",
+    price: 559.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv15",
+    name: "CHITTIMUTYALU PULAV (PANEER / MUSHROOM)",
+    description: "Traditional aromatic short-grain Chittimutyalu rice pulao cooked with cottage cheese or button mushrooms & ghee.",
+    price: 439.00,
+    category: "raju-gari-vindhuri",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv16",
+    name: "CHITTIMUTYALU FRY PIECE PULAV (CHICKEN / MUTTON / PRAWN)",
+    description: "Aromatic tiny-grain Chittimutyalu rice cooked in ghee with choice of fried Chicken, Mutton or River Prawns.",
+    price: 459.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv17",
+    name: "BHANUMATHI COOKER PULAV (VEG / CHICKEN / MUTTON)",
+    description: "Fiery pressure-cooked hometown style Bhanumathi pulao cooked with green chilies, coriander & choice of protein.",
+    price: 449.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "rgv18",
+    name: "SURYAKANTHAM COOKER PULAV (VEG / CHICKEN / MUTTON)",
+    description: "Special spicy Suryakantham pressure cooker pulao loaded with roasted cashews, fried onions & choice of meat.",
+    price: 469.00,
+    category: "raju-gari-vindhuri",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+
+  // 7. MATTIKUNDA ROTTELU (4 BREAD ITEMS)
+  {
+    id: "mr1",
+    name: "TANDOORI ROTI (PLAIN / BUTTER)",
+    description: "Whole wheat unleavened bread baked in traditional clay tandoor oven, served plain or brushed with butter.",
+    price: 79.00,
+    category: "mattikunda-rottelu",
+    isVeg: true
+  },
+  {
+    id: "mr2",
+    name: "NAAN (PLAIN / BUTTER / GARLIC)",
+    description: "Soft refined flour bread baked in clay tandoor, choice of plain, creamy butter or minced garlic coriander.",
+    price: 79.00,
+    category: "mattikunda-rottelu",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "mr3",
+    name: "PARATHA (LACHA / PUDINA / PANEER)",
+    description: "Multi-layered crispy tandoori paratha, choice of Lacha, fresh mint Pudina or stuffed cottage cheese Paneer.",
+    price: 89.00,
+    category: "mattikunda-rottelu",
+    isVeg: true
+  },
+  {
+    id: "mr4",
+    name: "CHAPATHI / MALABAR PAROTA",
+    description: "Homestyle soft wheat chapathi or flaky layered Kerala Malabar parota.",
+    price: 99.00,
+    category: "mattikunda-rottelu",
+    isVeg: true
+  },
+
+  // 8. ASALUSISILINA (14 MAIN COURSE GRAVY ITEMS)
+  {
+    id: "as1",
+    name: "DAL FRY / TOMATO",
+    description: "Yellow lentils tempered with ghee, cumin, garlic & mustard seeds or tangy tomatoes.",
+    price: 329.00,
+    category: "asalusisilina",
+    isVeg: true
+  },
+  {
+    id: "as2",
+    name: "CORN PALAK",
+    description: "Sweet corn kernels simmered in smooth velvety spinach puree, garlic & cream.",
+    price: 389.00,
+    category: "asalusisilina",
+    isVeg: true
+  },
+  {
+    id: "as3",
+    name: "MUSHROOM MASALA",
+    description: "Fresh button mushrooms cooked in rich onion tomato masala with freshly roasted spices.",
+    price: 389.00,
+    category: "asalusisilina",
+    isVeg: true
+  },
+  {
+    id: "as4",
+    name: "GUTHI VANKAYA KURA",
+    description: "Legendary Andhra stuffed baby brinjals simmered in thick peanut, sesame & tamarind gravy.",
+    price: 389.00,
+    category: "asalusisilina",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "as5",
+    name: "KODI GUDDU PULUSU / MASALA",
+    description: "Hard-boiled eggs simmered in tangy tamarind onion pulusu or spicy onion tomato masala gravy.",
+    price: 389.00,
+    category: "asalusisilina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "as6",
+    name: "ANDHRA KODI KOORA",
+    description: "Traditional Andhra chicken curry cooked with bone, caramelized onions, green chilies & roasted spices.",
+    price: 469.00,
+    category: "asalusisilina",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "as7",
+    name: "GONGURA KODI KOORA",
+    description: "Spicy chicken curry infused with tangy sorrel leaves (Gongura) and red chili paste.",
+    price: 469.00,
+    category: "asalusisilina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "as8",
+    name: "KOTHIMEERA KODI KOORA",
+    description: "Tender chicken pieces cooked in aromatic coriander green gravy with coconut milk & roasted spices.",
+    price: 469.00,
+    category: "asalusisilina",
+    isVeg: false
+  },
+  {
+    id: "as9",
+    name: "BUTTER CHICKEN (B/L)",
+    description: "Boneless tandoori chicken cooked in rich velvety tomato cashew gravy with cream & butter.",
+    price: 489.00,
+    category: "asalusisilina",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "as10",
+    name: "ANDHRA MAMSAM KOORA",
+    description: "Slow-cooked tender mutton curry prepared with hand-pounded Godavari masala & pure ghee.",
+    price: 549.00,
+    category: "asalusisilina",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "as11",
+    name: "GONGURA MAMSAM KOORA",
+    description: "Tender mutton chunks simmered in tangy sorrel leaf (Gongura) paste & roasted chili gravy.",
+    price: 549.00,
+    category: "asalusisilina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "as12",
+    name: "MIRIYALA MAMSAM KOORA",
+    description: "Rich mutton curry cooked with crushed black pepper (Miryalu), shallots & roasted spices.",
+    price: 549.00,
+    category: "asalusisilina",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "as13",
+    name: "ROYYALA IGURU / GONGURA",
+    description: "Fresh river prawns cooked in thick onion tomato iguru gravy or tangy sorrel leaf Gongura paste.",
+    price: 549.00,
+    category: "asalusisilina",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "as14",
+    name: "GODAVARI CHEPALA PULUSU",
+    description: "Iconic Godavari river fish simmered in tangy tamarind broth with green chilies, raw mango & coriander.",
+    price: 549.00,
+    category: "asalusisilina",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true,
+    image: realFishImg
+  },
+
+  // 9. TEEPI TEEPIGHA (4 DESSERT ITEMS)
+  {
+    id: "tt1",
+    name: "MATKA JUNNU",
+    description: "Traditional steam-cooked colostrum milk pudding flavored with jaggery, cardamom & black pepper, served in clay pot.",
+    price: 189.00,
+    category: "teepi-teepigha",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "tt2",
+    name: "C/O RAJAHMUNDRY DELIGHT",
+    description: "Chef's special dessert combining royal apricoti sweet, rabri & roasted nuts.",
+    price: 229.00,
+    category: "teepi-teepigha",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "tt3",
+    name: "BOBBATLU WITH BELLAM ICE CREAM",
+    description: "Warm puran poli (Bobbatlu) stuffed with sweet chana dahl & jaggery, served with artisan jaggery ice cream.",
+    price: 229.00,
+    category: "teepi-teepigha",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "tt4",
+    name: "ATHREYAPURAM POOTHAREKULU WITH ICE CREAM",
+    description: "Legendary Athreyapuram rice paper sweet stuffed with jaggery & ghee, paired with creamy vanilla ice cream.",
+    price: 249.00,
+    category: "teepi-teepigha",
+    isVeg: true,
+    isChefSpecial: true
+  },
+
+  // 10. JATHAGHA (4 BEVERAGE ITEMS)
+  {
+    id: "j1",
+    name: "PACKAGED DRINKING WATER",
+    description: "Pure chilled premium packaged drinking water bottle.",
+    price: 30.00,
+    category: "jathagha",
+    isVeg: true
+  },
+  {
+    id: "j2",
+    name: "AERATED DRINKS",
+    description: "Chilled carbonated soft drinks (Thums Up, Sprite, Coca-Cola).",
+    price: 89.00,
+    category: "jathagha",
+    isVeg: true
+  },
+  {
+    id: "j3",
+    name: "NIMMA SODA",
+    description: "Freshly squeezed lemon soda, choice of sweet, salted or mixed masala.",
+    price: 139.00,
+    category: "jathagha",
+    isVeg: true
+  },
+  {
+    id: "j4",
+    name: "CHALLA CHALLAGA",
+    description: "Refreshing cold spiced Andhra buttermilk blended with green chilies, ginger & curry leaves.",
+    price: 139.00,
+    category: "jathagha",
+    isVeg: true,
+    isChefSpecial: true
   }
 ];
 
