@@ -1,17 +1,18 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800;900&family=Unbounded:wght@700;800;900&family=Syne:wght@700;800;900&family=Cinzel:wght@700;900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cinzel:wght@700;900&display=swap');
 
 @layer base {
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'General Sans', 'Inter', sans-serif;
     background-color: #FAF6F0;
     color: #1F1919;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, .font-serif-heading, .roast-display-heading {
-    font-family: 'Unbounded', 'Syne', 'Poppins', sans-serif;
-    font-weight: 900;
+    font-family: 'General Sans', sans-serif;
+    font-weight: 800;
   }
 
   .font-cinzel {
@@ -19,17 +20,17 @@
   }
 }
 
-/* ROAST Signature Extended Geometric Display Headline (Unbounded 900 / Syne) */
+/* ROAST Signature Headline Typography (General Sans Bold / Black 800-900) */
 .roast-display-heading {
-  font-family: 'Unbounded', 'Syne', 'Poppins', sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
+  font-family: 'General Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
-/* Small Uppercase Eyebrow Text (Inter Medium 500 with 0.4em spacing) */
+/* Small Uppercase Eyebrow Text (General Sans Medium with 0.4em spacing) */
 .eyebrow-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'General Sans', 'Inter', sans-serif;
   font-weight: 500;
   font-size: 13px;
   text-transform: uppercase;
