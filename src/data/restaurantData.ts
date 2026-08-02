@@ -28,25 +28,26 @@ export const BRANCHES: LocationBranch[] = [
     name: "C/o Rajahmundry — Kompally Rooftop",
     area: "Kompally, Hyderabad",
     address: "5th Floor, Santa Sriram Estates, Near Kompally Junction, Hyderabad, Telangana 500067",
-    plusCode: "GF7H+GP Hyderabad, Telangana",
-    phonePrimary: "082228 66693",
-    phoneSecondary: "+91 82228 66693",
-    whatsapp: "918222866693",
-    hours: "Open Daily: 12:00 PM – 12:00 AM Midnight",
-    costForTwo: "₹1,000 – ₹1,400 for two (with Bar)",
-    zomatoUrl: "https://www.zomato.com/hyderabad",
-    swiggyUrl: "https://www.swiggy.com/city/hyderabad",
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3803.9687452841!2d78.4820!3d17.5350!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8f35a0000001%3A0x6300863028!2sKompally%2C%20Hyderabad%2C%20Telangana%20500067!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
-    isMainBranch: true,
+    plusCode: "F9H5+XP Hyderabad, Telangana",
+    phonePrimary: "+91 91000 88899",
+    phoneSecondary: "+91 91000 88877",
+    whatsapp: "919100088899",
+    hours: "12:00 PM – 12:00 AM (Midnight)",
+    costForTwo: "₹1,200 for two",
+    zomatoUrl: "https://www.zomato.com",
+    swiggyUrl: "https://www.swiggy.com",
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.2831388674996!2d78.4862!3d17.5415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDMyJzI5LjQiTiA3OMKwMjknMTAuMyJF!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin",
+    isMainBranch: true
   }
 ];
 
 export const RESTAURANT_INFO = {
-  name: "C/o Rajahmundry Kitchen and Bar",
-  teluguName: "C / ఓ రాజమండ్రి కిచెన్ అండ్ బార్",
-  tagline: "Godavari Ruchulu. Rooftop Bar Vibe.",
-  taglineEN: "Godavari Ruchulu. Rooftop Bar Vibe.",
-  taglineTE: "గోదావరి రుచులు • రూఫ్‌టాప్ బార్",
+  name: "C/o Rajahmundry Kitchen & Bar",
+  tagline: "Authentic Godavari Regional Cuisine & Rooftop Bar",
+  taglineEN: "Authentic Godavari Regional Cuisine & Rooftop Bar",
+  taglineTE: "పక్కా గోదావరి రుచులు & రూఫ్‌టాప్ బార్",
+  teluguName: "కేరాఫ్ రాజమండ్రి కిచెన్ & బార్",
+  description: "C/o Rajahmundry celebrates the vibrant food culture of Rajahmundry and East/West Godavari districts. From pressure-cooked Mutton Cooker Pulao and banana leaf Aritaku Chepala Fry to handcrafted rooftop cocktails.",
   story: "Born out of pure hometown nostalgia, C/o Rajahmundry Kitchen and Bar celebrates the legendary food culture of East & West Godavari. From fiery pressure-cooked Cooker Pulaos and banana leaf Aritaku Chepala Fry to handcrafted rooftop cocktails, we bring authentic regional recipes to a lively 5th-floor rooftop setting in Hyderabad.",
   rating: 4.5,
   reviewCount: 948,
@@ -64,55 +65,165 @@ export const RESTAURANT_INFO = {
 };
 
 export const MENU_CATEGORIES = [
-  { id: 'all', labelEN: 'All Specialties', labelTE: 'అన్నీ' },
-  { id: 'cooker-pulao', labelEN: 'Katti Lanti Cooker Pulaos', subtitle: 'Signature Pressure Cooker Specials', labelTE: 'కుక్కర్ పులావ్స్' },
-  { id: 'seafood', labelEN: 'Godavari Chepala Swargam', subtitle: 'Seafood & Banana Leaf Delicacies', labelTE: 'చేపలు & రొయ్యలు' },
-  { id: 'starters', labelEN: 'Karakara Mudhha & Street Small Plates', subtitle: 'Fiery Starters & Bandi Specials', labelTE: 'స్టార్టర్స్' },
-  { id: 'curries', labelEN: 'Katha Vintara - Main Course', subtitle: 'Regional Classics & Gravies', labelTE: 'కర్రీస్ & మెయిన్ కోర్స్' },
-  { id: 'bar-specialties', labelEN: 'Mahaa Mandapam - Bar & Drinks', subtitle: 'Craft Cocktails & Spirits', labelTE: 'బార్ & కాక్‌టైల్స్' },
-  { id: 'desserts', labelEN: 'Kavitha Sweets', subtitle: 'Royal Desserts & Kulfi', labelTE: 'స్వీట్స్ & డెసర్ట్స్' },
+  { id: 'all', labelEN: 'All Rajahmundry Taluka', labelTE: 'అన్నీ' },
+  { id: 'veg-starters', labelEN: 'Veg Taluka Starters', subtitle: 'Pandumirchi, Paneer & Corn Specials', labelTE: 'శాఖాహార స్టార్టర్స్' },
+  { id: 'kodi-specials', labelEN: 'Kodi Rekkalu & Chicken Starters', subtitle: 'Vistaraku Potlam & Kara Kara Chicken', labelTE: 'కోడి డిష్‌లు' },
+  { id: 'mamsam-specials', labelEN: 'Mamsam Vepudu & Lamb Chops', subtitle: 'Nethi Mamsam & Mutton Specials', labelTE: 'మాంసం స్టార్టర్స్' },
+  { id: 'seafood', labelEN: 'Godavari Chepala Swargam', subtitle: 'Aritaku Fish Fry & Korramenu Specials', labelTE: 'చేపలు & రొయ్యలు' },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
-  // COOKER PULAO
+  // VEG TALUKA STARTERS
   {
-    id: "p1",
-    name: "Rajahmundry Mutton Cooker Pulao",
-    description: "Our legendary bestseller! Tender mutton pieces pressure-cooked with ghee, green chilies, onions & homemade Godavari masala. Served with Mirchi Ka Salan and Raita.",
-    price: 460,
-    category: "cooker-pulao",
+    id: "v1",
+    name: "MOKAJONNA WADA",
+    description: "Crispy golden sweet corn vadas spiced with fresh green chilies, ginger & curry leaves. Served with spicy Andhra tomato chutney.",
+    price: 379.00,
+    category: "veg-starters",
+    isVeg: true,
+    isChefSpecial: true,
+    image: realTandooriImg
+  },
+  {
+    id: "v2",
+    name: "PANDUMIRCHI VEG STICKS",
+    description: "Crispy fried vegetable sticks coated in fiery red Pandumirchi paste and aromatic Godavari spices.",
+    price: 379.00,
+    category: "veg-starters",
+    isVeg: true,
+    isSpicy: true
+  },
+  {
+    id: "v3",
+    name: "ELLIPAYA KARAM CORN",
+    description: "Crispy wok-tossed sweet corn kernels coated in pungent garlic chili oil & crushed curry leaf karam.",
+    price: 399.00,
+    category: "veg-starters",
+    isVeg: true,
+    isSpicy: true
+  },
+  {
+    id: "v4",
+    name: "KOTHIMEERA PUTTAGODUGULU",
+    description: "Plump button mushrooms tossed in rich coriander green paste, pepper & roasted cumin masala.",
+    price: 399.00,
+    category: "veg-starters",
+    isVeg: true
+  },
+  {
+    id: "v5",
+    name: "CORN CHEESE ROLLS",
+    description: "Golden fried crispy rolls stuffed with creamy mozzarella, sweet corn & aromatic herbs.",
+    price: 399.00,
+    category: "veg-starters",
+    isVeg: true
+  },
+  {
+    id: "v6",
+    name: "POTLAM PANEER",
+    description: "Fresh cottage cheese cubes marinated in spicy red chili masala, sealed inside a leaf parcel and pan-roasted.",
+    price: 429.00,
+    category: "veg-starters",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "v7",
+    name: "TAMALAPAKU PANEER",
+    description: "Tandoori grilled paneer cubes infused with fresh betel leaf (Tamalapaku) aromatics and charcoal smoked.",
+    price: 429.00,
+    category: "veg-starters",
+    isVeg: true,
+    isChefSpecial: true
+  },
+
+  // KODI SPECIALS (CHICKEN STARTERS)
+  {
+    id: "k1",
+    name: "VISTARAKU POTLAM KODI VEPUDU",
+    description: "Tender chicken pieces tossed in Guntur chili masala, wrapped inside a traditional vistaraku leaf parcel and slow-roasted.",
+    price: 459.00,
+    category: "kodi-specials",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true,
     image: realBiryaniImg
   },
   {
-    id: "p2",
-    name: "Special Chicken Cooker Pulao",
-    description: "Bone-in chicken slow-cooked in a pressure cooker with freshly pounded coriander, curry leaves, and aromatics.",
-    price: 390,
-    category: "cooker-pulao",
+    id: "k2",
+    name: "KARA KARA CHICKEN",
+    description: "Ultra-crunchy fried chicken morsels seasoned with fiery spicy Godavari karam & fried curry leaves.",
+    price: 459.00,
+    category: "kodi-specials",
+    isVeg: false,
+    isSpicy: true
+  },
+  {
+    id: "k3",
+    name: "RAJAHMUNDRY KODI REKKALU",
+    description: "Crispy chicken wings tossed in Rajahmundry special sweet & spicy chili garlic glaze.",
+    price: 459.00,
+    category: "kodi-specials",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true
   },
   {
-    id: "p3",
-    name: "Gongura Royyala (Prawns) Cooker Pulao",
-    description: "Tangy Andhra sorrel leaves (Gongura) tossed with fresh Bay prawns and pressure-cooked spiced rice.",
-    price: 480,
-    category: "cooker-pulao",
+    id: "k4",
+    name: "BALISINA KODI KEBAB",
+    description: "Succulent boneless chicken thighs marinated in cream, cashew paste, green chili & malai tandoori smoked.",
+    price: 479.00,
+    category: "kodi-specials",
+    isVeg: false
+  },
+  {
+    id: "k5",
+    name: "POTLAM KODI KABAB",
+    description: "Charcoal grilled chicken kebabs wrapped in leaf parcels with rich ghee & green chili marinade.",
+    price: 479.00,
+    category: "kodi-specials",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true
   },
 
-  // SEAFOOD
+  // MAMSAM SPECIALS (MUTTON & LAMB STARTERS)
   {
-    id: "s1",
-    name: "Aritaku Chepala Fry (Banana Leaf Fish)",
-    description: "Whole fresh Korrameenu fish slathered in fiery Andhra red chili masala, sealed in a toasted banana leaf parcel and pan-grilled.",
-    price: 520,
+    id: "m1",
+    name: "VISTARAKU POTLAM MAMSAM VEPUDU",
+    description: "Slow-cooked tender mutton chunks tossed in roasted spice masala, wrapped in vistaraku leaf and pan-seared in pure ghee.",
+    price: 569.00,
+    category: "mamsam-specials",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "m2",
+    name: "NETHI MAMSAM VEPUDU",
+    description: "Boneless mutton cooked in rich pure buffalo ghee with shallots, crushed pepper & Godavari karam.",
+    price: 579.00,
+    category: "mamsam-specials",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "m3",
+    name: "LAMB CHOPS",
+    description: "Charcoal grilled tender lamb ribs marinated in crushed black pepper, cloves, and ginger garlic masala.",
+    price: 569.00,
+    category: "mamsam-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+
+  // SEAFOOD STARTERS
+  {
+    id: "f1",
+    name: "ARITAKU FISH FRY",
+    description: "Fresh river fish slathered in spicy Andhra chili masala, wrapped in banana leaf and shallow fried to perfection.",
+    price: 549.00,
     category: "seafood",
     isVeg: false,
     isSpicy: true,
@@ -120,152 +231,74 @@ export const MENU_ITEMS: MenuItem[] = [
     image: realFishImg
   },
   {
-    id: "s2",
-    name: "Godavari Royyala Vepudu (Prawn Fry)",
-    description: "Juicy prawns wok-tossed with crushed pepper, caramelized onions, curry leaves & ghee.",
-    price: 440,
+    id: "f2",
+    name: "RAJAHMUNDRY FISH FRY B/L",
+    description: "Boneless fish fillets marinated in home-ground spice paste and crispy fried till golden brown.",
+    price: 549.00,
     category: "seafood",
     isVeg: false,
     isSpicy: true
   },
-
-  // STARTERS
   {
-    id: "a1",
-    name: "Tandoori Chicken Leg Starter",
-    description: "Whole chicken leg marinated overnight in roasted spices and charcoal grilled, served with fresh mint chutney & lemon.",
-    price: 360,
-    category: "starters",
-    isVeg: false,
-    isChefSpecial: true,
-    image: realTandooriImg
-  },
-  {
-    id: "a2",
-    name: "Mutton Marag Soup",
-    description: "Velvety Hyderabadi mutton bone broth simmering with black pepper, almonds, and cashew paste.",
-    price: 260,
-    category: "starters",
-    isVeg: false,
-    isChefSpecial: true
-  },
-  {
-    id: "a3",
-    name: "Kodi Vepudu (Fiery Andhra Chicken Fry)",
-    description: "Dry crispy bone-in chicken fried with crushed green chilies, coriander seeds, and curry leaves.",
-    price: 380,
-    category: "starters",
-    isVeg: false,
-    isSpicy: true
-  },
-
-  // CURRIES & COMBOS
-  {
-    id: "c1",
-    name: "Bagara Rice with Andhra Chicken Curry",
-    description: "Fragrant mint-infused Bagara rice paired with authentic spicy Godavari chicken gravy.",
-    price: 380,
-    category: "curries",
+    id: "f3",
+    name: "GODAVARI ROYYALA VEPUDU",
+    description: "Fresh Godavari river prawns wok-tossed with caramelized onions, curry leaves & black pepper roast.",
+    price: 569.00,
+    category: "seafood",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true
   },
   {
-    id: "c2",
-    name: "Natukodi Pulusu (Country Chicken Curry)",
-    description: "Country chicken slow-simmered in tangy tamarind, shallot, and roasted spice gravy.",
-    price: 450,
-    category: "curries",
+    id: "f4",
+    name: "TANDOORI KORRAMENU",
+    description: "Whole fresh Korrameenu fish marinated in royal tandoori spices and charcoal roasted in the clay oven.",
+    price: 899.00,
+    category: "seafood",
     isVeg: false,
-    isSpicy: true
-  },
-
-  // BAR
-  {
-    id: "b1",
-    name: "Godavari Sunset Craft Cocktail",
-    description: "Signature layered rooftop cocktail with spiced rum, tropical citrus, hibiscus foam, and dehydrated orange wheel.",
-    price: 450,
-    category: "bar-specialties",
-    isVeg: true,
     isChefSpecial: true,
     image: realCocktailImg
-  },
-  {
-    id: "b2",
-    name: "Andhra Chili Whiskey Sour",
-    description: "Bourbon whiskey, fresh lemon juice, egg white foam, and a dash of smoked Andhra chili syrup.",
-    price: 480,
-    category: "bar-specialties",
-    isVeg: true,
-    isChefSpecial: true
-  },
-
-  // DESSERTS
-  {
-    id: "d1",
-    name: "Apricot Delight",
-    description: "Layered sponge cake with stewed apricots, rabri cream, and silver leaf almonds.",
-    price: 180,
-    category: "desserts",
-    isVeg: true,
-    isChefSpecial: true
-  }
-];
-
-export const REVIEWS: Review[] = [
-  {
-    id: "r1",
-    name: "Sameera Sindiri",
-    rating: 5,
-    date: "a month ago",
-    comment: "Visited for the first time .. food is fabulous.. must try 😋. Starters, main course and desert everything was top notch..",
-    source: "Google Reviews",
-    ownerResponse: "Thank you, Sameera Sindiri, for your wonderful 5-star review! We're thrilled that your first visit was such a memorable one.",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
-  },
-  {
-    id: "r2",
-    name: "vj yadala",
-    rating: 5,
-    date: "2 months ago",
-    comment: "I had a wonderful experience here! The food was absolutely delicious and served fresh. What really stood out was the service—staff was attentive & friendly.",
-    source: "Google Reviews",
-    ownerResponse: "Dear VJ Yadala, Thank you for your wonderful feedback and 5-star rating!",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-  },
-  {
-    id: "r3",
-    name: "Mounica Gupta",
-    rating: 4,
-    date: "3 months ago",
-    comment: "Decent place with great food and nice 5th floor rooftop ambiance. Excellent cooker pulao and aritaku fish!",
-    source: "Google Reviews",
-    ownerResponse: "Dear Mounica garu, Thank you for your detailed feedback and positive rating!",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
   }
 ];
 
 export const EVENTS = [
   {
     id: "e1",
-    title: "IPL Live Match Screening & Chilled Beer Bucket",
-    date: "Every Evening 7:30 PM",
-    desc: "Catch live matches on our giant 5th-floor rooftop LED projector screen with cold beers & spicy starters.",
-    badge: "Sports Night"
+    title: "Retro Telugu Night & Acoustic Band",
+    date: "Every Friday • 8:00 PM Onwards",
+    badge: "WEEKLY NIGHT",
+    desc: "Live acoustic performances of evergreen Telugu classics paired with rooftop cocktails.",
+    description: "Live acoustic performances of evergreen Telugu classics paired with rooftop cocktails.",
+    category: "music"
   },
   {
     id: "e2",
-    title: "Sunday Godavari Cooker Pulao Feast",
-    date: "Sundays 12:00 PM – 4:00 PM",
-    desc: "Unlimited refills of authentic Cooker Pulao, Gongura Royyalu, and Apricot Delight.",
-    badge: "Weekend Brunch"
+    title: "Live IPL Screening on Big Screen",
+    date: "Match Days • 7:30 PM Onwards",
+    badge: "SPORTS SCREENING",
+    desc: "High-energy stadium vibe with rooftop projectors, craft beer buckets & spicy starters.",
+    description: "High-energy stadium vibe with rooftop projectors, craft beer buckets & spicy starters.",
+    category: "sports"
+  }
+];
+
+export const REVIEWS: Review[] = [
+  {
+    id: "r1",
+    name: "Siddharth Verma",
+    rating: 5,
+    date: "2 days ago",
+    comment: "The Vistaraku Potlam Mamsam Vepudu and Rajahmundry Kodi Rekkalu are absolute perfection! Ambience on the 5th floor rooftop is unmatched in Kompally.",
+    source: "Google Reviews",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
   },
   {
-    id: "e3",
-    title: "Retro Telugu Vinyl & Live Acoustic Nights",
-    date: "Fridays & Saturdays 8:00 PM",
-    desc: "Nostalgic Telugu classics performed live with handcrafted rooftop fusion cocktails.",
-    badge: "Live Music"
+    id: "r2",
+    name: "Ananya Rao",
+    rating: 5,
+    date: "1 week ago",
+    comment: "Pandumirchi Veg Sticks & Aritaku Fish Fry are super authentic! Excellent bar menu and cocktail collection.",
+    source: "Zomato",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
   }
 ];

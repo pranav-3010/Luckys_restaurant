@@ -3,7 +3,7 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
-  category: 'cooker-pulao' | 'starters' | 'seafood' | 'curries' | 'bar-specialties' | 'desserts';
+  category: 'cooker-pulao' | 'starters' | 'seafood' | 'curries' | 'bar-specialties' | 'desserts' | 'veg-starters' | 'kodi-specials' | 'mamsam-specials' | string;
   isVeg: boolean;
   isSpicy?: boolean;
   isChefSpecial?: boolean;
