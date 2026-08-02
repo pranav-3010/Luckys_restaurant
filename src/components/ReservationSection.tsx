@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, Users, Send, CheckCircle, MapPin, ChevronDown } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
-import realInteriorImg from '../assets/real_reservation_interior.jpg';
 
 export const ReservationSection: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -50,26 +49,6 @@ Please confirm my table reservation!`;
           <h2 className="text-3xl sm:text-5xl font-black font-sans uppercase text-[#1F1919] tracking-tight">
             TABLE RESERVATION
           </h2>
-        </div>
-
-        {/* Featured Real Restaurant Interior Photo Banner */}
-        <div className="mb-6 overflow-hidden border border-[#E6DBC5] shadow-xl bg-white">
-          <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full">
-            <img
-              src={realInteriorImg}
-              alt="C/o Rajahmundry Authentic Dining Room Interior"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 text-white space-y-1">
-              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#F6E27A] block">
-                AUTHENTIC AMBIENCE
-              </span>
-              <h3 className="text-base sm:text-2xl font-black uppercase font-sans text-white leading-tight drop-shadow-md">
-                Experience Godavari Hospitality on the 5th Floor
-              </h3>
-            </div>
-          </div>
         </div>
 
         {/* Reservation Card (Rock-Solid Clean Dropdowns) */}
