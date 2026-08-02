@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
 import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
 import realReservationInteriorImg from '../assets/real_reservation_interior.jpg';
-import realInteriorVisitUsImg from '../assets/real_interior_visit_us.jpg';
+import luckysFacadeImg from '../assets/luckys_exterior_facade.jpg';
 
 interface FeatureGridSectionProps {
   onNavigateToExplore?: (sectionId?: string) => void;
@@ -20,12 +20,12 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
   };
 
   return (
-    <section className="py-12 bg-[#FAF3E0] border-b border-[#E6DBC5] select-none">
+    <section className="py-12 bg-[#FAF3E0] border-b border-[#E6DBC5] select-none font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 
-        {/* Top Row: 2 Asymmetric Feature Cards (Crisp Sharp Corners, Matching ROAST Layout) */}
+        {/* Top Row: 2 Asymmetric Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          {/* Card 1: Menu (58% width, tall ratio) */}
+          {/* Card 1: Menu */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
           >
             <img
               src={realBiryaniImg}
-              alt="C/o Rajahmundry Menu"
+              alt="Lucky's Restaurant Menu"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-10">
@@ -44,7 +44,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
                 Menu
               </h3>
               <p className="text-xs sm:text-sm text-[#E6DAD0] font-light mb-4 uppercase tracking-wider">
-                Digital Menu & Bar Card
+                Digital Menu & Mandi Cards
               </p>
               <div className="inline-flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>EXPLORE &rarr;</span>
@@ -52,7 +52,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
             </div>
           </motion.div>
 
-          {/* Card 2: Events & Bar (42% width, square aspect) */}
+          {/* Card 2: Events & Bar */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
                 Events & Bar
               </h3>
               <p className="text-xs sm:text-sm text-[#E6DAD0] font-light mb-4 uppercase tracking-wider">
-                Live IPL, Music & Craft Spirits
+                Live IPL, Music & Craft Cocktails
               </p>
               <div className="inline-flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>EXPLORE &rarr;</span>
@@ -80,9 +80,9 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
           </motion.div>
         </div>
 
-        {/* Bottom Row: 2 Distinct Aspect Cards (Reservation & Visit Us - Sharp Corners) */}
+        {/* Bottom Row: 2 Distinct Aspect Cards (Reservation & Visit Us) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Card 3: Reservation (With Real Authentic Dining Room Interior Photo) */}
+          {/* Card 3: Reservation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
           >
             <img
               src={realReservationInteriorImg}
-              alt="C/o Rajahmundry Dining Room Reservation"
+              alt="Lucky's Restaurant Dining Room Reservation"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-8">
@@ -101,7 +101,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
                 Reservation
               </h3>
               <p className="text-xs text-[#E6DAD0] font-light mb-3 uppercase tracking-wider">
-                Rooftop & AC Lounge Table Booking
+                Dining Room & Rooftop Lounge Table Booking
               </p>
               <div className="inline-flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>BOOK TABLE &rarr;</span>
@@ -109,7 +109,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
             </div>
           </motion.div>
 
-          {/* Card 4: Visit Us */}
+          {/* Card 4: Visit Us - Adjusted Image Positioning (object-[center_10%]) for Clean Text Alignment without Box */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,18 +119,18 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
             className="group relative rounded-none overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
-              src={realInteriorVisitUsImg}
-              alt="Visit C/o Rajahmundry Kompally"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
+              src={luckysFacadeImg}
+              alt="Visit Lucky's Restaurant Suchitra"
+              className="w-full h-full object-cover object-[center_10%] group-hover:scale-105 transition-transform duration-700 filter brightness-[0.78]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-8">
-              <h3 className="text-2xl sm:text-4xl font-black font-sans text-white tracking-tight leading-none mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-end p-6 sm:p-8">
+              <h3 className="text-2xl sm:text-4xl font-black font-sans text-white tracking-tight leading-none mb-2 drop-shadow-lg">
                 Visit Us
               </h3>
-              <p className="text-xs text-[#E6DAD0] font-light mb-3 uppercase tracking-wider">
-                5th Floor, Santa Sriram Estates, Kompally
+              <p className="text-xs text-[#E6DAD0] font-light mb-3 uppercase tracking-wider drop-shadow-md">
+                84a, Suchitra Rd, Suchitra (Opp. HDFC Bank)
               </p>
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-[#F6E27A] uppercase tracking-widest border-b-2 border-[#F6E27A] pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
+              <div className="inline-flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>FIND LOCATION &rarr;</span>
               </div>
             </div>

@@ -1,55 +1,110 @@
 import React from 'react';
 
-export const Footer: React.FC = () => {
-  return (
-    <footer className="bg-[#FAF3E0] border-t border-[#E6DBC5] py-16 text-[#1F1919] select-none">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 items-start">
+interface FooterProps {
+  onNavigateToExplore?: (sectionId?: string) => void;
+}
 
-          {/* Column 1: Brand Wordmark */}
-          <div className="space-y-3">
-            <h3 className="text-2xl font-black font-sans tracking-tight text-[#1F1919] uppercase">
-              C/o Rajahmundry
+export const Footer: React.FC<FooterProps> = ({ onNavigateToExplore }) => {
+  const handleNav = (id: string) => {
+    if (onNavigateToExplore) {
+      onNavigateToExplore(id);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <footer className="bg-[#FAF5ED] text-[#1F1919] pt-16 pb-12 border-t border-[#E6DBC5] select-none font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        {/* Main Footer Layout matching reference image */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Column (4 cols): Brand Name & Address */}
+          <div className="md:col-span-4 space-y-2">
+            <h3 className="text-2xl sm:text-3xl font-black font-sans uppercase tracking-tight text-[#1F1919] leading-none">
+              LUCKY'S RESTAURANT
             </h3>
-            <p className="text-xs text-[#6E5C5C] font-light leading-relaxed font-sans max-w-xs">
-              Kitchen and Bar • 5th Floor, Santa Sriram Estates, Kompally, Hyderabad.
+            <p className="text-xs text-[#554747] font-normal leading-relaxed pt-1">
+              Suchitra Road • Opp. to HDFC Bank, Suchitra, Hyderabad.
             </p>
           </div>
 
-          {/* Column 2: Main Links */}
-          <div className="space-y-3">
-            <ul className="space-y-2 text-sm font-normal text-[#3D3333] font-sans">
-              <li><a href="#home" className="hover:text-[#E67E22] transition-colors">Home</a></li>
-              <li><a href="#menu" className="hover:text-[#E67E22] transition-colors">Menu</a></li>
-              <li><a href="#events" className="hover:text-[#E67E22] transition-colors">Events & Bar</a></li>
-              <li><a href="#reservation" className="hover:text-[#E67E22] transition-colors">Reservation</a></li>
+          {/* Right Columns (8 cols): 3 Links Columns */}
+          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs sm:text-sm text-[#3D3333] font-medium">
+            
+            {/* Column 1 */}
+            <ul className="space-y-2.5">
+              <li>
+                <button onClick={() => handleNav('home')} className="hover:text-[#7B1E1E] transition-colors cursor-pointer text-left">
+                  Home
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('menu')} className="hover:text-[#7B1E1E] transition-colors cursor-pointer text-left">
+                  Menu
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('events')} className="hover:text-[#7B1E1E] transition-colors cursor-pointer text-left">
+                  Events & Bar
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('reservation')} className="hover:text-[#7B1E1E] transition-colors cursor-pointer text-left">
+                  Reservation
+                </button>
+              </li>
             </ul>
-          </div>
 
-          {/* Column 3: Locations & Contact */}
-          <div className="space-y-3">
-            <ul className="space-y-2 text-sm font-normal text-[#3D3333] font-sans">
-              <li><a href="#contact" className="hover:text-[#E67E22] transition-colors">Contact</a></li>
-              <li><a href="#contact" className="hover:text-[#E67E22] transition-colors">Our Locations</a></li>
-              <li><a href="#reservation" className="hover:text-[#E67E22] transition-colors">Table Booking</a></li>
+            {/* Column 2 */}
+            <ul className="space-y-2.5">
+              <li>
+                <button onClick={() => handleNav('contact')} className="hover:text-[#7B1E1E] transition-colors cursor-pointer text-left">
+                  Contact
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('contact')} className="hover:text-[#7B1E1E] transition-colors cursor-pointer text-left">
+                  Our Locations
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('reservation')} className="hover:text-[#7B1E1E] transition-colors cursor-pointer text-left">
+                  Table Booking
+                </button>
+              </li>
             </ul>
-          </div>
 
-          {/* Column 4: Legal & Policy */}
-          <div className="space-y-3">
-            <ul className="space-y-2 text-sm font-normal text-[#3D3333] font-sans">
-              <li><a href="#about" className="hover:text-[#E67E22] transition-colors">Terms & Conditions</a></li>
-              <li><a href="#about" className="hover:text-[#E67E22] transition-colors">Privacy Policy</a></li>
-              <li><a href="#about" className="hover:text-[#E67E22] transition-colors">Refunds & Delivery</a></li>
+            {/* Column 3 */}
+            <ul className="space-y-2.5">
+              <li>
+                <a href="#terms" className="hover:text-[#7B1E1E] transition-colors">
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a href="#privacy" className="hover:text-[#7B1E1E] transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#refunds" className="hover:text-[#7B1E1E] transition-colors">
+                  Refunds & Delivery
+                </a>
+              </li>
             </ul>
+
           </div>
 
         </div>
 
-        {/* Bottom Minimalist Copyright Line */}
-        <div className="mt-16 pt-8 border-t border-[#E6DBC5] text-center text-xs text-[#7A6B6B] font-sans">
-          <p>© {new Date().getFullYear()} C/o Rajahmundry Kitchen and Bar. All rights reserved.</p>
+        {/* Thin bottom divider line matching reference image */}
+        <div className="pt-4 border-t border-[#E6DBC5]/60 text-center text-[11px] text-[#7A6A6A]">
+          <p>© {new Date().getFullYear()} Lucky’s Restaurant Suchitra. All Rights Reserved.</p>
         </div>
+
       </div>
     </footer>
   );

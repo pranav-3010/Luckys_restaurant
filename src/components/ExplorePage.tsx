@@ -94,7 +94,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
     { id: 'menu', label: 'MENU' },
     { id: 'cocktails', label: 'COCKTAILS & BAR' },
     { id: 'reservations', label: 'RESERVATIONS' },
-    { id: 'locations', label: 'LOCATIONS' },
+    { id: 'locations', label: 'LOCATION' },
   ];
 
   return (
@@ -112,7 +112,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         onClearCart={handleClearCart}
       />
 
-      {/* 1. TOP ROAST BLACK NAVBAR - MOBILE RESPONSIVE */}
+      {/* 1. TOP ROAST BLACK NAVBAR - STICKY TOP */}
       <header className="sticky top-0 z-50 bg-[#161312] text-white py-3 sm:py-4 px-3 sm:px-8 shadow-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
 
@@ -127,10 +127,10 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             </button>
             <div>
               <h1 className="text-lg sm:text-2xl font-black tracking-tight text-white uppercase font-sans leading-none">
-                C/O Rajahmundry
+                Lucky’s Restaurant
               </h1>
-              <span className="text-[8px] sm:text-[9px] font-bold text-gray-400 tracking-widest uppercase block mt-0.5">
-                Kitchen & Bar
+              <span className="text-[8px] sm:text-[9px] font-bold text-[#F6E27A] tracking-widest uppercase block mt-0.5">
+                Suchitra, Hyderabad
               </span>
             </div>
           </div>
@@ -185,7 +185,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search menu or drinks..."
+                placeholder="Search menu, kababs, mandi..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9 pr-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs text-white placeholder-gray-400 focus:outline-none focus:border-[#7DCE9F] w-36 sm:w-44 transition-all"
@@ -223,7 +223,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search dishes or cocktails..."
+                placeholder="Search kababs, mandi, biryani..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-3 py-2 rounded-xl bg-white/15 border border-white/25 text-xs text-white placeholder-gray-300 focus:outline-none"
@@ -234,7 +234,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
       </header>
 
       {/* Mobile Sticky Navigation Tabs */}
-      <div className="flex md:hidden bg-[#161312] border-b border-white/10 px-2 py-2 justify-around overflow-x-auto text-[10px] sm:text-[11px] font-black uppercase tracking-wider sticky top-[57px] z-40">
+      <div className="flex md:hidden bg-[#161312] border-b border-white/10 px-2 py-2 justify-around overflow-x-auto text-[10px] sm:text-[11px] font-black uppercase tracking-wider sticky top-[53px] z-40 shadow-sm">
         {navTabs.map((tab) => {
           const isActive = activeTab === tab.id;
           return (
@@ -270,14 +270,14 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         {(activeTab === 'menu' || activeTab === 'cocktails') && (
           <div className="space-y-8 sm:space-y-12">
             {/* Sticky Category Quick-Jump Pill Slider */}
-            <div className="sticky top-[95px] md:top-[60px] z-30 bg-white/95 backdrop-blur-md p-2 rounded-xl border border-[#E6DBC5] shadow-md flex items-center gap-1.5 overflow-x-auto scrollbar-none touch-pan-x">
+            <div className="sticky top-[88px] md:top-[68px] z-30 bg-white/98 backdrop-blur-md p-2.5 rounded-xl border border-[#E6DBC5] shadow-md flex items-center gap-2 overflow-x-auto scrollbar-none touch-pan-x transition-all">
               <button className="p-1 rounded-full text-gray-400 hover:text-[#1F1919] shrink-0 hidden sm:block">
                 <ChevronLeft className="w-4 h-4" />
               </button>
 
               <button
                 onClick={() => scrollToCategory('all')}
-                className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
+                className={`px-4 py-2 sm:px-5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                   selectedSubCategory === 'all'
                     ? 'bg-[#1A1615] text-white shadow-md'
                     : 'bg-[#F5EBE0] text-[#4A3E3E] hover:bg-white'
@@ -290,7 +290,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                 <button
                   key={cat.id}
                   onClick={() => scrollToCategory(cat.id)}
-                  className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
+                  className={`px-4 py-2 sm:px-5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                     selectedSubCategory === cat.id
                       ? 'bg-[#1A1615] text-white shadow-md'
                       : 'bg-[#F5EBE0] text-[#4A3E3E] hover:bg-white'
@@ -314,7 +314,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               if (categoryItems.length === 0) return null;
 
               return (
-                <section key={category.id} id={`cat-section-${category.id}`} className="space-y-4 sm:space-y-6 pt-2 scroll-mt-36">
+                <section key={category.id} id={`cat-section-${category.id}`} className="space-y-4 sm:space-y-6 pt-2 scroll-mt-36 md:scroll-mt-32">
                   {/* Category Title & Subtitle */}
                   <div className="border-b border-[#E6DBC5] pb-2 sm:pb-3">
                     <h2 className="text-xl sm:text-3xl md:text-4xl font-black font-sans uppercase text-[#1F1919] tracking-tight">

@@ -19,38 +19,41 @@ export interface LocationBranch {
   zomatoUrl: string;
   swiggyUrl: string;
   mapsEmbedUrl: string;
+  mapsDirectUrl: string;
   isMainBranch?: boolean;
 }
 
 export const BRANCHES: LocationBranch[] = [
   {
-    id: "kompally",
-    name: "C/o Rajahmundry — Kompally Rooftop",
-    area: "Kompally, Hyderabad",
-    address: "5th Floor, Santa Sriram Estates, Near Kompally Junction, Hyderabad, Telangana 500067",
-    plusCode: "F9H5+XP Hyderabad, Telangana",
-    phonePrimary: "+91 91000 88899",
-    phoneSecondary: "+91 91000 88877",
-    whatsapp: "919100088899",
-    hours: "12:00 PM – 12:00 AM (Midnight)",
-    costForTwo: "₹1,200 for two",
+    id: "suchitra",
+    name: "Lucky’s restaurant Suchitra",
+    area: "Suchitra, Hyderabad",
+    address: "84a, Suchitra Rd, Suchitra, Vennala Gadda, Quthbullapur, Hyderabad, Telangana 500067 (Opp. to HDFC Bank)",
+    plusCode: "GF2F+3Q Hyderabad, Telangana",
+    phonePrimary: "+91 96426 04015",
+    phoneSecondary: "+91 96426 04016",
+    whatsapp: "919642604015",
+    hours: "11:00 AM – 1:00 AM (Closes 1 AM)",
+    costForTwo: "₹400 for two (₹200–400 per person)",
     zomatoUrl: "https://www.zomato.com",
     swiggyUrl: "https://www.swiggy.com",
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.2831388674996!2d78.4862!3d17.5415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDMyJzI5LjQiTiA3OMKwMjknMTAuMyJF!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin",
+    mapsDirectUrl: "https://www.google.com/maps/place/Lucky%E2%80%99s+restaurant+Suchitra/@17.5001385,78.4744327,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb910068cd5611:0x56856c26632a8b7d!8m2!3d17.5001385!4d78.4744327!16s%2Fg%2F11vzdst8lc",
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.869719329712!2d78.4744327!3d17.5001385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910068cd5611%3A0x56856c26632a8b7d!2sLucky%E2%80%99s%20restaurant%20Suchitra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     isMainBranch: true
   }
 ];
 
 export const RESTAURANT_INFO = {
-  name: "C/o Rajahmundry Kitchen & Bar",
-  tagline: "Authentic Godavari Regional Cuisine & Rooftop Bar",
-  taglineEN: "Authentic Godavari Regional Cuisine & Rooftop Bar",
-  taglineTE: "పక్కా గోదావరి రుచులు & రూఫ్‌టాప్ బార్",
-  teluguName: "కేరాఫ్ రాజమండ్రి కిచెన్ & బార్",
-  description: "C/o Rajahmundry celebrates the vibrant food culture of Rajahmundry and East/West Godavari districts. From pressure-cooked Mutton Cooker Pulao and banana leaf Aritaku Chepala Fry to handcrafted rooftop cocktails.",
-  story: "Born out of pure hometown nostalgia, C/o Rajahmundry Kitchen and Bar celebrates the legendary food culture of East & West Godavari. From fiery pressure-cooked Cooker Pulaos and banana leaf Aritaku Chepala Fry to handcrafted rooftop cocktails, we bring authentic regional recipes to a lively 5th-floor rooftop setting in Hyderabad.",
-  rating: 4.5,
-  reviewCount: 948,
+  name: "Lucky’s restaurant Suchitra",
+  branchName: "Suchitra Branch",
+  tagline: "Authentic Hyderabadi Biryani, Smoky Angara Kababs & Mandi",
+  taglineEN: "Authentic Hyderabadi Biryani, Smoky Angara Kababs & Mandi",
+  taglineTE: "లక్కీస్ రెస్టారెంట్ - సుచిత్ర | బిర్యానీ, అంగారా కబాబ్స్ & మండి",
+  teluguName: "లక్కీస్ రెస్టారెంట్ సుచిత్ర",
+  description: "Experience the magic at Lucky’s restaurant Suchitra! From mouthwatering smoky Angara Kababs and Mutton Juicy Mandi to authentic Hyderabadi Chicken Biryani and Irani Chai.",
+  story: "Craving something truly delicious? Experience the magic at Lucky’s restaurant Suchitra with our mouthwatering Angara Kabab! Perfectly grilled, smoky, and juicy, our signature kebabs, Mandi, and Hyderabadi Biryanis transform your dining experience into a flavor-packed feast. Located near Suchitra Opp to HDFC Bank.",
+  rating: 3.9,
+  reviewCount: 428,
   address: BRANCHES[0].address,
   plusCode: BRANCHES[0].plusCode,
   phone: BRANCHES[0].phonePrimary,
@@ -59,6 +62,7 @@ export const RESTAURANT_INFO = {
   hours: BRANCHES[0].hours,
   costForTwo: BRANCHES[0].costForTwo,
   googleMapsEmbed: BRANCHES[0].mapsEmbedUrl,
+  googleMapsDirectUrl: BRANCHES[0].mapsDirectUrl,
   heroImage: heroImg,
   instagramUrl: "https://www.instagram.com",
   facebookUrl: "https://facebook.com",
@@ -66,7 +70,10 @@ export const RESTAURANT_INFO = {
 
 export const MENU_CATEGORIES = [
   { id: 'all', labelEN: 'All Items', labelTE: 'అన్నీ' },
-  { id: 'rajahmundry-taluka', labelEN: 'C/o Rajahmundry Taluka', subtitle: 'Authentic Rajahmundry Starters & Specials', labelTE: 'రాజమండ్రి తాలూకా' },
+  { id: 'luckys-specials', labelEN: 'Lucky’s Signature Kababs', subtitle: 'Smoky Angara Kababs & Tandoori Starters', labelTE: 'అంగారా కబాబ్స్' },
+  { id: 'mandi-specials', labelEN: 'Mutton & Chicken Mandi', subtitle: 'Mutton Juicy Mandi & Fried Chicken Mandi', labelTE: 'మండి స్పెషల్స్' },
+  { id: 'hyderabadi-biryani', labelEN: 'Hyderabadi Biryani', subtitle: 'Authentic Hyderabadi Dum & Fry Piece Biryani', labelTE: 'హైదరాబాదీ బిర్యానీ' },
+  { id: 'rajahmundry-taluka', labelEN: 'C/o Rajahmundry Taluka', subtitle: 'Godavari Regional Starters & Specials', labelTE: 'రాజమండ్రి తాలూకా' },
   { id: 'yekadaina-yeppudaina', labelEN: 'Yekadaina Yeppudaina', subtitle: 'Evergreen Anytime Favorites & Snacks', labelTE: 'ఎక్కడైనా ఎప్పుడైనా' },
   { id: 'vedigha-ghatugha', labelEN: 'Vedigha Ghatugha', subtitle: 'Hot & Spicy Soups, Rasam & Mutton Marag', labelTE: 'వేడిగా ఘాటుగా' },
   { id: 'nuvva-nena', labelEN: 'Nuvva-Nena', subtitle: 'Authentic Godavari Rice & Bandi Style Noodles', labelTE: 'నువ్వా-నేనా' },
@@ -74,7 +81,7 @@ export const MENU_CATEGORIES = [
   { id: 'raju-gari-vindhuri', labelEN: 'Raju Gari Vindhuri', subtitle: 'Royal Biryanis, Chittimutyalu & Potlam Pulaos', labelTE: 'రాజు గారి విందురి' },
   { id: 'mattikunda-rottelu', labelEN: 'Mattikunda Rottelu', subtitle: 'Tandoori Roti, Naan & Malabar Parotas', labelTE: 'మట్టికుండ రొట్టెలు' },
   { id: 'asalusisilina', labelEN: 'Asalusisalina', subtitle: 'Authentic Andhra Curries, Gravies & Guthi Vankaya', labelTE: 'అసలుసిసలైన' },
-  { id: 'teepi-teepigha', labelEN: 'Teepi Teepigha', subtitle: 'Matka Junnu, Bobbatlu & Pootharekulu Sweets', labelTE: 'తీపి తీపిగా' },
+  { id: 'teepi-teepigha', labelEN: 'Teepi Teepigha', subtitle: 'Matka Junnu, Bobbatlu & Irani Chai Sweets', labelTE: 'తీపి తీపిగా' },
   { id: 'jathagha', labelEN: 'Jathagha', subtitle: 'Coolers, Nimma Soda & Refreshing Beverages', labelTE: 'జతగా' },
   // BAR & COCKTAIL CATEGORIES
   { id: 'signature-cocktails', labelEN: 'Signature Rooftop Cocktails', subtitle: 'Handcrafted Craft Cocktails & Infusions', labelTE: 'కాక్‌టైల్స్' },
@@ -85,6 +92,75 @@ export const MENU_CATEGORIES = [
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
+  // LUCKY'S SIGNATURE SPECIALS (ANGARA KABAB, BANJARA KABAB, MANDI)
+  {
+    id: "l1",
+    name: "LUCKY’S SPECIAL ANGARA KABAB",
+    description: "Chef's signature smoky, juicy Angara Kabab marinated in secret red spice blend, charcoal grilled & served with mint chutney.",
+    price: 449.00,
+    category: "luckys-specials",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true,
+    image: realTandooriImg
+  },
+  {
+    id: "l2",
+    name: "CHICKEN BANJARA KEBAB (8 PIECES)",
+    description: "Eight juicy boneless chicken morsels marinated in coriander, mint, green chili & tandoori smoked.",
+    price: 429.00,
+    category: "luckys-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "l3",
+    name: "MUTTON JUICY MANDI",
+    description: "Signature Arabian Mandi rice topped with melt-in-mouth slow cooked mutton shank, cashews, raisins & spicy mandi chutney.",
+    price: 599.00,
+    category: "mandi-specials",
+    isVeg: false,
+    isChefSpecial: true,
+    image: realBiryaniImg
+  },
+  {
+    id: "l4",
+    name: "FRIED CHICKEN MANDI",
+    description: "Aromatic Mandi rice served with crispy fried marinated chicken, caramelized onions & signature Mandi soup.",
+    price: 469.00,
+    category: "mandi-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "l5",
+    name: "HYDERABADI CHICKEN BIRYANI",
+    description: "Classic authentic Hyderabadi Dum Chicken Biryani cooked with long-grain basmati rice, saffron & pure ghee.",
+    price: 369.00,
+    category: "hyderabadi-biryani",
+    isVeg: false,
+    isChefSpecial: true,
+    image: realBiryaniImg
+  },
+  {
+    id: "l6",
+    name: "MUTTON HALEEM (SEASONAL)",
+    description: "Royal slow-cooked mutton haleem blended with lentils, wheat, pure ghee, fried onions & cashews.",
+    price: 299.00,
+    category: "luckys-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "l7",
+    name: "IRANI CHAI & MASALA TEA",
+    description: "Authentic rich, thick Hyderabadi Irani Chai simmered with condensed milk & cardamom.",
+    price: 49.00,
+    category: "teepi-teepigha",
+    isVeg: true,
+    isChefSpecial: true
+  },
+
   // 1. C/O RAJAHMUNDRY TALUKA (19 ITEMS)
   {
     id: "t1",
@@ -1206,8 +1282,8 @@ export const EVENTS = [
     title: "Live IPL Screening on Big Screen",
     date: "Match Days • 7:30 PM Onwards",
     badge: "SPORTS SCREENING",
-    desc: "High-energy stadium vibe with rooftop projectors, craft beer buckets & spicy starters.",
-    description: "High-energy stadium vibe with rooftop projectors, craft beer buckets & spicy starters.",
+    desc: "High-energy stadium vibe with rooftop projectors, craft beer buckets & smoky Angara Kababs.",
+    description: "High-energy stadium vibe with rooftop projectors, craft beer buckets & smoky Angara Kababs.",
     category: "sports"
   }
 ];
@@ -1215,19 +1291,19 @@ export const EVENTS = [
 export const REVIEWS: Review[] = [
   {
     id: "r1",
-    name: "Siddharth Verma",
-    rating: 5,
-    date: "2 days ago",
-    comment: "The Vistaraku Potlam Mamsam Vepudu and Rajahmundry Kodi Rekkalu are absolute perfection! Ambience on the 5th floor rooftop is unmatched in Kompally.",
+    name: "Naga Saibabu",
+    rating: 4,
+    date: "Recently",
+    comment: "The Angara Kabab & Mutton Juicy Mandi at Suchitra branch are super delicious! Great place to hang out with friends.",
     source: "Google Reviews",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
   },
   {
     id: "r2",
-    name: "Ananya Rao",
-    rating: 5,
+    name: "Karthik Verma",
+    rating: 4,
     date: "1 week ago",
-    comment: "Pandumirchi Veg Sticks & Aritaku Fish Fry are super authentic! Excellent bar menu and cocktail collection.",
+    comment: "Awesome chicken fry Mandi and Irani chai! Located right opposite to HDFC Bank in Suchitra.",
     source: "Zomato",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
   }

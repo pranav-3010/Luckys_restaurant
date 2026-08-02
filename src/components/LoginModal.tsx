@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle, Smartphone } from 'lucide-react';
+import { X, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -8,141 +8,165 @@ interface LoginModalProps {
 }
 
 export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
-  const [step, setStep] = useState<'phone' | 'otp' | 'success'>('phone');
-  const [phone, setPhone] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [otpStep, setOtpStep] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '']);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleProceedPhone = (e: React.FormEvent) => {
+  const handleSendOtp = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!phone || phone.length < 10) return;
-    setStep('otp');
+    if (phoneNumber.length >= 10) {
+      setOtpStep(true);
+    }
   };
 
   const handleVerifyOtp = (e: React.FormEvent) => {
     e.preventDefault();
-    setStep('success');
-    setTimeout(() => {
-      onClose();
-      setStep('phone');
-      setPhone('');
-      setOtp(['', '', '', '']);
-    }, 2000);
+    if (otp.join('').length === 4) {
+      setIsLoggedIn(true);
+      setTimeout(() => {
+        setIsLoggedIn(false);
+        setOtpStep(false);
+        setPhoneNumber('');
+        setOtp(['', '', '', '']);
+        onClose();
+      }, 1800);
+    }
   };
 
   if (!isOpen) return null;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm select-none">
-        
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md p-4 select-none">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          transition={{ duration: 0.3 }}
-          className="relative w-full max-w-md bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-gray-100 text-center font-sans"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 font-sans relative"
         >
-          {/* Close X Button */}
+          {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full text-gray-400 hover:text-[#1A1615] hover:bg-gray-100 transition-all cursor-pointer"
+            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-all cursor-pointer z-10"
           >
             <X className="w-5 h-5" />
           </button>
 
-          {/* STEP 1: PHONE NUMBER INPUT */}
-          {step === 'phone' && (
-            <form onSubmit={handleProceedPhone} className="space-y-6 pt-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#1A1615] font-sans tracking-tight">
-                Login / Signup
-              </h2>
-
-              <div className="relative">
-                <input
-                  type="tel"
-                  required
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Enter your Phone Number"
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-xl text-sm sm:text-base text-[#1A1615] placeholder-gray-400 focus:outline-none focus:border-[#1A1615] transition-colors font-sans text-center"
-                />
+          {isLoggedIn ? (
+            <div className="p-8 text-center space-y-4">
+              <CheckCircle2 className="w-16 h-16 text-emerald-500 mx-auto animate-bounce" />
+              <h3 className="text-2xl font-black font-sans text-gray-900">Successfully Logged In!</h3>
+              <p className="text-xs text-gray-500">Welcome to Lucky's Restaurant Suchitra!</p>
+            </div>
+          ) : !otpStep ? (
+            /* STEP 1: Phone Number Input */
+            <div className="p-8 space-y-6">
+              <div className="space-y-1">
+                <h2 className="text-2xl font-black font-sans text-gray-900 tracking-tight">
+                  Login or Signup
+                </h2>
+                <p className="text-xs text-gray-500">
+                  Enter your phone number to manage orders & rewards.
+                </p>
               </div>
 
-              <button
-                type="submit"
-                className="w-full py-4 bg-[#1A1615] hover:bg-[#7B1E1E] text-white font-black text-xs sm:text-sm uppercase tracking-widest rounded-full transition-all shadow-lg cursor-pointer hover:scale-[1.01]"
-              >
-                PROCEED
-              </button>
+              <form onSubmit={handleSendOtp} className="space-y-5">
+                <div className="space-y-2">
+                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
+                    Enter your Phone Number
+                  </label>
+                  <div className="relative flex items-center">
+                    <span className="absolute left-3 text-sm font-bold text-gray-500 border-r pr-2">
+                      +91
+                    </span>
+                    <input
+                      type="tel"
+                      required
+                      maxLength={10}
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ''))}
+                      placeholder="98765 43210"
+                      className="w-full pl-14 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-bold text-gray-900 placeholder-gray-400 focus:bg-white focus:border-black focus:outline-none transition-all"
+                    />
+                  </div>
+                </div>
 
-              <p className="text-[11px] text-gray-400 font-light pt-2">
-                By proceeding, you agree to C/o Rajahmundry's Terms of Service & Privacy Policy.
-              </p>
-            </form>
-          )}
+                <button
+                  type="submit"
+                  disabled={phoneNumber.length < 10}
+                  className="w-full py-4 bg-[#161312] hover:bg-[#7B1E1E] disabled:bg-gray-200 text-white font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
+                >
+                  <span>PROCEED</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </form>
 
-          {/* STEP 2: OTP VERIFICATION */}
-          {step === 'otp' && (
-            <form onSubmit={handleVerifyOtp} className="space-y-6 pt-2">
-              <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-2">
-                <Smartphone className="w-6 h-6" />
+              <div className="pt-2 text-center border-t border-gray-100">
+                <p className="text-[11px] text-gray-400">
+                  By proceeding, you agree to Lucky's Restaurant Terms of Service & Privacy Policy.
+                </p>
+              </div>
+            </div>
+          ) : (
+            /* STEP 2: OTP Verification */
+            <div className="p-8 space-y-6">
+              <div className="space-y-1">
+                <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <h2 className="text-2xl font-black font-sans text-gray-900 tracking-tight">
+                  Verify OTP Code
+                </h2>
+                <p className="text-xs text-gray-500">
+                  Enter the 4-digit code sent to <strong className="text-gray-900">+91 {phoneNumber}</strong>
+                </p>
               </div>
 
-              <h2 className="text-xl sm:text-2xl font-bold text-[#1A1615] font-sans">
-                Enter 4-Digit OTP
-              </h2>
+              <form onSubmit={handleVerifyOtp} className="space-y-5">
+                <div className="flex justify-between gap-3">
+                  {[0, 1, 2, 3].map((idx) => (
+                    <input
+                      key={idx}
+                      id={`otp-input-${idx}`}
+                      type="text"
+                      maxLength={1}
+                      value={otp[idx]}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        const newOtp = [...otp];
+                        newOtp[idx] = val;
+                        setOtp(newOtp);
+                        if (val && idx < 3) {
+                          const nextEl = document.getElementById(`otp-input-${idx + 1}`);
+                          if (nextEl) nextEl.focus();
+                        }
+                      }}
+                      className="w-14 h-14 text-center bg-gray-50 border border-gray-200 rounded-xl text-xl font-black text-gray-900 focus:bg-white focus:border-black focus:outline-none transition-all"
+                    />
+                  ))}
+                </div>
 
-              <p className="text-xs text-gray-500 font-light">
-                We sent a verification code to <span className="font-bold text-[#1A1615]">+91 {phone}</span>
-              </p>
+                <button
+                  type="submit"
+                  disabled={otp.join('').length < 4}
+                  className="w-full py-4 bg-[#161312] hover:bg-[#7B1E1E] disabled:bg-gray-200 text-white font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
+                >
+                  <span>VERIFY & LOGIN</span>
+                </button>
 
-              <div className="flex justify-center gap-3 py-2">
-                {otp.map((digit, idx) => (
-                  <input
-                    key={idx}
-                    type="text"
-                    maxLength={1}
-                    value={digit}
-                    onChange={(e) => {
-                      const newOtp = [...otp];
-                      newOtp[idx] = e.target.value;
-                      setOtp(newOtp);
-                    }}
-                    className="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-xl text-[#1A1615] focus:outline-none focus:border-[#1A1615] bg-gray-50"
-                  />
-                ))}
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-4 bg-[#1A1615] hover:bg-[#7B1E1E] text-white font-black text-xs sm:text-sm uppercase tracking-widest rounded-full transition-all shadow-lg cursor-pointer"
-              >
-                VERIFY & CONTINUE
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setStep('phone')}
-                className="text-xs font-bold text-gray-500 hover:text-[#1A1615] underline block mx-auto pt-1"
-              >
-                Change Phone Number
-              </button>
-            </form>
-          )}
-
-          {/* STEP 3: SUCCESS STATE */}
-          {step === 'success' && (
-            <div className="space-y-4 py-6 text-center">
-              <CheckCircle className="w-16 h-16 text-emerald-600 mx-auto" />
-              <h2 className="text-2xl font-bold text-[#1A1615] font-sans">
-                Welcome to C/o Rajahmundry!
-              </h2>
-              <p className="text-xs text-gray-500 font-light">
-                You are successfully logged in. Enjoy your culinary experience!
-              </p>
+                <div className="text-center">
+                  <button
+                    type="button"
+                    onClick={() => setOtpStep(false)}
+                    className="text-xs text-gray-500 hover:text-black font-bold uppercase tracking-wider cursor-pointer"
+                  >
+                    Change Phone Number
+                  </button>
+                </div>
+              </form>
             </div>
           )}
-
         </motion.div>
       </div>
     </AnimatePresence>

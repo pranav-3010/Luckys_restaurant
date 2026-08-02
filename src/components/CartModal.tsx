@@ -37,11 +37,11 @@ export const CartModal: React.FC<CartModalProps> = ({
 
   const handleApplyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
-    if (couponCode.toUpperCase() === 'GODAVARI10' || couponCode.toUpperCase() === 'FIRST10') {
+    if (couponCode.toUpperCase() === 'GODAVARI10' || couponCode.toUpperCase() === 'LUCKYS10') {
       const discount = Math.round(subtotal * 0.1);
       setAppliedDiscount(discount);
     } else {
-      alert('Invalid coupon code. Try GODAVARI10 for 10% off!');
+      alert('Invalid coupon code. Try LUCKYS10 for 10% off!');
     }
   };
 
@@ -53,7 +53,7 @@ export const CartModal: React.FC<CartModalProps> = ({
       .join('\n');
 
     const message =
-`🛒 *NEW ONLINE ORDER - C/o Rajahmundry Kitchen & Bar*
+`🛒 *NEW ONLINE ORDER - Lucky's Restaurant Suchitra*
 --------------------------------------------------
 📦 *Order Type:* ${orderType === 'delivery' ? 'Home Delivery' : 'Takeaway / Pickup'}
 📍 *Address / Notes:* ${address || 'Not specified'}
@@ -115,7 +115,7 @@ Please confirm my order and share payment link!`;
                   Your Order Cart
                 </h2>
                 <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest block mt-1">
-                  C/o Rajahmundry Kompally
+                  Lucky's Restaurant Suchitra
                 </span>
               </div>
             </div>
@@ -139,7 +139,7 @@ Please confirm my order and share payment link!`;
                   Order Placed via WhatsApp!
                 </h3>
                 <p className="text-xs text-[#6E5C5C] font-light max-w-xs">
-                  Thank you! Our kitchen team at C/o Rajahmundry is preparing your meal.
+                  Thank you! Our kitchen team at Lucky's Restaurant Suchitra is preparing your meal.
                 </p>
               </div>
             ) : cartItems.length === 0 ? (
@@ -147,7 +147,7 @@ Please confirm my order and share payment link!`;
                 <ShoppingBag className="w-16 h-16 stroke-1 text-gray-400" />
                 <h3 className="text-lg font-bold font-sans text-[#1F1919] uppercase">Your Cart is Empty</h3>
                 <p className="text-xs text-[#6E5C5C] font-light max-w-xs">
-                  Add delicious starters, pulaos & drinks from our menu!
+                  Add smoky Angara Kababs, Mutton Mandi & drinks from our menu!
                 </p>
                 <button
                   type="button"
@@ -248,7 +248,7 @@ Please confirm my order and share payment link!`;
                     <Tag className="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="text"
-                      placeholder="Coupon (GODAVARI10)"
+                      placeholder="Coupon (LUCKYS10)"
                       value={couponCode}
                       onChange={(e) => setCouponCode(e.target.value)}
                       className="w-full pl-8 pr-3 py-2 bg-white border border-[#E6DBC5] text-xs text-[#1F1919] uppercase focus:outline-none"
@@ -272,7 +272,7 @@ Please confirm my order and share payment link!`;
                       rows={2}
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
-                      placeholder="Enter full delivery address in Kompally / nearby area"
+                      placeholder="Enter full delivery address in Suchitra / nearby area"
                       className="w-full p-2.5 bg-white border border-[#E6DBC5] text-xs text-[#1F1919] placeholder-gray-400 focus:outline-none resize-none font-sans"
                     />
                   </div>

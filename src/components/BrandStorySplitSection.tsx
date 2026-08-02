@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
-import real3dWallLogo from '../assets/real_3d_wall_logo.jpg';
+import luckysFacadeImg from '../assets/luckys_exterior_facade.jpg';
 
 interface BrandStorySplitSectionProps {
   onNavigateToExplore?: (sectionId?: string) => void;
@@ -18,11 +18,11 @@ export const BrandStorySplitSection: React.FC<BrandStorySplitSectionProps> = ({ 
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-white border-b border-[#E6DBC5] select-none overflow-hidden">
+    <section className="py-20 sm:py-28 bg-white border-b border-[#E6DBC5] select-none overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* Left Column (58% width on Desktop): 3D Wall Logo Image ABOVE Aritaku Fish Photo */}
+          {/* Left Column (58% width on Desktop): Official Lucky's Restaurant Illuminated Facade Photo ABOVE Aritaku Fish Photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -30,16 +30,16 @@ export const BrandStorySplitSection: React.FC<BrandStorySplitSectionProps> = ({ 
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6"
           >
-            {/* Top Image: Official 3D Backlit C/o Rajahmundry Logo Wall */}
+            {/* Top / First Picture: Official Lucky's Restaurant Illuminated Night Facade */}
             <div className="relative aspect-[16/11] rounded-none overflow-hidden border border-[#E6DBC5] shadow-xl">
               <img
-                src={real3dWallLogo}
-                alt="Official C/o Rajahmundry 3D Wall Logo"
+                src={luckysFacadeImg}
+                alt="Lucky's Restaurant Suchitra Building Facade"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
 
-            {/* Second Image: Aritaku Chepala Fry */}
+            {/* Second Picture: Aritaku Chepala Fry */}
             <div className="relative aspect-[16/10] rounded-none overflow-hidden border border-[#E6DBC5] shadow-lg">
               <img
                 src={realFishImg}
@@ -59,37 +59,36 @@ export const BrandStorySplitSection: React.FC<BrandStorySplitSectionProps> = ({ 
           >
             {/* Eyebrow Tag */}
             <span className="eyebrow-text block mb-1 text-xs sm:text-sm">
-              WHERE GODAVARI HERITAGE MEETS HYDERABAD NIGHTLIFE
+              SUCHITRA, HYDERABAD (OPP. HDFC BANK)
             </span>
 
             {/* ROAST Display Headline (General Sans 800) */}
-            <h2 className="text-3xl sm:text-5xl md:text-6xl roast-display-heading text-[#1F1919] leading-[1.1] my-4">
-              Experience Hyderabad's Premier Rajahmundry Kitchen & Rooftop Bar
+            <h2 className="text-3xl sm:text-5xl md:text-6xl roast-display-heading text-[#1F1919] leading-[1.1] my-4 font-black">
+              Experience Lucky's Restaurant Suchitra & Rooftop Bar
             </h2>
 
             {/* Body Text Paragraph 1 */}
             <p className="text-sm sm:text-base text-[#3D3333] font-normal leading-relaxed font-sans">
-              Born out of pure hometown nostalgia in Kompally, <strong className="font-semibold text-[#7B1E1E]">C/o Rajahmundry Kitchen & Bar</strong> redefines casual rooftop dining by seamlessly blending authentic Godavari recipes with a vibrant bar vibe. Our 5th-floor flagship at Santa Sriram Estates features traditional pressure-cooked Mutton Pulaos, banana-leaf toasted Aritaku Chepala Fry, and open-air rooftop lounge seating.
+              Craving something truly delicious? Experience the magic at <strong className="font-semibold text-[#7B1E1E]">Lucky’s Restaurant Suchitra</strong> with our mouthwatering signature <strong className="font-semibold text-[#7B1E1E]">Angara Kabab</strong>! Perfectly grilled, smoky, and juicy, our Angara Kabab transforms your dining experience from ordinary to unforgettable.
             </p>
 
             {/* Body Text Paragraph 2 */}
             <p className="text-sm sm:text-base text-[#3D3333] font-normal leading-relaxed font-sans">
-              From hand-pounded Godavari spice masalas to artisanal rooftop cocktails, we bring generations of regional culinary heritage to every creation. Whether catching live match screenings, enjoying retro Telugu acoustic nights, or gathering for weekend family feasts, we craft experiences that delight your senses.
+              Located near Suchitra Opp. to HDFC Bank, we serve authentic Hyderabadi Dum Biryani, slow-cooked Mutton Juicy Mandi, fried chicken Mandi, and refreshing Irani Chai. Whether hanging out with friends or grabbing a feast with family, this is the ultimate spot to satisfy your cravings.
             </p>
 
             {/* Closing Italic Quote */}
             <p className="text-sm text-[#7B1E1E] font-medium italic pt-3 border-t border-gray-100 font-sans">
-              "Join a community where every meal tells a hometown story and every toast sparks connection."
+              "Swing by Lucky's Restaurant near Suchitra and treat yourself to the best food in town. Your taste buds will thank you!"
             </p>
 
             {/* EXPLORE MENU CTA Button */}
             <div className="pt-4">
               <button
                 onClick={scrollToMenu}
-                className="px-10 py-4 rounded-full orange-btn-bg text-white font-bold text-sm uppercase tracking-widest shadow-xl hover:scale-105 transition-all flex items-center gap-3 cursor-pointer"
+                className="w-full sm:w-auto px-10 py-4 border-2 border-[#3D2314] bg-white text-[#3D2314] hover:bg-[#3D2314] hover:text-white font-bold text-xs sm:text-sm uppercase tracking-[0.25em] transition-all duration-300 cursor-pointer shadow-sm rounded-none text-center active:scale-98"
               >
-                <span>EXPLORE MENU</span>
-                <span className="text-base">&rarr;</span>
+                EXPLORE MENU
               </button>
             </div>
           </motion.div>
