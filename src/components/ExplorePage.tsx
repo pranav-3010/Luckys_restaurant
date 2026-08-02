@@ -26,7 +26,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
     let items = MENU_ITEMS;
 
     if (activeTab === 'cocktails') {
-      items = items.filter(item => item.category === 'bar-specialties');
+      items = items.filter(item => item.category === 'bar-specialties' || item.category === 'seafood');
     } else if (selectedSubCategory !== 'all') {
       items = items.filter(item => item.category === selectedSubCategory);
     }
@@ -45,7 +45,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
   const filteredItems = getFilteredItems();
 
   return (
-    <div className="min-h-screen bg-[#FAF6F0] text-[#1F1919] select-none font-sans">
+    <div className="min-h-screen bg-[#F5EBE0] text-[#1F1919] select-none font-sans">
 
       {/* 1. TOP ROAST BLACK NAVBAR */}
       <header className="sticky top-0 z-50 bg-[#1A1615] text-white py-3.5 px-4 sm:px-8 shadow-md">
@@ -81,7 +81,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               MENU
             </button>
             <button
-              onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('bar-specialties'); }}
+              onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('all'); }}
               className={`text-xs font-bold uppercase tracking-widest transition-all cursor-pointer py-1 ${
                 activeTab === 'cocktails' ? 'text-white border-b-2 border-[#E67E22]' : 'text-gray-400 hover:text-white'
               }`}
@@ -108,7 +108,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
           {/* Right: Search Icon, Profile Icon & Cart Pill Button */}
           <div className="flex items-center gap-3">
-            {/* Search Toggle Input */}
+            {/* Search Input Bar */}
             <div className="relative hidden sm:block">
               <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
@@ -125,7 +125,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               <User className="w-5 h-5" />
             </button>
 
-            {/* Cart Pill Button (Matching ROAST Cart Pill in Image) */}
+            {/* Cart Pill Button (Matching ROAST Cart Pill) */}
             <button className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-wider cursor-pointer transition-all">
               <ShoppingBag className="w-4 h-4" />
               <span>CART</span>
@@ -139,7 +139,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
       </header>
 
       {/* 2. SUB-BAR: LOCATION SELECTOR & MOBILE TABS */}
-      <div className="bg-[#FAF3E0] border-b border-[#E6DBC5] py-2 px-4 sm:px-8">
+      <div className="bg-[#FAF5ED] border-b border-[#E6DBC5] py-2 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs text-[#4A3E3E]">
           <div className="flex items-center gap-1.5 font-medium cursor-pointer">
             <MapPin className="w-3.5 h-3.5 text-[#E67E22]" />
@@ -149,21 +149,21 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
           {/* Mobile Tab Links */}
           <div className="flex md:hidden items-center gap-3 overflow-x-auto text-[11px] font-bold uppercase">
             <button onClick={() => { setActiveTab('menu'); setSelectedSubCategory('all'); }} className={activeTab === 'menu' ? 'text-[#E67E22]' : 'text-gray-600'}>Menu</button>
-            <button onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('bar-specialties'); }} className={activeTab === 'cocktails' ? 'text-[#E67E22]' : 'text-gray-600'}>Cocktails</button>
+            <button onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('all'); }} className={activeTab === 'cocktails' ? 'text-[#E67E22]' : 'text-gray-600'}>Cocktails</button>
             <button onClick={() => setActiveTab('reservations')} className={activeTab === 'reservations' ? 'text-[#E67E22]' : 'text-gray-600'}>Reservations</button>
             <button onClick={() => setActiveTab('locations')} className={activeTab === 'locations' ? 'text-[#E67E22]' : 'text-gray-600'}>Locations</button>
           </div>
         </div>
       </div>
 
-      {/* 3. TAB VIEW CONTENT (TAB-BASED SWITCHING - ONLY ACTIVE TAB IS VISIBLE) */}
+      {/* 3. TAB VIEW CONTENT */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         {/* --- VIEW 1: MENU & COCKTAILS VIEW ONLY --- */}
         {(activeTab === 'menu' || activeTab === 'cocktails') && (
           <div className="space-y-8">
-            {/* Category Pill Slider (Matching ROAST Category Slider Bar) */}
-            <div className="relative bg-[#FAF3E0] p-2 rounded-2xl border border-[#E6DBC5] shadow-sm flex items-center gap-2 overflow-x-auto scrollbar-none">
+            {/* Category Pill Slider (Matching ROAST Category Bar) */}
+            <div className="relative bg-[#FAF5ED] p-2 rounded-xl border border-[#E6DBC5] shadow-sm flex items-center gap-2 overflow-x-auto scrollbar-none">
               <button className="p-1 rounded-full text-gray-400 hover:text-[#1F1919] shrink-0">
                 <ChevronLeft className="w-4 h-4" />
               </button>
@@ -173,10 +173,10 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                 className={`px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                   selectedSubCategory === 'all'
                     ? 'bg-[#1A1615] text-white shadow-md'
-                    : 'bg-white/60 text-[#4A3E3E] hover:bg-white'
+                    : 'bg-white/80 text-[#4A3E3E] hover:bg-white'
                 }`}
               >
-                All Specialties
+                C/o Rajahmundry Taluka
               </button>
 
               {MENU_CATEGORIES.filter(c => c.id !== 'all').map((cat) => (
@@ -186,7 +186,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                   className={`px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                     selectedSubCategory === cat.id
                       ? 'bg-[#1A1615] text-white shadow-md'
-                      : 'bg-white/60 text-[#4A3E3E] hover:bg-white'
+                      : 'bg-white/80 text-[#4A3E3E] hover:bg-white'
                   }`}
                 >
                   {cat.labelEN}
@@ -201,50 +201,55 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             {/* Section Heading */}
             <div>
               <h2 className="text-3xl sm:text-5xl font-black font-sans uppercase text-[#1F1919] tracking-tight">
-                {activeTab === 'cocktails' ? 'ROOFTOP CRAFT COCKTAILS & BAR' : (selectedSubCategory === 'all' ? 'DIGITAL MENU & BAR CARD' : MENU_CATEGORIES.find(c => c.id === selectedSubCategory)?.labelEN)}
+                {activeTab === 'cocktails' ? 'ROOFTOP CRAFT COCKTAILS & BAR' : 'C/O RAJAHMUNDRY TALUKA'}
               </h2>
             </div>
 
-            {/* Product Card Grid (Matching ROAST Card Grid with ADD Button) */}
+            {/* PRODUCT CARD GRID (EXACT MATCH TO ROAST CONTAINER PICTURE) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {filteredItems.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white rounded-3xl overflow-hidden border border-[#E6DBC5] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group"
+                  className="bg-[#FAF5ED] border border-[#E6DBC5]/80 p-5 rounded-none shadow-sm hover:shadow-xl transition-all flex flex-col justify-between space-y-4 group"
                 >
-                  {/* Item Image */}
-                  <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden">
+                  {/* 1. Square Dish Image Container */}
+                  <div className="relative aspect-square w-full bg-white overflow-hidden border border-[#E6DBC5]/40 flex items-center justify-center p-2">
                     <img
-                      src={item.image}
+                      src={item.image || MENU_ITEMS[0].image}
                       alt={item.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-white uppercase tracking-wider">
-                      {item.isVeg ? '🟢 VEG' : '🔴 NON-VEG'}
-                    </div>
                   </div>
 
-                  {/* Item Info & ADD Button */}
-                  <div className="p-5 flex flex-col justify-between flex-1 space-y-4">
-                    <div>
-                      <div className="flex items-start justify-between gap-2 mb-1">
-                        <h3 className="text-lg font-bold font-sans text-[#1F1919] group-hover:text-[#7B1E1E] transition-colors leading-snug">
-                          {item.name}
-                        </h3>
-                        <span className="text-sm font-black text-[#7B1E1E] font-sans">₹{item.price}</span>
-                      </div>
-                      <p className="text-xs text-[#6E5C5C] font-light line-clamp-2 leading-relaxed">
-                        {item.description}
-                      </p>
+                  {/* 2. ROAST Signature White ADD Button */}
+                  <button
+                    onClick={() => onSelectItem(item)}
+                    className="w-full py-3 bg-white hover:bg-[#1A1615] hover:text-white border border-[#E6DBC5] text-[#C88A3B] hover:border-[#1A1615] font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-sm text-center"
+                  >
+                    ADD
+                  </button>
+
+                  {/* 3. Dish Title & Veg/Non-Veg Badge Side-by-Side */}
+                  <div className="space-y-2 pt-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-black font-sans text-[#1F1919] leading-snug">
+                        {item.name}
+                      </h3>
+                      {/* Square Veg/Non-Veg Dot Badge */}
+                      <span className={`shrink-0 w-4 h-4 rounded-sm border flex items-center justify-center p-0.5 ${item.isVeg ? 'border-emerald-600 bg-emerald-50' : 'border-rose-600 bg-rose-50'}`}>
+                        <span className={`w-2 h-2 rounded-full ${item.isVeg ? 'bg-emerald-600' : 'bg-rose-600'}`} />
+                      </span>
                     </div>
 
-                    {/* ROAST Signature ADD Button */}
-                    <button
-                      onClick={() => onSelectItem(item)}
-                      className="w-full py-2.5 rounded-xl border-2 border-[#E6DBC5] bg-white hover:bg-[#1A1615] hover:text-white hover:border-[#1A1615] text-[#1F1919] font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-sm text-center"
-                    >
-                      ADD +
-                    </button>
+                    {/* 4. Price Tag */}
+                    <div className="text-sm font-black text-[#1F1919] font-sans">
+                      ₹{item.price.toFixed(2)}
+                    </div>
+
+                    {/* 5. Description */}
+                    <p className="text-xs text-[#6E5C5C] font-normal leading-relaxed font-sans line-clamp-3">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               ))}
