@@ -3,6 +3,7 @@ import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
 import realTandooriImg from '../assets/real_tandoori_starter.jpg';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
 import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
+import luckysMandiPlatterImg from '../assets/luckys_mandi_platter.jpg';
 import heroImg from '../assets/co_rajahmundry_hero.jpg';
 
 export interface LocationBranch {
@@ -113,24 +114,392 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     isChefSpecial: true
   },
+  // ==================== ARABIAN MANDI SPECIALS ====================
+  // 1. CHICKEN AL FAHAM MANDI
   {
-    id: "l3",
-    name: "MUTTON JUICY MANDI",
-    description: "Signature Arabian Mandi rice topped with melt-in-mouth slow cooked mutton shank, cashews, raisins & spicy mandi chutney.",
-    price: 599.00,
+    id: "mandi-alfaham-1",
+    name: "Chicken Al Faham Mandi [1 Piece]",
+    description: "Arabian Mandi rice topped with 1 piece of smoky charcoal-grilled Al Faham chicken, cashews, raisins, mayonnaise & spicy Mandi chutney.",
+    price: 453.60,
     category: "mandi-specials",
     isVeg: false,
     isChefSpecial: true,
-    image: realBiryaniImg
+    image: luckysMandiPlatterImg
   },
   {
-    id: "l4",
-    name: "FRIED CHICKEN MANDI",
-    description: "Aromatic Mandi rice served with crispy fried marinated chicken, caramelized onions & signature Mandi soup.",
-    price: 469.00,
+    id: "mandi-alfaham-2",
+    name: "Chicken Al Faham Mandi [2 Pieces]",
+    description: "Arabian Mandi rice served with 2 pieces of charcoal-grilled Al Faham chicken, nuts, garnishes & signature Mandi soup.",
+    price: 838.80,
     category: "mandi-specials",
     isVeg: false,
     isChefSpecial: true
+  },
+  {
+    id: "mandi-alfaham-3",
+    name: "Chicken Al Faham Mandi [3 Pieces]",
+    description: "Arabian Mandi rice feast with 3 pieces of smoky Al Faham chicken, roasted cashews, fried onions & spicy chutney (Serves 3).",
+    price: 1213.20,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-alfaham-4",
+    name: "Chicken Al Faham Mandi [4 Pieces]",
+    description: "Grand Arabian Mandi platter with 4 full pieces of charcoal Al Faham chicken, extra Mandi rice, soup & accompaniments (Serves 4).",
+    price: 1710.00,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 2. MUTTON TURKISH MANDI
+  {
+    id: "mandi-mutton-turkish-1",
+    name: "Mutton Turkish Mandi [1 Piece]",
+    description: "Authentic Turkish style spiced slow-roasted tender mutton shank served over aromatic long-grain Mandi rice.",
+    price: 606.00,
+    category: "mandi-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "mandi-mutton-turkish-2",
+    name: "Mutton Turkish Mandi [2 Pieces]",
+    description: "Two pieces of succulent Turkish spiced mutton shanks over fragrant Mandi rice with cashews, raisins & spicy soup.",
+    price: 1075.20,
+    category: "mandi-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "mandi-mutton-turkish-3",
+    name: "Mutton Turkish Mandi [3 Pieces]",
+    description: "Three tender Turkish mutton shanks served over a large platter of Mandi rice with garlic dip & Mandi gravy (Serves 3).",
+    price: 1533.60,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-mutton-turkish-4",
+    name: "Mutton Turkish Mandi [4 Pieces]",
+    description: "Royal Turkish Mutton Mandi platter featuring 4 slow-cooked shanks, aromatic basmati rice & festive garnishes (Serves 4).",
+    price: 1999.20,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 3. FRIED CHICKEN MANDI
+  {
+    id: "mandi-fried-chicken-1",
+    name: "Fried Chicken Mandi [1 Piece]",
+    description: "Crispy golden fried marinated chicken piece served over spiced Mandi basmati rice with fried onions & gravy.",
+    price: 412.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-fried-chicken-2",
+    name: "Fried Chicken Mandi [2 Pieces]",
+    description: "Two crispy golden fried chicken pieces served over aromatic Mandi rice with cashews & hot Mandi soup.",
+    price: 812.40,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-fried-chicken-3",
+    name: "Fried Chicken Mandi [3 Pieces]",
+    description: "Three crispy fried chicken pieces over a generous portion of Mandi rice with salad & mayonnaise dip.",
+    price: 1078.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-fried-chicken-4",
+    name: "Fried Chicken Mandi [4 Pieces]",
+    description: "Platter of Mandi rice served with 4 crunchy fried chicken pieces, roasted nuts & signature Mandi sauces.",
+    price: 1318.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 4. CHICKEN MASALA MANDI
+  {
+    id: "mandi-chicken-masala-1",
+    name: "Chicken Masala Mandi [1 Piece]",
+    description: "Tender chicken cooked in rich spicy Hyderabadi masalas served over aromatic Mandi rice.",
+    price: 440.40,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-masala-2",
+    name: "Chicken Masala Mandi [2 Pieces]",
+    description: "Two pieces of masala spiced chicken served over fragrant Mandi basmati rice with gravy & soup.",
+    price: 838.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-masala-3",
+    name: "Chicken Masala Mandi [3 Pieces]",
+    description: "Three masala marinated chicken pieces served over a Mandi rice platter with fried cashews & spicy chutney.",
+    price: 1078.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-masala-4",
+    name: "Chicken Masala Mandi [4 Pieces]",
+    description: "Family platter of 4 masala chicken pieces over spiced Mandi rice with accompaniments.",
+    price: 1558.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 5. MUTTON GHEE ROAST MANDI
+  {
+    id: "mandi-mutton-ghee-roast-1",
+    name: "Mutton Ghee Roast Mandi [1 Piece]",
+    description: "Melt-in-mouth mutton shank roasted in pure desi ghee & coastal aromatic spices served over Mandi rice.",
+    price: 578.40,
+    category: "mandi-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+
+  // 6. MUTTON FRIED MANDI
+  {
+    id: "mandi-mutton-fried-1",
+    name: "Mutton Fried Mandi [1 Piece]",
+    description: "Crispy spiced fried mutton piece served over aromatic Mandi basmati rice with cashews & gravy.",
+    price: 550.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-mutton-fried-2",
+    name: "Mutton Fried Mandi [2 Pieces]",
+    description: "Two crispy fried mutton pieces served over Mandi rice with caramelized onions & spicy Mandi soup.",
+    price: 1033.20,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-mutton-fried-3",
+    name: "Mutton Fried Mandi [3 Pieces]",
+    description: "Three spiced fried mutton pieces over a large Mandi rice platter with roasted nuts & garlic dip.",
+    price: 1461.60,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-mutton-fried-4",
+    name: "Mutton Fried Mandi [4 Pieces]",
+    description: "Feast platter of 4 fried mutton pieces served over aromatic Mandi rice with full garnishes.",
+    price: 1930.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 7. MUTTON JUICY MANDI
+  {
+    id: "mandi-mutton-juicy-1",
+    name: "Mutton Juicy Mandi [1 Piece]",
+    description: "Lucky's signature slow-steamed juicy mutton shank cooked with fragrant Arabian spices over Mandi rice.",
+    price: 578.40,
+    category: "mandi-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "mandi-mutton-juicy-2",
+    name: "Mutton Juicy Mandi [2 Pieces]",
+    description: "Two ultra-tender juicy mutton shanks over fragrant Mandi rice topped with cashews & raisins.",
+    price: 1060.80,
+    category: "mandi-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+  {
+    id: "mandi-mutton-juicy-3",
+    name: "Mutton Juicy Mandi [3 Pieces]",
+    description: "Three succulent juicy mutton shanks served over a Mandi rice platter with spicy chutney & soup.",
+    price: 1489.20,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-mutton-juicy-4",
+    name: "Mutton Juicy Mandi [4 Pieces]",
+    description: "Grand family Mandi feast featuring 4 melt-in-mouth mutton shanks over aromatic Mandi rice.",
+    price: 1930.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 8. CHICKEN JUICY MANDI
+  {
+    id: "mandi-chicken-juicy-1",
+    name: "Chicken Juicy Mandi [1 Piece]",
+    description: "Steamed tender juicy chicken leg piece infused with mild Arabian spices served over Mandi rice.",
+    price: 412.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-juicy-2",
+    name: "Chicken Juicy Mandi [2 Pieces]",
+    description: "Two steamed juicy chicken pieces served over Mandi rice with roasted nuts & garlic sauce.",
+    price: 854.40,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-juicy-3",
+    name: "Chicken Juicy Mandi [3 Pieces]",
+    description: "Three tender juicy chicken pieces over a Mandi rice platter served with spicy chutney & Mandi soup.",
+    price: 1185.60,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-juicy-4",
+    name: "Chicken Juicy Mandi [4 Pieces]",
+    description: "Four juicy steamed chicken pieces served over a large Mandi basmati rice platter.",
+    price: 1654.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 9. MUTTON AFGHANI MANDI
+  {
+    id: "mandi-mutton-afghani-1",
+    name: "Mutton Afghani Mandi [1 Piece]",
+    description: "Creamy cashew & black pepper marinated Afghani mutton shank slow-roasted over Mandi rice.",
+    price: 514.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-mutton-afghani-2",
+    name: "Mutton Afghani Mandi [2 Pieces]",
+    description: "Two pieces of creamy Afghani spiced mutton shanks over fragrant Arabian Mandi rice.",
+    price: 958.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-mutton-afghani-3",
+    name: "Mutton Afghani Mandi [3 Pieces]",
+    description: "Three creamy Afghani mutton shanks served over a Mandi rice platter with cashews & garlic dip.",
+    price: 1318.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-mutton-afghani-4",
+    name: "Mutton Afghani Mandi [4 Pieces]",
+    description: "Platter of 4 Afghani mutton shanks served over aromatic Mandi basmati rice.",
+    price: 1678.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 10. CHICKEN BROASTED MANDI
+  {
+    id: "mandi-chicken-broasted-1",
+    name: "Chicken Broasted Mandi [1 Piece]",
+    description: "Crispy pressure-fried broasted chicken piece served over spiced Arabian Mandi rice.",
+    price: 442.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-broasted-2",
+    name: "Chicken Broasted Mandi [2 Pieces]",
+    description: "Two crunchy broasted chicken pieces served over Mandi basmati rice with garlic dip.",
+    price: 838.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-broasted-3",
+    name: "Chicken Broasted Mandi [3 Pieces]",
+    description: "Three broasted chicken pieces over a Mandi rice platter with hot soup & condiments.",
+    price: 1078.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-broasted-4",
+    name: "Chicken Broasted Mandi [4 Pieces]",
+    description: "Four crispy broasted chicken pieces served over a large Mandi rice platter.",
+    price: 1390.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 11. CHICKEN BARBEQUE MANDI
+  {
+    id: "mandi-chicken-bbq-1",
+    name: "Chicken Barbeque Mandi [1 Piece]",
+    description: "Smoky sweet-spicy BBQ glazed chicken piece served over fragrant Mandi basmati rice.",
+    price: 453.60,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-bbq-2",
+    name: "Chicken Barbeque Mandi [2 Pieces]",
+    description: "Two BBQ grilled chicken pieces served over Mandi rice with caramelized onions & dip.",
+    price: 838.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-bbq-3",
+    name: "Chicken Barbeque Mandi [3 Pieces]",
+    description: "Three BBQ grilled chicken pieces over a Mandi rice platter with roasted cashews & chutney.",
+    price: 1186.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-chicken-bbq-4",
+    name: "Chicken Barbeque Mandi [4 Pieces]",
+    description: "Four BBQ glazed chicken pieces served over a full Mandi basmati rice platter.",
+    price: 1558.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+
+  // 12. PRAWNS FRIED MANDI
+  {
+    id: "mandi-prawns-half",
+    name: "Prawns Fried Mandi [Half, Serves 1]",
+    description: "Golden fried marinated tiger prawns served over aromatic Mandi basmati rice with spicy chutney.",
+    price: 550.80,
+    category: "mandi-specials",
+    isVeg: false
+  },
+  {
+    id: "mandi-prawns-full",
+    name: "Prawns Fried Mandi [Full, Serves 3]",
+    description: "Grand Mandi platter topped with crispy fried prawns, roasted cashews, fried onions & Mandi soup.",
+    price: 1102.80,
+    category: "mandi-specials",
+    isVeg: false,
+    isChefSpecial: true
+  },
+
+  // 13. FRIED FISH MANDI
+  {
+    id: "mandi-fish-fried-1",
+    name: "Fried Fish Mandi [1 Piece]",
+    description: "Crispy tawa fried spiced fish fillet served over aromatic Arabian Mandi basmati rice.",
+    price: 550.80,
+    category: "mandi-specials",
+    isVeg: false
   },
   {
     id: "l5",
