@@ -17,7 +17,7 @@ export const FeatureGridSection: React.FC = () => {
     <section className="py-12 bg-[#FAF3E0] border-b border-[#E6DBC5] select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 
-        {/* Top Row: 2 Asymmetric Feature Cards (Matching ROAST Layout) */}
+        {/* Top Row: 2 Asymmetric Feature Cards (Crisp Sharp Corners, Matching ROAST Layout) */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {/* Card 1: Menu (58% width, tall ratio) */}
           <motion.div
@@ -26,7 +26,7 @@ export const FeatureGridSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             onClick={() => scrollToSection('menu')}
-            className="md:col-span-7 group relative rounded-3xl overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-[16/11] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
+            className="md:col-span-7 group relative rounded-none overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-[16/11] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
               src={realBiryaniImg}
@@ -53,7 +53,7 @@ export const FeatureGridSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             onClick={() => scrollToSection('events')}
-            className="md:col-span-5 group relative rounded-3xl overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-square bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
+            className="md:col-span-5 group relative rounded-none overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-square bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
               src={realCocktailImg}
@@ -74,7 +74,7 @@ export const FeatureGridSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Row: 2 Distinct Aspect Cards (Reservation & Visit Us) */}
+        {/* Bottom Row: 2 Distinct Aspect Cards (Reservation & Visit Us - Sharp Corners) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Card 3: Reservation */}
           <motion.div
@@ -83,7 +83,7 @@ export const FeatureGridSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             onClick={() => scrollToSection('reservation')}
-            className="group relative rounded-3xl overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
+            className="group relative rounded-none overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
               src={heroImg}
@@ -110,7 +110,7 @@ export const FeatureGridSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
             onClick={() => scrollToSection('contact')}
-            className="group relative rounded-3xl overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
+            className="group relative rounded-none overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
               src={realTandooriImg}
