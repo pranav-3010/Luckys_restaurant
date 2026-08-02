@@ -31,28 +31,28 @@ export const BrandStorySplitSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 space-y-6 lg:pl-2"
           >
-            {/* Eyebrow Tag */}
-            <span className="text-[11px] font-bold uppercase tracking-widest text-[#E67E22] block">
+            {/* Small Uppercase Eyebrow Text (Inter Medium 500 with 0.4em letter-spacing) */}
+            <span className="eyebrow-text block">
               WHERE GODAVARI HERITAGE MEETS HYDERABAD NIGHTLIFE
             </span>
 
-            {/* ROAST Signature Heavy Extended Headline Typography */}
+            {/* Headline (Poppins ExtraBold / Black 900) */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl roast-display-heading text-[#1F1919] max-w-xl">
               Experience Hyderabad's Premier Rajahmundry Kitchen & Rooftop Bar
             </h2>
 
-            {/* Body Text Paragraph 1 */}
-            <p className="text-xs sm:text-sm text-[#4A3E3E] font-light leading-relaxed">
-              Born out of pure hometown nostalgia in Kompally, <strong className="font-bold text-[#7B1E1E]">C/o Rajahmundry Kitchen & Bar</strong> redefines casual rooftop dining by seamlessly blending authentic Godavari recipes with a vibrant bar vibe. Our 5th-floor flagship at Santa Sriram Estates features traditional pressure-cooked Mutton Pulaos, banana-leaf toasted Aritaku Chepala Fry, and open-air rooftop lounge seating.
+            {/* Body Text (Inter Regular) */}
+            <p className="text-xs sm:text-sm text-[#4A3E3E] font-normal leading-relaxed font-sans">
+              Born out of pure hometown nostalgia in Kompally, <strong className="font-semibold text-[#7B1E1E]">C/o Rajahmundry Kitchen & Bar</strong> redefines casual rooftop dining by seamlessly blending authentic Godavari recipes with a vibrant bar vibe. Our 5th-floor flagship at Santa Sriram Estates features traditional pressure-cooked Mutton Pulaos, banana-leaf toasted Aritaku Chepala Fry, and open-air rooftop lounge seating.
             </p>
 
-            {/* Body Text Paragraph 2 */}
-            <p className="text-xs sm:text-sm text-[#4A3E3E] font-light leading-relaxed">
+            {/* Body Text Paragraph 2 (Inter Regular) */}
+            <p className="text-xs sm:text-sm text-[#4A3E3E] font-normal leading-relaxed font-sans">
               From hand-pounded Godavari spice masalas to artisanal rooftop cocktails, we bring generations of regional culinary heritage to every creation. Whether catching live match screenings, enjoying retro Telugu acoustic nights, or gathering for weekend family feasts, we craft experiences that delight your senses.
             </p>
 
             {/* Closing Italic Quote */}
-            <p className="text-xs sm:text-sm text-[#7B1E1E] font-medium italic pt-2 border-t border-gray-100">
+            <p className="text-xs sm:text-sm text-[#7B1E1E] font-medium italic pt-2 border-t border-gray-100 font-sans">
               "Join a community where every meal tells a hometown story and every toast sparks connection."
             </p>
           </motion.div>
