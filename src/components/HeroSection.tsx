@@ -4,7 +4,6 @@ import { ChevronDown, Globe } from 'lucide-react';
 import luckysMandiPlatterImg from '../assets/luckys_mandi_platter.jpg';
 import luckysBiryaniFeastImg from '../assets/luckys_biryani_feast.jpg';
 import luckysStarterDishImg from '../assets/luckys_starter_dish.jpg';
-import realTandooriImg from '../assets/real_tandoori_starter.jpg';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
 import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
 import { useLanguage } from '../context/LanguageContext';
@@ -27,11 +26,6 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
       image: luckysBiryaniFeastImg,
       taglineEN: "Lucky's Special Hyderabadi Dum & Fry Piece Biryani Feast",
       taglineTE: 'లక్కీస్ స్పెషల్ హైదరాబాదీ దమ్ & ఫ్రై పీస్ బిర్యానీ',
-    },
-    {
-      image: realTandooriImg,
-      taglineEN: 'Signature Smoky Angara Kabab & Tandoori Specials',
-      taglineTE: 'లక్కీస్ సిగ్నేచర్ అంగారా కబాబ్స్',
     },
     {
       image: luckysStarterDishImg,
