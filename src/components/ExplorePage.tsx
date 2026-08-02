@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Search, User, ShoppingBag, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { MENU_CATEGORIES, MENU_ITEMS } from '../data/restaurantData';
 import { ReservationSection } from './ReservationSection';
@@ -51,6 +52,13 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
     return item.name.toLowerCase().includes(q) || item.description.toLowerCase().includes(q);
   };
 
+  const navTabs: { id: 'menu' | 'cocktails' | 'reservations' | 'locations'; label: string }[] = [
+    { id: 'menu', label: 'MENU' },
+    { id: 'cocktails', label: 'COCKTAILS & BAR' },
+    { id: 'reservations', label: 'RESERVATIONS' },
+    { id: 'locations', label: 'LOCATIONS' },
+  ];
+
   return (
     <div className="min-h-screen bg-[#F5EBE0] text-[#1F1919] select-none font-sans">
 
@@ -77,51 +85,41 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             </div>
           </div>
 
-          {/* Middle: Tab Navigation Links with Active Sage Green Text & Green Underline */}
-          <nav className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => { setActiveTab('menu'); setSelectedSubCategory('all'); }}
-              className={`text-xs font-black uppercase tracking-[0.2em] transition-all cursor-pointer py-1 relative ${
-                activeTab === 'menu'
-                  ? 'text-[#7DCE9F] drop-shadow-sm border-b-2 border-[#7DCE9F] pb-1'
-                  : 'text-white/90 hover:text-white'
-              }`}
-            >
-              MENU
-            </button>
+          {/* Middle: Tab Navigation Links with Smooth Animated Sliding Green Double Line */}
+          <nav className="hidden md:flex items-center gap-8 relative">
+            {navTabs.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    setActiveTab(tab.id);
+                    if (tab.id === 'menu' || tab.id === 'cocktails') {
+                      setSelectedSubCategory('all');
+                    }
+                  }}
+                  className={`text-xs font-black uppercase tracking-[0.2em] transition-colors duration-300 cursor-pointer py-2 relative ${
+                    isActive ? 'text-[#7DCE9F]' : 'text-white/80 hover:text-white'
+                  }`}
+                >
+                  {tab.label}
 
-            <button
-              onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('all'); }}
-              className={`text-xs font-black uppercase tracking-[0.2em] transition-all cursor-pointer py-1 relative ${
-                activeTab === 'cocktails'
-                  ? 'text-[#7DCE9F] drop-shadow-sm border-b-2 border-[#7DCE9F] pb-1'
-                  : 'text-white/90 hover:text-white'
-              }`}
-            >
-              COCKTAILS & BAR
-            </button>
-
-            <button
-              onClick={() => setActiveTab('reservations')}
-              className={`text-xs font-black uppercase tracking-[0.2em] transition-all cursor-pointer py-1 relative ${
-                activeTab === 'reservations'
-                  ? 'text-[#7DCE9F] drop-shadow-sm border-b-2 border-[#7DCE9F] pb-1'
-                  : 'text-white/90 hover:text-white'
-              }`}
-            >
-              RESERVATIONS
-            </button>
-
-            <button
-              onClick={() => setActiveTab('locations')}
-              className={`text-xs font-black uppercase tracking-[0.2em] transition-all cursor-pointer py-1 relative ${
-                activeTab === 'locations'
-                  ? 'text-[#7DCE9F] drop-shadow-sm border-b-2 border-[#7DCE9F] pb-1'
-                  : 'text-white/90 hover:text-white'
-              }`}
-            >
-              LOCATIONS
-            </button>
+                  {/* Animated Sliding Green Double Line Indicator */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="navTabActiveDoubleLine"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      className="absolute left-0 right-0 -bottom-1 flex flex-col items-center gap-0.5 pointer-events-none"
+                    >
+                      {/* Top Main Line */}
+                      <span className="w-full h-[2px] bg-[#7DCE9F] rounded-full shadow-[0_0_8px_rgba(125,206,159,0.6)]" />
+                      {/* Bottom Accent Secondary Line */}
+                      <span className="w-3/4 h-[1.5px] bg-[#7DCE9F]/80 rounded-full" />
+                    </motion.div>
+                  )}
+                </button>
+              );
+            })}
           </nav>
 
           {/* Right: Search Input Bar, Profile Icon & Cart Pill Button */}
@@ -153,32 +151,34 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         </div>
       </header>
 
-      {/* Mobile Tab Bar for Small Screens */}
-      <div className="flex md:hidden bg-[#1A1615] border-b border-white/10 px-4 py-2 justify-around overflow-x-auto text-[11px] font-black uppercase tracking-wider">
-        <button
-          onClick={() => { setActiveTab('menu'); setSelectedSubCategory('all'); }}
-          className={`py-1 ${activeTab === 'menu' ? 'text-[#7DCE9F] border-b-2 border-[#7DCE9F]' : 'text-white/70'}`}
-        >
-          MENU
-        </button>
-        <button
-          onClick={() => { setActiveTab('cocktails'); setSelectedSubCategory('all'); }}
-          className={`py-1 ${activeTab === 'cocktails' ? 'text-[#7DCE9F] border-b-2 border-[#7DCE9F]' : 'text-white/70'}`}
-        >
-          COCKTAILS
-        </button>
-        <button
-          onClick={() => setActiveTab('reservations')}
-          className={`py-1 ${activeTab === 'reservations' ? 'text-[#7DCE9F] border-b-2 border-[#7DCE9F]' : 'text-white/70'}`}
-        >
-          RESERVATIONS
-        </button>
-        <button
-          onClick={() => setActiveTab('locations')}
-          className={`py-1 ${activeTab === 'locations' ? 'text-[#7DCE9F] border-b-2 border-[#7DCE9F]' : 'text-white/70'}`}
-        >
-          LOCATIONS
-        </button>
+      {/* Mobile Tab Bar for Small Screens with Sliding Underline */}
+      <div className="flex md:hidden bg-[#161312] border-b border-white/10 px-4 py-2 justify-around overflow-x-auto text-[11px] font-black uppercase tracking-wider">
+        {navTabs.map((tab) => {
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => {
+                setActiveTab(tab.id);
+                if (tab.id === 'menu' || tab.id === 'cocktails') {
+                  setSelectedSubCategory('all');
+                }
+              }}
+              className={`py-1.5 relative transition-colors ${
+                isActive ? 'text-[#7DCE9F]' : 'text-white/70'
+              }`}
+            >
+              {tab.label === 'COCKTAILS & BAR' ? 'COCKTAILS' : tab.label}
+              {isActive && (
+                <motion.div
+                  layoutId="mobileNavTabActiveLine"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  className="absolute left-0 right-0 bottom-0 h-[2px] bg-[#7DCE9F]"
+                />
+              )}
+            </button>
+          );
+        })}
       </div>
 
       {/* 2. TAB VIEW CONTENT */}
