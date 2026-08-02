@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Star, Globe } from 'lucide-react';
+import { ChevronDown, Globe } from 'lucide-react';
 import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
 import realTandooriImg from '../assets/real_tandoori_starter.jpg';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
@@ -77,22 +77,8 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onReserveTable
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
       </div>
 
-      {/* Top Bar: Google Rating & Language Toggle Switcher */}
-      <div className="relative z-10 pt-8 sm:pt-10 px-6 flex items-center justify-between max-w-7xl mx-auto w-full">
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/75 border border-[#D4AF37]/60 text-xs text-[#F6E27A] backdrop-blur-md shadow-2xl"
-        >
-          <span className="flex items-center gap-1 font-bold text-amber-400">
-            <Star className="w-3.5 h-3.5 fill-current text-amber-400" />
-            4.5 ({RESTAURANT_INFO.reviewCount}+ Google Diners)
-          </span>
-          <span className="text-white/40">•</span>
-          <span className="text-white font-semibold">C / ఓ రాజమండ్రి కిచెన్ అండ్ బార్</span>
-        </motion.div>
-
+      {/* Top Bar: Language Toggle Switcher */}
+      <div className="relative z-10 pt-8 sm:pt-10 px-6 flex items-center justify-end max-w-7xl mx-auto w-full">
         {/* Language Switch Button on Hero Screen */}
         <button
           onClick={toggleLanguage}
@@ -103,35 +89,31 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onReserveTable
         </button>
       </div>
 
-      {/* Center Giant Block Typography & Brand Story */}
+      {/* Center Sized Block Typography (Clean Minimal Overlay) */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 my-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
-          className="space-y-3 p-6 sm:p-8 rounded-3xl bg-black/55 backdrop-blur-md border border-white/20 shadow-2xl max-w-4xl"
+          className="space-y-3 p-6 sm:p-8 rounded-3xl bg-black/55 backdrop-blur-md border border-white/20 shadow-2xl max-w-2xl"
         >
-          <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter uppercase font-serif-heading text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)] leading-none">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight uppercase font-serif-heading text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-tight">
             C/O RAJAHMUNDRY
           </h1>
-          <p className="text-xs sm:text-xl font-bold uppercase tracking-widest text-[#F6E27A] drop-shadow-md">
+          <p className="text-xs sm:text-base font-bold uppercase tracking-widest text-[#F6E27A] drop-shadow-md">
             {language === 'EN' ? RESTAURANT_INFO.taglineEN : RESTAURANT_INFO.taglineTE}
           </p>
 
-          <p className="text-xs sm:text-sm text-[#E6DAD0] font-light max-w-2xl mx-auto leading-relaxed pt-2">
-            {RESTAURANT_INFO.story}
-          </p>
-
-          <div className="flex items-center justify-center gap-4 pt-4">
+          <div className="flex items-center justify-center gap-4 pt-3">
             <button
               onClick={onExploreMenu}
-              className="px-6 py-3 rounded-full orange-btn-bg text-white font-bold text-xs uppercase tracking-wider shadow-xl hover:scale-105 transition-transform"
+              className="px-6 py-2.5 rounded-full orange-btn-bg text-white font-bold text-xs uppercase tracking-wider shadow-xl hover:scale-105 transition-transform"
             >
               View Menu & Drinks
             </button>
             <button
               onClick={onReserveTable}
-              className="px-6 py-3 rounded-full border border-[#D4AF37] bg-white/10 text-white font-bold text-xs uppercase tracking-wider backdrop-blur-md hover:bg-white/20 transition-all"
+              className="px-6 py-2.5 rounded-full border border-[#D4AF37] bg-white/10 text-white font-bold text-xs uppercase tracking-wider backdrop-blur-md hover:bg-white/20 transition-all"
             >
               Book 5th Floor Table
             </button>
