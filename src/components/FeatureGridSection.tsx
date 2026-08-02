@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
 import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
 import heroImg from '../assets/co_rajahmundry_hero.jpg';
-import realTandooriImg from '../assets/real_tandoori_starter.jpg';
+import realInteriorVisitUsImg from '../assets/real_interior_visit_us.jpg';
 
 export const FeatureGridSection: React.FC = () => {
   const scrollToSection = (id: string) => {
@@ -103,7 +103,7 @@ export const FeatureGridSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Card 4: Visit Us */}
+          {/* Card 4: Visit Us (Using Real C/o Rajahmundry Rooftop Interior Photo) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -113,8 +113,8 @@ export const FeatureGridSection: React.FC = () => {
             className="group relative rounded-none overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
-              src={realTandooriImg}
-              alt="Visit Us"
+              src={realInteriorVisitUsImg}
+              alt="Visit C/o Rajahmundry Kompally"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-8">
