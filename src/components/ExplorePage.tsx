@@ -24,6 +24,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isLoginOpen, setIsLoginOpen] = useState<boolean>(false);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+  const [showMobileSearch, setShowMobileSearch] = useState<boolean>(false);
 
   // Global Cart State
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -37,7 +38,6 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
       return [...prev, { item, quantity: 1 }];
     });
     onSelectItem(item);
-    // Silent add to cart without auto-opening cart drawer
   };
 
   const handleUpdateQuantity = (itemId: string, delta: number) => {
@@ -112,30 +112,30 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         onClearCart={handleClearCart}
       />
 
-      {/* 1. TOP ROAST BLACK NAVBAR */}
-      <header className="sticky top-0 z-50 bg-[#161312] text-white py-4 px-4 sm:px-8 shadow-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      {/* 1. TOP ROAST BLACK NAVBAR - MOBILE RESPONSIVE */}
+      <header className="sticky top-0 z-50 bg-[#161312] text-white py-3 sm:py-4 px-3 sm:px-8 shadow-xl border-b border-white/10">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
 
           {/* Left: Single Brand Logo Wordmark */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <button
               onClick={onBackToHome}
-              className="p-2 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-all cursor-pointer"
+              className="p-1.5 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-all cursor-pointer"
               title="Back to Home"
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
             <div>
-              <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white uppercase font-sans leading-none">
+              <h1 className="text-lg sm:text-2xl font-black tracking-tight text-white uppercase font-sans leading-none">
                 C/O Rajahmundry
               </h1>
-              <span className="text-[9px] font-bold text-gray-400 tracking-widest uppercase block mt-0.5">
+              <span className="text-[8px] sm:text-[9px] font-bold text-gray-400 tracking-widest uppercase block mt-0.5">
                 Kitchen & Bar
               </span>
             </div>
           </div>
 
-          {/* Middle: Tab Navigation Links with Smooth Animated Sliding Green Double Line */}
+          {/* Middle: Tab Navigation Links for Desktop */}
           <nav className="hidden md:flex items-center gap-8 relative">
             {navTabs.map((tab) => {
               const isActive = activeTab === tab.id;
@@ -161,9 +161,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                       className="absolute left-0 right-0 -bottom-1 flex flex-col items-center gap-0.5 pointer-events-none"
                     >
-                      {/* Top Main Line */}
                       <span className="w-full h-[2px] bg-[#7DCE9F] rounded-full shadow-[0_0_8px_rgba(125,206,159,0.6)]" />
-                      {/* Bottom Accent Secondary Line */}
                       <span className="w-3/4 h-[1.5px] bg-[#7DCE9F]/80 rounded-full" />
                     </motion.div>
                   )}
@@ -172,8 +170,17 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             })}
           </nav>
 
-          {/* Right: Search Input Bar, Profile Icon & Cart Pill Button */}
-          <div className="flex items-center gap-3">
+          {/* Right: Search, Profile & Cart Pill Button */}
+          <div className="flex items-center gap-1.5 sm:gap-3">
+            {/* Mobile Search Toggle Button */}
+            <button
+              onClick={() => setShowMobileSearch(!showMobileSearch)}
+              className="p-2 rounded-full hover:bg-white/10 text-white/80 sm:hidden transition-all cursor-pointer"
+            >
+              <Search className="w-4 h-4" />
+            </button>
+
+            {/* Desktop Search Input Bar */}
             <div className="relative hidden sm:block">
               <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
@@ -188,19 +195,19 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             {/* PROFILE USER ICON */}
             <button
               onClick={() => setIsLoginOpen(true)}
-              className="p-2 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-all cursor-pointer relative group"
+              className="p-1.5 sm:p-2 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-all cursor-pointer relative group"
               title="Login / Signup"
             >
-              <User className="w-5 h-5 group-hover:text-[#7DCE9F] transition-colors" />
+              <User className="w-4 h-4 sm:w-5 sm:h-5 group-hover:text-[#7DCE9F] transition-colors" />
             </button>
 
-            {/* CART BUTTON - OPENS CART DRAWER */}
+            {/* CART BUTTON */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-wider cursor-pointer transition-all hover:border-[#7DCE9F]"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 text-white text-[11px] sm:text-xs font-bold tracking-wider cursor-pointer transition-all hover:border-[#7DCE9F]"
             >
-              <ShoppingBag className="w-4 h-4" />
-              <span>CART</span>
+              <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="hidden xs:inline">CART</span>
               <span className="w-4 h-4 rounded-full bg-[#7DCE9F] text-[#161312] text-[10px] flex items-center justify-center font-bold">
                 {totalCartCount}
               </span>
@@ -208,10 +215,26 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
           </div>
 
         </div>
+
+        {/* Expandable Mobile Search Bar */}
+        {showMobileSearch && (
+          <div className="sm:hidden px-2 pt-2 pb-1">
+            <div className="relative">
+              <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                placeholder="Search dishes or cocktails..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-9 pr-3 py-2 rounded-xl bg-white/15 border border-white/25 text-xs text-white placeholder-gray-300 focus:outline-none"
+              />
+            </div>
+          </div>
+        )}
       </header>
 
-      {/* Mobile Tab Bar for Small Screens with Sliding Underline */}
-      <div className="flex md:hidden bg-[#161312] border-b border-white/10 px-4 py-2 justify-around overflow-x-auto text-[11px] font-black uppercase tracking-wider">
+      {/* Mobile Sticky Navigation Tabs */}
+      <div className="flex md:hidden bg-[#161312] border-b border-white/10 px-2 py-2 justify-around overflow-x-auto text-[10px] sm:text-[11px] font-black uppercase tracking-wider sticky top-[57px] z-40">
         {navTabs.map((tab) => {
           const isActive = activeTab === tab.id;
           return (
@@ -223,7 +246,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                   setSelectedSubCategory('all');
                 }
               }}
-              className={`py-1.5 relative transition-colors ${
+              className={`py-1 relative transition-colors whitespace-nowrap px-2 ${
                 isActive ? 'text-[#7DCE9F]' : 'text-white/70'
               }`}
             >
@@ -240,21 +263,21 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         })}
       </div>
 
-      {/* 2. TAB VIEW CONTENT */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* 2. MAIN CONTENT AREA */}
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
 
         {/* --- VIEW 1: MENU & COCKTAILS VIEW --- */}
         {(activeTab === 'menu' || activeTab === 'cocktails') && (
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {/* Sticky Category Quick-Jump Pill Slider */}
-            <div className="sticky top-[60px] z-40 bg-white/95 backdrop-blur-md p-2.5 rounded-xl border border-[#E6DBC5] shadow-md flex items-center gap-2 overflow-x-auto scrollbar-none">
-              <button className="p-1 rounded-full text-gray-400 hover:text-[#1F1919] shrink-0">
+            <div className="sticky top-[95px] md:top-[60px] z-30 bg-white/95 backdrop-blur-md p-2 rounded-xl border border-[#E6DBC5] shadow-md flex items-center gap-1.5 overflow-x-auto scrollbar-none touch-pan-x">
+              <button className="p-1 rounded-full text-gray-400 hover:text-[#1F1919] shrink-0 hidden sm:block">
                 <ChevronLeft className="w-4 h-4" />
               </button>
 
               <button
                 onClick={() => scrollToCategory('all')}
-                className={`px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
+                className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                   selectedSubCategory === 'all'
                     ? 'bg-[#1A1615] text-white shadow-md'
                     : 'bg-[#F5EBE0] text-[#4A3E3E] hover:bg-white'
@@ -267,7 +290,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                 <button
                   key={cat.id}
                   onClick={() => scrollToCategory(cat.id)}
-                  className={`px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
+                  className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                     selectedSubCategory === cat.id
                       ? 'bg-[#1A1615] text-white shadow-md'
                       : 'bg-[#F5EBE0] text-[#4A3E3E] hover:bg-white'
@@ -277,7 +300,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                 </button>
               ))}
 
-              <button className="p-1 rounded-full text-gray-400 hover:text-[#1F1919] shrink-0">
+              <button className="p-1 rounded-full text-gray-400 hover:text-[#1F1919] shrink-0 hidden sm:block">
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -291,21 +314,21 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               if (categoryItems.length === 0) return null;
 
               return (
-                <section key={category.id} id={`cat-section-${category.id}`} className="space-y-6 pt-4 scroll-mt-28">
+                <section key={category.id} id={`cat-section-${category.id}`} className="space-y-4 sm:space-y-6 pt-2 scroll-mt-36">
                   {/* Category Title & Subtitle */}
-                  <div className="border-b border-[#E6DBC5] pb-3">
-                    <h2 className="text-2xl sm:text-4xl font-black font-sans uppercase text-[#1F1919] tracking-tight">
+                  <div className="border-b border-[#E6DBC5] pb-2 sm:pb-3">
+                    <h2 className="text-xl sm:text-3xl md:text-4xl font-black font-sans uppercase text-[#1F1919] tracking-tight">
                       {category.labelEN}
                     </h2>
                     {category.subtitle && (
-                      <p className="text-xs text-[#7B1E1E] font-bold uppercase tracking-widest mt-1">
+                      <p className="text-[10px] sm:text-xs text-[#7B1E1E] font-bold uppercase tracking-widest mt-0.5">
                         {category.subtitle}
                       </p>
                     )}
                   </div>
 
-                  {/* Product Cards Grid for this Category */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {/* Product Cards Grid - 1 Col Mobile / 2 Col Tablet / 4 Col Desktop */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     {categoryItems.map((item) => {
                       const itemInCart = cartItems.find(ci => ci.item.id === item.id);
                       const quantityInCart = itemInCart ? itemInCart.quantity : 0;
@@ -313,7 +336,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                       return (
                         <div
                           key={item.id}
-                          className="bg-[#FAF5ED] border border-[#E6DBC5]/80 p-5 rounded-none shadow-sm hover:shadow-xl transition-all flex flex-col justify-between space-y-4 group"
+                          className="bg-[#FAF5ED] border border-[#E6DBC5]/80 p-4 sm:p-5 rounded-none shadow-sm hover:shadow-xl transition-all flex flex-col justify-between space-y-3 sm:space-y-4 group"
                         >
                           {/* Square Image */}
                           <div className="relative aspect-square w-full bg-white overflow-hidden border border-[#E6DBC5]/40 flex items-center justify-center p-2">
@@ -328,22 +351,22 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                           {quantityInCart === 0 ? (
                             <button
                               onClick={() => handleAddToCart(item)}
-                              className="w-full py-3 bg-white hover:bg-[#1A1615] hover:text-white border border-[#E6DBC5] text-[#C88A3B] hover:border-[#1A1615] font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-sm text-center"
+                              className="w-full py-2.5 sm:py-3 bg-white hover:bg-[#1A1615] hover:text-white border border-[#E6DBC5] text-[#C88A3B] hover:border-[#1A1615] font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-sm text-center active:scale-98"
                             >
                               ADD
                             </button>
                           ) : (
-                            <div className="w-full py-2 bg-[#1A1615] text-[#7DCE9F] border border-[#1A1615] font-bold text-xs uppercase tracking-widest flex items-center justify-between px-4 shadow-sm">
+                            <div className="w-full py-2 bg-[#1A1615] text-[#7DCE9F] border border-[#1A1615] font-bold text-xs uppercase tracking-widest flex items-center justify-between px-3 shadow-sm">
                               <button
                                 onClick={() => handleUpdateQuantity(item.id, -1)}
-                                className="hover:text-white transition-colors cursor-pointer text-base font-black px-1"
+                                className="hover:text-white transition-colors cursor-pointer text-base font-black px-2 py-0.5"
                               >
                                 -
                               </button>
                               <span>{quantityInCart} IN CART</span>
                               <button
                                 onClick={() => handleUpdateQuantity(item.id, 1)}
-                                className="hover:text-white transition-colors cursor-pointer text-base font-black px-1"
+                                className="hover:text-white transition-colors cursor-pointer text-base font-black px-2 py-0.5"
                               >
                                 +
                               </button>
@@ -351,21 +374,21 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                           )}
 
                           {/* Title & Veg Badge */}
-                          <div className="space-y-2 pt-1">
+                          <div className="space-y-1.5 pt-1">
                             <div className="flex items-center gap-2">
-                              <h3 className="text-lg font-black font-sans text-[#1F1919] leading-snug">
+                              <h3 className="text-base sm:text-lg font-black font-sans text-[#1F1919] leading-snug">
                                 {item.name}
                               </h3>
-                              <span className={`shrink-0 w-4 h-4 rounded-sm border flex items-center justify-center p-0.5 ${item.isVeg ? 'border-emerald-600 bg-emerald-50' : 'border-rose-600 bg-rose-50'}`}>
-                                <span className={`w-2 h-2 rounded-full ${item.isVeg ? 'bg-emerald-600' : 'bg-rose-600'}`} />
+                              <span className={`shrink-0 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-sm border flex items-center justify-center p-0.5 ${item.isVeg ? 'border-emerald-600 bg-emerald-50' : 'border-rose-600 bg-rose-50'}`}>
+                                <span className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${item.isVeg ? 'bg-emerald-600' : 'bg-rose-600'}`} />
                               </span>
                             </div>
 
-                            <div className="text-sm font-black text-[#1F1919] font-sans">
+                            <div className="text-xs sm:text-sm font-black text-[#1F1919] font-sans">
                               ₹{item.price.toFixed(2)}
                             </div>
 
-                            <p className="text-xs text-[#6E5C5C] font-normal leading-relaxed font-sans line-clamp-3">
+                            <p className="text-[11px] sm:text-xs text-[#6E5C5C] font-normal leading-relaxed font-sans line-clamp-2 sm:line-clamp-3">
                               {item.description}
                             </p>
                           </div>
@@ -381,14 +404,14 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
         {/* --- VIEW 2: RESERVATIONS VIEW ONLY --- */}
         {activeTab === 'reservations' && (
-          <div className="py-4">
+          <div className="py-2 sm:py-4">
             <ReservationSection />
           </div>
         )}
 
         {/* --- VIEW 3: LOCATIONS VIEW ONLY --- */}
         {activeTab === 'locations' && (
-          <div className="py-4">
+          <div className="py-2 sm:py-4">
             <ContactSection />
           </div>
         )}
