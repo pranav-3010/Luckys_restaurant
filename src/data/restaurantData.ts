@@ -76,6 +76,12 @@ export const MENU_CATEGORIES = [
   { id: 'asalusisilina', labelEN: 'Asalusisalina', subtitle: 'Authentic Andhra Curries, Gravies & Guthi Vankaya', labelTE: 'అసలుసిసలైన' },
   { id: 'teepi-teepigha', labelEN: 'Teepi Teepigha', subtitle: 'Matka Junnu, Bobbatlu & Pootharekulu Sweets', labelTE: 'తీపి తీపిగా' },
   { id: 'jathagha', labelEN: 'Jathagha', subtitle: 'Coolers, Nimma Soda & Refreshing Beverages', labelTE: 'జతగా' },
+  // BAR & COCKTAIL CATEGORIES
+  { id: 'signature-cocktails', labelEN: 'Signature Rooftop Cocktails', subtitle: 'Handcrafted Craft Cocktails & Infusions', labelTE: 'కాక్‌టైల్స్' },
+  { id: 'wines', labelEN: 'Wine & Bubbles', subtitle: 'Fine Red, White & Sparkling Wines', labelTE: 'వైన్' },
+  { id: 'vodka-spirits', labelEN: 'Vodka & Premium Spirits', subtitle: 'Grey Goose, Absolut & Import Spirits', labelTE: 'వోడ్కా' },
+  { id: 'beers', labelEN: 'Craft & Bottled Beers', subtitle: 'Corona, Heineken & Budweiser', labelTE: 'బీర్' },
+  { id: 'whisky-rum', labelEN: 'Whisky, Rum & Tequila', subtitle: 'Black Label, Jameson & Don Julio', labelTE: 'విస్కీ & రమ్' },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -591,7 +597,7 @@ export const MENU_ITEMS: MenuItem[] = [
     image: realFishImg
   },
 
-  // 6. RAJU GARI VINDHURI (18 BIRYANI & PULAO ITEMS)
+  // 6. RAJU GARI VINDHURI (18 ITEMS)
   {
     id: "rgv1",
     name: "VEG PULAV (ULAVACHARU / AVAKAYA)",
@@ -765,7 +771,7 @@ export const MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true
   },
 
-  // 7. MATTIKUNDA ROTTELU (4 BREAD ITEMS)
+  // 7. MATTIKUNDA ROTTELU (4 ITEMS)
   {
     id: "mr1",
     name: "TANDOORI ROTI (PLAIN / BUTTER)",
@@ -800,7 +806,7 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: true
   },
 
-  // 8. ASALUSISILINA (14 MAIN COURSE GRAVY ITEMS)
+  // 8. ASALUSISILINA (14 ITEMS)
   {
     id: "as1",
     name: "DAL FRY / TOMATO",
@@ -929,7 +935,7 @@ export const MENU_ITEMS: MenuItem[] = [
     image: realFishImg
   },
 
-  // 9. TEEPI TEEPIGHA (4 DESSERT ITEMS)
+  // 9. TEEPI TEEPIGHA (4 ITEMS)
   {
     id: "tt1",
     name: "MATKA JUNNU",
@@ -967,7 +973,7 @@ export const MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true
   },
 
-  // 10. JATHAGHA (4 BEVERAGE ITEMS)
+  // 10. JATHAGHA (4 ITEMS)
   {
     id: "j1",
     name: "PACKAGED DRINKING WATER",
@@ -998,6 +1004,188 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Refreshing cold spiced Andhra buttermilk blended with green chilies, ginger & curry leaves.",
     price: 139.00,
     category: "jathagha",
+    isVeg: true,
+    isChefSpecial: true
+  },
+
+  // 11. SIGNATURE ROOFTOP COCKTAILS (5 ITEMS)
+  {
+    id: "sc1",
+    name: "GODAVARI SUNRISE COCKTAIL",
+    description: "Handcrafted cocktail infused with Silver Tequila, Grenadine, fresh mango juice, lime & chili salt rim.",
+    price: 499.00,
+    category: "signature-cocktails",
+    isVeg: true,
+    isChefSpecial: true,
+    image: realCocktailImg
+  },
+  {
+    id: "sc2",
+    name: "RAJAHMUNDRY LITCHI LIQUID",
+    description: "Triple-distilled Vodka shaken with litchi liqueur, crushed mint, lemon soda & ice.",
+    price: 479.00,
+    category: "signature-cocktails",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "sc3",
+    name: "TELANGANA GIN SPRITZER",
+    description: "Artisanal Gin infused with elderflower tonic, cucumber slices & fresh rosemary sprig.",
+    price: 459.00,
+    category: "signature-cocktails",
+    isVeg: true
+  },
+  {
+    id: "sc4",
+    name: "PANDUMIRCHI FIERY MARGARITA",
+    description: "Smoked Tequila, Pandumirchi chili rim, fresh lime juice & agave syrup.",
+    price: 499.00,
+    category: "signature-cocktails",
+    isVeg: true,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "sc5",
+    name: "GONGURA SPICED MOJITO",
+    description: "White Rum muddled with sorrel leaf Gongura extract, fresh mint, lime wedges & sparkling soda.",
+    price: 449.00,
+    category: "signature-cocktails",
+    isVeg: true,
+    isSpicy: true
+  },
+
+  // 12. WINE & BUBBLES (4 ITEMS)
+  {
+    id: "wb1",
+    name: "SULA SHIRAZ RED WINE (GLASS / BOTTLE)",
+    description: "Rich Indian red wine with notes of dark berries, pepper & oak.",
+    price: 449.00,
+    category: "wines",
+    isVeg: true
+  },
+  {
+    id: "wb2",
+    name: "SULA SAUVIGNON BLANC WHITE WINE",
+    description: "Crisp, refreshing dry white wine with aromas of green apple & citrus.",
+    price: 449.00,
+    category: "wines",
+    isVeg: true
+  },
+  {
+    id: "wb3",
+    name: "JACOB'S CREEK CABERNET",
+    description: "Premium Australian full-bodied red wine with plum & spice character.",
+    price: 599.00,
+    category: "wines",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "wb4",
+    name: "PROSECCO SPARKLING WINE",
+    description: "Italian sparkling bubbly wine with delicate green apple & floral notes.",
+    price: 699.00,
+    category: "wines",
+    isVeg: true,
+    isChefSpecial: true
+  },
+
+  // 13. VODKA & PREMIUM SPIRITS (3 ITEMS)
+  {
+    id: "vp1",
+    name: "GREY GOOSE VODKA (60ML)",
+    description: "Ultra-premium French wheat vodka distilled for exceptionally smooth taste.",
+    price: 549.00,
+    category: "vodka-spirits",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "vp2",
+    name: "ABSOLUT VODKA (60ML)",
+    description: "Classic Swedish pure vodka crafted from winter wheat.",
+    price: 399.00,
+    category: "vodka-spirits",
+    isVeg: true
+  },
+  {
+    id: "vp3",
+    name: "SMIRNOFF GREEN APPLE (60ML)",
+    description: "Crisp green apple flavored triple distilled vodka.",
+    price: 299.00,
+    category: "vodka-spirits",
+    isVeg: true
+  },
+
+  // 14. CRAFT & BOTTLED BEERS (4 ITEMS)
+  {
+    id: "cb1",
+    name: "CORONA EXTRA (BOTTLE)",
+    description: "Chilled Mexican lager served with fresh lime wedge.",
+    price: 349.00,
+    category: "beers",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "cb2",
+    name: "HEINEKEN PREMIUM (BOTTLE)",
+    description: "Classic Dutch premium malt lager.",
+    price: 299.00,
+    category: "beers",
+    isVeg: true
+  },
+  {
+    id: "cb3",
+    name: "BUDWEISER MAGNUM (BOTTLE)",
+    description: "Strong super-premium lager beer.",
+    price: 279.00,
+    category: "beers",
+    isVeg: true
+  },
+  {
+    id: "cb4",
+    name: "KINGFISHER ULTRA (BOTTLE)",
+    description: "Smooth premium Indian lager.",
+    price: 249.00,
+    category: "beers",
+    isVeg: true
+  },
+
+  // 15. WHISKY, RUM & TEQUILA (4 ITEMS)
+  {
+    id: "wrt1",
+    name: "BLACK LABEL 12 YRS (60ML)",
+    description: "Iconic Johnnie Walker 12 Year aged Scotch whisky with smoky oak finish.",
+    price: 499.00,
+    category: "whisky-rum",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "wrt2",
+    name: "JAMESON IRISH WHISKEY (60ML)",
+    description: "Triple-distilled smooth Irish whiskey.",
+    price: 449.00,
+    category: "whisky-rum",
+    isVeg: true
+  },
+  {
+    id: "wrt3",
+    name: "BACARDI WHITE RUM (60ML)",
+    description: "Classic Cuban light white rum.",
+    price: 299.00,
+    category: "whisky-rum",
+    isVeg: true
+  },
+  {
+    id: "wrt4",
+    name: "DON JULIO BLANCO TEQUILA (SHOT)",
+    description: "Ultra-premium 100% blue agave Mexican tequila shot.",
+    price: 599.00,
+    category: "whisky-rum",
     isVeg: true,
     isChefSpecial: true
   }

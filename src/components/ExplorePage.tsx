@@ -21,6 +21,19 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [cartCount] = useState<number>(0);
 
+  const isBarCategory = (catId: string) => {
+    return ['signature-cocktails', 'wines', 'vodka-spirits', 'beers', 'whisky-rum'].includes(catId);
+  };
+
+  const getVisibleCategories = () => {
+    if (activeTab === 'cocktails') {
+      return MENU_CATEGORIES.filter(c => c.id !== 'all' && isBarCategory(c.id));
+    }
+    return MENU_CATEGORIES.filter(c => c.id !== 'all' && !isBarCategory(c.id));
+  };
+
+  const visibleCategories = getVisibleCategories();
+
   const scrollToCategory = (catId: string) => {
     setSelectedSubCategory(catId);
     if (catId !== 'all') {
@@ -80,7 +93,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                 activeTab === 'cocktails' ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
               }`}
             >
-              COCKTAILS
+              COCKTAILS & BAR
             </button>
             <button
               onClick={() => setActiveTab('reservations')}
@@ -106,7 +119,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search dishes..."
+                placeholder="Search menu or drinks..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9 pr-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs text-white placeholder-gray-400 focus:outline-none focus:border-white w-36 sm:w-44 transition-all"
@@ -135,7 +148,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         {/* --- VIEW 1: MENU & COCKTAILS VIEW --- */}
         {(activeTab === 'menu' || activeTab === 'cocktails') && (
           <div className="space-y-12">
-            {/* Sticky Category Quick-Jump Pill Slider (Clean Off-White Background) */}
+            {/* Sticky Category Quick-Jump Pill Slider */}
             <div className="sticky top-[60px] z-40 bg-white/95 backdrop-blur-md p-2.5 rounded-xl border border-[#E6DBC5] shadow-md flex items-center gap-2 overflow-x-auto scrollbar-none">
               <button className="p-1 rounded-full text-gray-400 hover:text-[#1F1919] shrink-0">
                 <ChevronLeft className="w-4 h-4" />
@@ -149,10 +162,10 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                     : 'bg-[#F5EBE0] text-[#4A3E3E] hover:bg-white'
                 }`}
               >
-                All Categories
+                {activeTab === 'cocktails' ? 'All Drinks' : 'All Categories'}
               </button>
 
-              {MENU_CATEGORIES.filter(c => c.id !== 'all').map((cat) => (
+              {visibleCategories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => scrollToCategory(cat.id)}
@@ -171,8 +184,8 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               </button>
             </div>
 
-            {/* CONTINUOUS ALL-CATEGORY SECTIONS DISPLAY */}
-            {MENU_CATEGORIES.filter(c => c.id !== 'all').map((category) => {
+            {/* CONTINUOUS SECTIONS DISPLAY FOR ACTIVE TAB */}
+            {visibleCategories.map((category) => {
               const categoryItems = MENU_ITEMS.filter(
                 item => item.category === category.id && searchFilter(item)
               );
