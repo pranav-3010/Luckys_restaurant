@@ -5,6 +5,7 @@ import { MENU_CATEGORIES, MENU_ITEMS } from '../data/restaurantData';
 import { ReservationSection } from './ReservationSection';
 import { ContactSection } from './ContactSection';
 import { LoginModal } from './LoginModal';
+import { CartModal, type CartItem } from './CartModal';
 import type { MenuItem } from '../types';
 
 interface ExplorePageProps {
@@ -21,8 +22,43 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
   const [activeTab, setActiveTab] = useState<'menu' | 'cocktails' | 'reservations' | 'locations'>(initialTab);
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [cartCount] = useState<number>(0);
   const [isLoginOpen, setIsLoginOpen] = useState<boolean>(false);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+
+  // Global Cart State
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  const handleAddToCart = (item: MenuItem) => {
+    setCartItems((prev) => {
+      const existing = prev.find(ci => ci.item.id === item.id);
+      if (existing) {
+        return prev.map(ci => ci.item.id === item.id ? { ...ci, quantity: ci.quantity + 1 } : ci);
+      }
+      return [...prev, { item, quantity: 1 }];
+    });
+    onSelectItem(item);
+    setIsCartOpen(true);
+  };
+
+  const handleUpdateQuantity = (itemId: string, delta: number) => {
+    setCartItems((prev) => {
+      return prev
+        .map(ci => {
+          if (ci.item.id === itemId) {
+            const newQty = ci.quantity + delta;
+            return newQty > 0 ? { ...ci, quantity: newQty } : null;
+          }
+          return ci;
+        })
+        .filter(Boolean) as CartItem[];
+    });
+  };
+
+  const handleClearCart = () => {
+    setCartItems([]);
+  };
+
+  const totalCartCount = cartItems.reduce((sum, ci) => sum + ci.quantity, 0);
 
   const isBarCategory = (catId: string) => {
     return ['signature-cocktails', 'wines', 'vodka-spirits', 'beers', 'whisky-rum'].includes(catId);
@@ -66,6 +102,15 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
       {/* Login Modal Popup */}
       <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+
+      {/* Cart Modal Drawer */}
+      <CartModal
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cartItems}
+        onUpdateQuantity={handleUpdateQuantity}
+        onClearCart={handleClearCart}
+      />
 
       {/* 1. TOP ROAST BLACK NAVBAR */}
       <header className="sticky top-0 z-50 bg-[#161312] text-white py-4 px-4 sm:px-8 shadow-xl border-b border-white/10">
@@ -127,7 +172,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             })}
           </nav>
 
-          {/* Right: Search Input Bar, Profile Icon (Triggers Login Modal) & Cart Pill Button */}
+          {/* Right: Search Input Bar, Profile Icon & Cart Pill Button */}
           <div className="flex items-center gap-3">
             <div className="relative hidden sm:block">
               <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -140,7 +185,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               />
             </div>
 
-            {/* PROFILE USER ICON - TRIGGERS LOGIN / SIGNUP MODAL */}
+            {/* PROFILE USER ICON */}
             <button
               onClick={() => setIsLoginOpen(true)}
               className="p-2 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-all cursor-pointer relative group"
@@ -149,11 +194,15 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               <User className="w-5 h-5 group-hover:text-[#7DCE9F] transition-colors" />
             </button>
 
-            <button className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-wider cursor-pointer transition-all">
+            {/* CART BUTTON - OPENS CART DRAWER */}
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-wider cursor-pointer transition-all hover:border-[#7DCE9F]"
+            >
               <ShoppingBag className="w-4 h-4" />
               <span>CART</span>
               <span className="w-4 h-4 rounded-full bg-[#7DCE9F] text-[#161312] text-[10px] flex items-center justify-center font-bold">
-                {cartCount}
+                {totalCartCount}
               </span>
             </button>
           </div>
@@ -273,7 +322,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
                         {/* ADD Button */}
                         <button
-                          onClick={() => onSelectItem(item)}
+                          onClick={() => handleAddToCart(item)}
                           className="w-full py-3 bg-white hover:bg-[#1A1615] hover:text-white border border-[#E6DBC5] text-[#C88A3B] hover:border-[#1A1615] font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-sm text-center"
                         >
                           ADD
