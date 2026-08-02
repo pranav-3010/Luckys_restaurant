@@ -5,7 +5,6 @@ import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
 import realTandooriImg from '../assets/real_tandoori_starter.jpg';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
 import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
-import officialLogoImg from '../assets/official_3d_backlit_logo.jpg';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -89,24 +88,15 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onReserveTable
         </button>
       </div>
 
-      {/* CENTER ILLUMINATED 3D BACKLIT LOGO & TYPOGRAPHY OVERLAY (IN MIDDLE OF FIRST PAGE) */}
+      {/* CENTER TYPOGRAPHY ONLY (TEXT-ONLY OVERLAY IN MIDDLE OF FIRST PAGE) */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 my-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
-          className="space-y-5 p-6 sm:p-10 rounded-3xl bg-black/65 backdrop-blur-md border border-white/20 shadow-[0_0_60px_rgba(0,0,0,0.8)] max-w-3xl flex flex-col items-center"
+          className="space-y-4 p-6 sm:p-10 rounded-3xl bg-black/65 backdrop-blur-md border border-white/20 shadow-[0_0_60px_rgba(0,0,0,0.8)] max-w-3xl flex flex-col items-center"
         >
-          {/* Official 3D Illuminated Backlit Sun Bridge Logo Badge */}
-          <div className="relative w-36 h-36 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-2 border-[#F6E27A]/60 shadow-[0_0_35px_rgba(246,226,122,0.4)] hover:scale-105 transition-transform duration-500">
-            <img
-              src={officialLogoImg}
-              alt="Official C/o Rajahmundry Kitchen and Bar 3D Backlit Logo"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Authentic Stylized Typography */}
+          {/* Authentic Stylized Typography (ONLY TEXT) */}
           <div className="space-y-1">
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-tight font-black">
               c/O Rajahmundry
