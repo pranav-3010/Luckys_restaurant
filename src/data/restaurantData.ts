@@ -1,9 +1,9 @@
 import type { MenuItem, Review } from '../types';
-import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
-import realTandooriImg from '../assets/real_tandoori_starter.jpg';
-import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
+import realBiryaniImg from '../assets/luckys_biryani_feast.jpg';
+import realTandooriImg from '../assets/luckys_starter_platter.jpg';
+import realFishImg from '../assets/luckys_angara_chicken_platter.jpg';
 import luckysMandiPlatterImg from '../assets/luckys_mandi_platter.jpg';
-import heroImg from '../assets/co_rajahmundry_hero.jpg';
+import heroImg from '../assets/luckys_exterior_facade.jpg';
 
 export interface LocationBranch {
   id: string;

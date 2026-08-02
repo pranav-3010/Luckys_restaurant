@@ -42,7 +42,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onOpenLocation
   }, [slides.length]);
 
   const scrollToNext = () => {
-    const el = document.getElementById('highlights');
+    const el = document.getElementById('features');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }

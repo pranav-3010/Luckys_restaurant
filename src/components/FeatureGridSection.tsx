@@ -20,7 +20,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
   };
 
   return (
-    <section className="py-12 bg-[#FAF3E0] border-b border-[#E6DBC5] select-none font-sans">
+    <section id="features" className="py-12 bg-[#FAF3E0] border-b border-[#E6DBC5] select-none font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 
         {/* Top Row: 2 Asymmetric Feature Cards */}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, ArrowRight } from 'lucide-react';
-import realInteriorImg from '../assets/real_reservation_interior.jpg';
+import realInteriorImg from '../assets/luckys_reservation_interior.jpg';
 
 interface StoryCalloutBannerSectionProps {
   onExploreClick?: () => void;
