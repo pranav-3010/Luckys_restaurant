@@ -5,7 +5,6 @@ import { TickerBanner } from './components/TickerBanner';
 import { FeatureGridSection } from './components/FeatureGridSection';
 import { BrandStorySplitSection } from './components/BrandStorySplitSection';
 import { StoryCalloutBannerSection } from './components/StoryCalloutBannerSection';
-import { CategoryHighlightsSection } from './components/CategoryHighlightsSection';
 import { MenuSection } from './components/MenuSection';
 import { AboutSection } from './components/AboutSection';
 import { GallerySection } from './components/GallerySection';
@@ -19,7 +18,7 @@ import type { MenuItem } from './types';
 
 export function App() {
   const [, setActiveSection] = useState('home');
-  const [selectedMenuCategory, setSelectedMenuCategory] = useState<string>('all');
+  const [selectedMenuCategory] = useState<string>('all');
   const [selectedOrderItem, setSelectedOrderItem] = useState<MenuItem | null>(null);
 
   const scrollToSection = (id: string) => {
@@ -46,12 +45,6 @@ export function App() {
           <BrandStorySplitSection />
 
           <StoryCalloutBannerSection />
-
-          <CategoryHighlightsSection
-            onSelectCategory={(category) => {
-              setSelectedMenuCategory(category);
-            }}
-          />
 
           <MenuSection
             initialCategory={selectedMenuCategory}

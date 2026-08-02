@@ -1,103 +1,54 @@
 import React from 'react';
-import { Heart, Phone, MapPin, Star, MessageCircle } from 'lucide-react';
-import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#FFFDF9] border-t border-[#D4AF37]/30 pt-16 pb-12 text-[#4A3E3E]">
+    <footer className="bg-[#FAF3E0] border-t border-[#E6DBC5] py-16 text-[#1F1919] select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-200">
-          {/* Brand */}
-          <div className="space-y-4 md:col-span-2">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#7B1E1E] p-0.5 shadow-md">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center font-cinzel text-sm font-bold text-[#7B1E1E]">
-                  C/O
-                </div>
-              </div>
-              <div>
-                <span className="text-2xl font-black tracking-tight text-[#7B1E1E] uppercase font-serif-heading block">
-                  C/o Rajahmundry
-                </span>
-                <span className="text-xs font-bold text-[#E67E22] tracking-wider uppercase block">
-                  {RESTAURANT_INFO.teluguName}
-                </span>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 items-start">
 
-            <p className="text-xs text-[#6E5C5C] max-w-md font-light leading-relaxed">
-              {RESTAURANT_INFO.tagline}. Authentic Andhra, Mutton Cooker Pulao, Aritaku Chepala Fry, Tandoori Starters & Handcrafted Cocktails on our 5th Floor Rooftop in Kompally.
+          {/* Column 1: Brand Wordmark */}
+          <div className="space-y-3">
+            <h3 className="text-2xl font-black font-sans tracking-tight text-[#1F1919] uppercase">
+              C/o Rajahmundry
+            </h3>
+            <p className="text-xs text-[#6E5C5C] font-light leading-relaxed font-sans max-w-xs">
+              Kitchen and Bar • 5th Floor, Santa Sriram Estates, Kompally, Hyderabad.
             </p>
-
-            <div className="flex items-center gap-2 pt-1 text-[11px] text-[#7B1E1E] font-semibold">
-              <MapPin className="w-4 h-4 text-[#E67E22]" />
-              <span>5th Floor, Santa Sriram Estates, Kompally, Hyderabad – 500067</span>
-            </div>
-
-            <div className="flex items-center gap-2 text-xs text-[#E67E22] font-bold">
-              <Star className="w-4 h-4 fill-current text-[#E67E22]" />
-              <span>4.5 Rating ({RESTAURANT_INFO.reviewCount} Diners on Google)</span>
-            </div>
           </div>
 
-          {/* Navigation Links */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#7B1E1E] mb-4">
-              Quick Navigation
-            </h4>
-            <ul className="space-y-2 text-xs text-[#4A3E3E]">
+          {/* Column 2: Main Links */}
+          <div className="space-y-3">
+            <ul className="space-y-2 text-sm font-normal text-[#3D3333] font-sans">
               <li><a href="#home" className="hover:text-[#E67E22] transition-colors">Home</a></li>
-              <li><a href="#menu" className="hover:text-[#E67E22] transition-colors">Digital Menu & Bar Card</a></li>
-              <li><a href="#about" className="hover:text-[#E67E22] transition-colors">About 5th Floor Rooftop</a></li>
-              <li><a href="#reviews" className="hover:text-[#E67E22] transition-colors">Google Reviews (4.5 ★)</a></li>
-              <li><a href="#reservation" className="hover:text-[#E67E22] transition-colors">Table Reservation</a></li>
-              <li><a href="#contact" className="hover:text-[#E67E22] transition-colors">Kompally Location</a></li>
+              <li><a href="#menu" className="hover:text-[#E67E22] transition-colors">Menu</a></li>
+              <li><a href="#events" className="hover:text-[#E67E22] transition-colors">Events & Bar</a></li>
+              <li><a href="#reservation" className="hover:text-[#E67E22] transition-colors">Reservation</a></li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#7B1E1E] mb-4">
-              Contact & Hours
-            </h4>
-            <div className="space-y-3 text-xs">
-              <a href={`tel:${RESTAURANT_INFO.phone}`} className="text-[#1F1919] font-bold hover:text-[#E67E22] flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#E67E22]" />
-                {RESTAURANT_INFO.phone}
-              </a>
-              <span className="block text-[#6E5C5C] text-[11px]">{RESTAURANT_INFO.hours}</span>
-
-              <a
-                href={`https://wa.me/${RESTAURANT_INFO.whatsapp}?text=Hi%20C/o%20Rajahmundry!%20I%20want%20to%20reserve%20a%20table.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600/10 border border-emerald-500/30 text-emerald-700 font-bold text-xs hover:bg-emerald-600/20 transition-colors mt-2"
-              >
-                <MessageCircle className="w-3.5 h-3.5" />
-                <span>WhatsApp Reservation</span>
-              </a>
-            </div>
+          {/* Column 3: Locations & Contact */}
+          <div className="space-y-3">
+            <ul className="space-y-2 text-sm font-normal text-[#3D3333] font-sans">
+              <li><a href="#contact" className="hover:text-[#E67E22] transition-colors">Contact</a></li>
+              <li><a href="#contact" className="hover:text-[#E67E22] transition-colors">Our Locations</a></li>
+              <li><a href="#reservation" className="hover:text-[#E67E22] transition-colors">Table Booking</a></li>
+            </ul>
           </div>
+
+          {/* Column 4: Legal & Policy */}
+          <div className="space-y-3">
+            <ul className="space-y-2 text-sm font-normal text-[#3D3333] font-sans">
+              <li><a href="#about" className="hover:text-[#E67E22] transition-colors">Terms & Conditions</a></li>
+              <li><a href="#about" className="hover:text-[#E67E22] transition-colors">Privacy Policy</a></li>
+              <li><a href="#about" className="hover:text-[#E67E22] transition-colors">Refunds & Delivery</a></li>
+            </ul>
+          </div>
+
         </div>
 
-        {/* SEO Strip */}
-        <div className="py-6 border-b border-gray-200 text-[10px] text-[#9E8E8E] text-center space-x-2">
-          <span>Best Restaurant in Kompally</span> • 
-          <span>Cooker Pulao Hyderabad</span> • 
-          <span>Rooftop Bar Kompally</span> • 
-          <span>Andhra Restaurant Kompally</span> • 
-          <span>Aritaku Fish Hyderabad</span> • 
-          <span>5th Floor Kitchen and Bar</span>
-        </div>
-
-        {/* Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <p>© {new Date().getFullYear()} {RESTAURANT_INFO.name}. All rights reserved.</p>
-          <div className="flex items-center gap-1 text-[#7B1E1E] font-medium">
-            <span>Website Designed & Managed with</span>
-            <Heart className="w-3.5 h-3.5 fill-current text-rose-500" />
-            <span>by <strong className="text-[#1F1919] font-bold">Aeronyx Tech (B.Pranav)</strong></span>
-          </div>
+        {/* Bottom Minimalist Copyright Line */}
+        <div className="mt-16 pt-8 border-t border-[#E6DBC5] text-center text-xs text-[#7A6B6B] font-sans">
+          <p>© {new Date().getFullYear()} C/o Rajahmundry Kitchen and Bar. All rights reserved.</p>
         </div>
       </div>
     </footer>
