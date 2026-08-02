@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
+import { TickerBanner } from './components/TickerBanner';
 import { CategoryHighlightsSection } from './components/CategoryHighlightsSection';
 import { MenuSection } from './components/MenuSection';
 import { AboutSection } from './components/AboutSection';
@@ -37,6 +38,8 @@ export function App() {
             onExploreMenu={() => scrollToSection('menu')}
             onReserveTable={() => scrollToSection('reservation')}
           />
+
+          <TickerBanner />
 
           <CategoryHighlightsSection
             onSelectCategory={(category) => {

@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   body {
@@ -33,15 +33,35 @@
   background: #7B1E1E;
 }
 
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Crisp Light Theme Design Tokens */
-.roast-card {
+.roast-card, .spice-card {
   background: #FFFFFF;
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 1.25rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.roast-card:hover {
+.roast-card:hover, .spice-card:hover {
   border-color: rgba(230, 126, 34, 0.6);
   box-shadow: 0 15px 35px rgba(212, 175, 55, 0.12);
 }
@@ -53,36 +73,32 @@
   border: 1px solid rgba(212, 175, 55, 0.35);
 }
 
-.gold-gradient-text {
+.gold-gradient-text, .gold-heading-text {
   background: linear-gradient(135deg, #7B1E1E 0%, #B8860B 50%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.amber-gradient-btn {
+.orange-btn-bg, .amber-gradient-btn {
   background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
   color: #FFFFFF;
   font-weight: 700;
 }
 
-.amber-gradient-btn:hover {
+.orange-btn-bg:hover, .amber-gradient-btn:hover {
   background: linear-gradient(135deg, #F39C12 0%, #E67E22 100%);
   box-shadow: 0 6px 20px rgba(230, 126, 34, 0.3);
 }
 
-.gold-border-btn {
+.gold-outline-btn, .gold-border-btn {
   border: 1.5px solid #D4AF37;
   color: #7B1E1E;
   background: rgba(212, 175, 55, 0.08);
   font-weight: 700;
 }
 
-.gold-border-btn:hover {
+.gold-outline-btn:hover, .gold-border-btn:hover {
   border-color: #7B1E1E;
   background: rgba(123, 30, 30, 0.1);
   color: #7B1E1E;
-}
-
-.ambient-glow {
-  box-shadow: 0 0 35px rgba(230, 126, 34, 0.2);
 }
