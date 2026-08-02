@@ -8,13 +8,13 @@ export const BrandStorySplitSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-          {/* Left Column (50% width on Desktop): Aritaku Fish Photo */}
+          {/* Left Column (Slightly Bigger 58% width on Desktop): Aritaku Fish Photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl lg:rounded-none overflow-hidden border border-[#E6DBC5] shadow-lg"
+            className="lg:col-span-7 relative aspect-[16/11] rounded-none overflow-hidden border border-[#E6DBC5] shadow-xl"
           >
             <img
               src={realFishImg}
@@ -23,21 +23,21 @@ export const BrandStorySplitSection: React.FC = () => {
             />
           </motion.div>
 
-          {/* Right Column (50% width on Desktop): Headline & Brand Story */}
+          {/* Right Column (42% width on Desktop): Headline & Brand Story */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 space-y-6 lg:pl-4"
+            className="lg:col-span-5 space-y-6 lg:pl-2"
           >
             {/* Eyebrow Tag */}
             <span className="text-[11px] font-bold uppercase tracking-widest text-[#E67E22] block">
               WHERE GODAVARI HERITAGE MEETS HYDERABAD NIGHTLIFE
             </span>
 
-            {/* Big Bold Headline (Matching ROAST typography) */}
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black font-serif-heading text-[#1F1919] tracking-tight leading-[1.1]">
+            {/* Big Bold Headline using Marquee Sans-Serif Font */}
+            <h2 className="text-3xl sm:text-5xl font-black uppercase font-sans text-[#1F1919] tracking-tighter leading-[1.05]">
               Experience Hyderabad's Premier Rajahmundry Kitchen & Rooftop Bar
             </h2>
 
