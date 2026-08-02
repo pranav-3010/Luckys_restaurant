@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, Users, Send, CheckCircle, MapPin, ChevronDown } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
+import reservationInteriorImg from '../assets/luckys_reservation_interior.jpg';
 
 export const ReservationSection: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -9,7 +10,7 @@ export const ReservationSection: React.FC = () => {
     guests: '2 Guests',
     date: '',
     time: '8:30 PM',
-    seating: '5th Floor Rooftop Open Air Lounge',
+    seating: 'Indoor AC Family Dining Area',
     requests: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -34,21 +35,43 @@ Please confirm my table reservation!`;
     window.open(whatsappUrl, '_blank');
 
     setSubmitted(true);
-    setFormState({ name: '', phone: '', guests: '2 Guests', date: '', time: '8:30 PM', seating: 'Family Dining Area', requests: '' });
+    setFormState({ name: '', phone: '', guests: '2 Guests', date: '', time: '8:30 PM', seating: 'Indoor AC Family Dining Area', requests: '' });
   };
 
   return (
     <section id="reservation" className="py-12 sm:py-16 relative bg-[#F5EBE0] select-none font-sans">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Section Header (General Sans 800) */}
-        <div className="text-center mb-8 space-y-1">
+        <div className="text-center space-y-1">
           <span className="eyebrow-text block text-xs sm:text-sm">
             FAMILY DINING & AC LOUNGE
           </span>
           <h2 className="text-3xl sm:text-5xl font-black font-sans uppercase text-[#1F1919] tracking-tight">
             TABLE RESERVATION
           </h2>
+        </div>
+
+        {/* Interior Dining Showcase Image */}
+        <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full border border-[#E6DBC5] shadow-2xl overflow-hidden group">
+          <img
+            src={reservationInteriorImg}
+            alt="Lucky's Restaurant Suchitra AC Family Dining Area"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4 sm:p-8">
+            <div className="text-white space-y-1">
+              <span className="px-3 py-1 bg-[#58111A] text-[#F6E27A] text-[10px] font-bold uppercase tracking-widest inline-block mb-1">
+                AC FAMILY DINING & MANDI HALL
+              </span>
+              <h3 className="text-xl sm:text-3xl font-black uppercase font-sans">
+                Book Your Table at Suchitra Branch
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-200 font-light hidden xs:block">
+                Opposite to HDFC Bank, Suchitra Road • Spacious AC Booth Seating
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Reservation Card (Rock-Solid Clean Dropdowns) */}
