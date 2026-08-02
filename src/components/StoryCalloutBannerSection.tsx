@@ -3,11 +3,17 @@ import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 import realInteriorImg from '../assets/real_interior_visit_us.jpg';
 
-export const StoryCalloutBannerSection: React.FC = () => {
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+interface StoryCalloutBannerSectionProps {
+  onNavigateToExplore?: (sectionId?: string) => void;
+}
+
+export const StoryCalloutBannerSection: React.FC<StoryCalloutBannerSectionProps> = ({ onNavigateToExplore }) => {
+  const handleClick = (sectionId: string) => {
+    if (onNavigateToExplore) {
+      onNavigateToExplore(sectionId);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -57,16 +63,16 @@ export const StoryCalloutBannerSection: React.FC = () => {
         >
           {/* Button 1: Golden Amber Pill (VISIT US) */}
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={() => handleClick('contact')}
             className="w-full sm:w-auto px-10 py-4.5 rounded-full bg-[#C88A3B] hover:bg-[#B37930] text-white font-bold text-xs uppercase tracking-widest transition-all shadow-2xl flex items-center justify-center gap-2.5 cursor-pointer hover:scale-105"
           >
             <span>VISIT US</span>
             <MapPin className="w-4 h-4" />
           </button>
 
-          {/* Button 2: White Pill (ORDER ONLINE) */}
+          {/* Button 2: White Pill (ORDER ONLINE - Loads Dedicated Explore Page) */}
           <button
-            onClick={() => scrollToSection('menu')}
+            onClick={() => handleClick('menu')}
             className="w-full sm:w-auto px-10 py-4.5 rounded-full bg-white hover:bg-[#FAF6F0] text-[#1F1919] font-bold text-xs uppercase tracking-widest transition-all shadow-2xl flex items-center justify-center gap-2.5 cursor-pointer hover:scale-105"
           >
             <span>ORDER ONLINE</span>

@@ -3,11 +3,17 @@ import { motion } from 'framer-motion';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
 import real3dWallLogo from '../assets/real_3d_wall_logo.jpg';
 
-export const BrandStorySplitSection: React.FC = () => {
+interface BrandStorySplitSectionProps {
+  onNavigateToExplore?: (sectionId?: string) => void;
+}
+
+export const BrandStorySplitSection: React.FC<BrandStorySplitSectionProps> = ({ onNavigateToExplore }) => {
   const scrollToMenu = () => {
-    const el = document.getElementById('menu');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (onNavigateToExplore) {
+      onNavigateToExplore('menu');
+    } else {
+      const el = document.getElementById('menu');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -16,7 +22,7 @@ export const BrandStorySplitSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* Left Column (58% width on Desktop): 3D Wall Logo Image ABOVE Aritaku Fish Photo (Clean, No Text Overlays) */}
+          {/* Left Column (58% width on Desktop): 3D Wall Logo Image ABOVE Aritaku Fish Photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

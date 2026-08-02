@@ -5,11 +5,17 @@ import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
 import heroImg from '../assets/co_rajahmundry_hero.jpg';
 import realInteriorVisitUsImg from '../assets/real_interior_visit_us.jpg';
 
-export const FeatureGridSection: React.FC = () => {
+interface FeatureGridSectionProps {
+  onNavigateToExplore?: (sectionId?: string) => void;
+}
+
+export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNavigateToExplore }) => {
   const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (onNavigateToExplore) {
+      onNavigateToExplore(id);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
