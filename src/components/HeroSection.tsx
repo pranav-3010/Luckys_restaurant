@@ -5,6 +5,7 @@ import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
 import realTandooriImg from '../assets/real_tandoori_starter.jpg';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
 import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
+import officialLogoImg from '../assets/official_3d_backlit_logo.jpg';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -73,13 +74,12 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onReserveTable
         </AnimatePresence>
 
         {/* Minimal gradient text backdrop strips */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
       </div>
 
       {/* Top Bar: Language Toggle Switcher */}
       <div className="relative z-10 pt-8 sm:pt-10 px-6 flex items-center justify-end max-w-7xl mx-auto w-full">
-        {/* Language Switch Button on Hero Screen */}
         <button
           onClick={toggleLanguage}
           className="px-4 py-1.5 rounded-full bg-black/75 border border-[#D4AF37]/60 text-xs font-bold text-[#F6E27A] backdrop-blur-md hover:bg-[#D4AF37] hover:text-black transition-all flex items-center gap-1.5 shadow-2xl"
@@ -89,31 +89,48 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onReserveTable
         </button>
       </div>
 
-      {/* Center Sized Block Typography (Clean Minimal Overlay) */}
+      {/* CENTER ILLUMINATED 3D BACKLIT LOGO & TYPOGRAPHY OVERLAY (IN MIDDLE OF FIRST PAGE) */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 my-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
-          className="space-y-3 p-6 sm:p-8 rounded-3xl bg-black/55 backdrop-blur-md border border-white/20 shadow-2xl max-w-2xl"
+          className="space-y-5 p-6 sm:p-10 rounded-3xl bg-black/65 backdrop-blur-md border border-white/20 shadow-[0_0_60px_rgba(0,0,0,0.8)] max-w-3xl flex flex-col items-center"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight uppercase font-serif-heading text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-tight">
-            C/O RAJAHMUNDRY
-          </h1>
-          <p className="text-xs sm:text-base font-bold uppercase tracking-widest text-[#F6E27A] drop-shadow-md">
+          {/* Official 3D Illuminated Backlit Sun Bridge Logo Badge */}
+          <div className="relative w-36 h-36 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-2 border-[#F6E27A]/60 shadow-[0_0_35px_rgba(246,226,122,0.4)] hover:scale-105 transition-transform duration-500">
+            <img
+              src={officialLogoImg}
+              alt="Official C/o Rajahmundry Kitchen and Bar 3D Backlit Logo"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Authentic Stylized Typography */}
+          <div className="space-y-1">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-tight font-black">
+              c/O Rajahmundry
+            </h1>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-[#F6E27A] drop-shadow-md pt-1">
+              k i t c h e n &nbsp; a n d &nbsp; b a r
+            </p>
+          </div>
+
+          <p className="text-xs sm:text-base font-light text-[#E6DAD0] max-w-xl leading-relaxed">
             {language === 'EN' ? RESTAURANT_INFO.taglineEN : RESTAURANT_INFO.taglineTE}
           </p>
 
-          <div className="flex items-center justify-center gap-4 pt-3">
+          {/* Action Pill Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full sm:w-auto">
             <button
               onClick={onExploreMenu}
-              className="px-6 py-2.5 rounded-full orange-btn-bg text-white font-bold text-xs uppercase tracking-wider shadow-xl hover:scale-105 transition-transform"
+              className="w-full sm:w-auto px-8 py-3 rounded-full orange-btn-bg text-white font-bold text-xs uppercase tracking-widest shadow-xl hover:scale-105 transition-transform"
             >
               View Menu & Drinks
             </button>
             <button
               onClick={onReserveTable}
-              className="px-6 py-2.5 rounded-full border border-[#D4AF37] bg-white/10 text-white font-bold text-xs uppercase tracking-wider backdrop-blur-md hover:bg-white/20 transition-all"
+              className="w-full sm:w-auto px-8 py-3 rounded-full border border-[#D4AF37] bg-white/10 text-white font-bold text-xs uppercase tracking-widest backdrop-blur-md hover:bg-white/20 transition-all"
             >
               Book 5th Floor Table
             </button>
