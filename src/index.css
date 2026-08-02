@@ -33,7 +33,7 @@
   background: #7B1E1E;
 }
 
-/* Infinite Marquee Animation */
+/* Infinite Marquee Animation (Slower, Smooth 45s Glide) */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -46,7 +46,7 @@
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 25s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 .animate-marquee:hover {
