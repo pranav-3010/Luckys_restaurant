@@ -6,10 +6,8 @@ export const TickerBanner: React.FC = () => {
     'CULTURE',
     'DRINKS',
     'COMMUNITY',
-    'WORKSHOPS',
     'GODAVARI RUCHULU',
     'ROOFTOP BAR',
-    'COOKER PULAO',
   ];
 
   // Repeat items for seamless infinite marquee loop
