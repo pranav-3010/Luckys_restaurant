@@ -4,74 +4,74 @@ import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#080706] border-t border-[#C8963E]/30 pt-16 pb-12 text-[#D4C5B9]">
+    <footer className="bg-[#FFFDF9] border-t border-[#D4AF37]/30 pt-16 pb-12 text-[#4A3E3E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-200">
           {/* Brand */}
           <div className="space-y-4 md:col-span-2">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8C6219] p-0.5 shadow-xl">
-                <div className="w-full h-full rounded-full bg-[#0D0B0A] flex items-center justify-center font-cinzel text-sm font-bold text-[#F6E27A]">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#7B1E1E] p-0.5 shadow-md">
+                <div className="w-full h-full rounded-full bg-white flex items-center justify-center font-cinzel text-sm font-bold text-[#7B1E1E]">
                   C/O
                 </div>
               </div>
               <div>
-                <span className="text-2xl font-black tracking-tight text-[#F6E27A] uppercase font-serif-heading block">
+                <span className="text-2xl font-black tracking-tight text-[#7B1E1E] uppercase font-serif-heading block">
                   C/o Rajahmundry
                 </span>
-                <span className="text-xs font-bold text-[#C8963E] tracking-wider uppercase block">
+                <span className="text-xs font-bold text-[#E67E22] tracking-wider uppercase block">
                   {RESTAURANT_INFO.teluguName}
                 </span>
               </div>
             </div>
 
-            <p className="text-xs text-[#A8988B] max-w-md font-light leading-relaxed">
+            <p className="text-xs text-[#6E5C5C] max-w-md font-light leading-relaxed">
               {RESTAURANT_INFO.tagline}. Authentic Andhra, Mutton Cooker Pulao, Aritaku Chepala Fry, Tandoori Starters & Handcrafted Cocktails on our 5th Floor Rooftop in Kompally.
             </p>
 
-            <div className="flex items-center gap-2 pt-1 text-[11px] text-[#F6E27A] font-semibold">
-              <MapPin className="w-4 h-4 text-[#C8963E]" />
+            <div className="flex items-center gap-2 pt-1 text-[11px] text-[#7B1E1E] font-semibold">
+              <MapPin className="w-4 h-4 text-[#E67E22]" />
               <span>5th Floor, Santa Sriram Estates, Kompally, Hyderabad – 500067</span>
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-amber-400 font-bold">
-              <Star className="w-4 h-4 fill-current text-amber-400" />
+            <div className="flex items-center gap-2 text-xs text-[#E67E22] font-bold">
+              <Star className="w-4 h-4 fill-current text-[#E67E22]" />
               <span>4.5 Rating ({RESTAURANT_INFO.reviewCount} Diners on Google)</span>
             </div>
           </div>
 
           {/* Navigation Links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#F6E27A] mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#7B1E1E] mb-4">
               Quick Navigation
             </h4>
-            <ul className="space-y-2 text-xs text-[#D4C5B9]">
-              <li><a href="#home" className="hover:text-[#F6E27A] transition-colors">Home</a></li>
-              <li><a href="#menu" className="hover:text-[#F6E27A] transition-colors">Digital Menu & Bar Card</a></li>
-              <li><a href="#about" className="hover:text-[#F6E27A] transition-colors">About 5th Floor Rooftop</a></li>
-              <li><a href="#reviews" className="hover:text-[#F6E27A] transition-colors">Google Reviews (4.5 ★)</a></li>
-              <li><a href="#reservation" className="hover:text-[#F6E27A] transition-colors">Table Reservation</a></li>
-              <li><a href="#contact" className="hover:text-[#F6E27A] transition-colors">Kompally Location</a></li>
+            <ul className="space-y-2 text-xs text-[#4A3E3E]">
+              <li><a href="#home" className="hover:text-[#E67E22] transition-colors">Home</a></li>
+              <li><a href="#menu" className="hover:text-[#E67E22] transition-colors">Digital Menu & Bar Card</a></li>
+              <li><a href="#about" className="hover:text-[#E67E22] transition-colors">About 5th Floor Rooftop</a></li>
+              <li><a href="#reviews" className="hover:text-[#E67E22] transition-colors">Google Reviews (4.5 ★)</a></li>
+              <li><a href="#reservation" className="hover:text-[#E67E22] transition-colors">Table Reservation</a></li>
+              <li><a href="#contact" className="hover:text-[#E67E22] transition-colors">Kompally Location</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#F6E27A] mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#7B1E1E] mb-4">
               Contact & Hours
             </h4>
             <div className="space-y-3 text-xs">
-              <a href={`tel:${RESTAURANT_INFO.phone}`} className="text-white font-bold hover:text-[#F6E27A] flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#C8963E]" />
+              <a href={`tel:${RESTAURANT_INFO.phone}`} className="text-[#1F1919] font-bold hover:text-[#E67E22] flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#E67E22]" />
                 {RESTAURANT_INFO.phone}
               </a>
-              <span className="block text-[#A8988B] text-[11px]">{RESTAURANT_INFO.hours}</span>
+              <span className="block text-[#6E5C5C] text-[11px]">{RESTAURANT_INFO.hours}</span>
 
               <a
                 href={`https://wa.me/${RESTAURANT_INFO.whatsapp}?text=Hi%20C/o%20Rajahmundry!%20I%20want%20to%20reserve%20a%20table.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 font-bold text-xs hover:bg-emerald-600/30 transition-colors mt-2"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600/10 border border-emerald-500/30 text-emerald-700 font-bold text-xs hover:bg-emerald-600/20 transition-colors mt-2"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 <span>WhatsApp Reservation</span>
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* SEO Strip */}
-        <div className="py-6 border-b border-white/10 text-[10px] text-[#A8988B] text-center space-x-2">
+        <div className="py-6 border-b border-gray-200 text-[10px] text-[#9E8E8E] text-center space-x-2">
           <span>Best Restaurant in Kompally</span> • 
           <span>Cooker Pulao Hyderabad</span> • 
           <span>Rooftop Bar Kompally</span> • 
@@ -93,10 +93,10 @@ export const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>© {new Date().getFullYear()} {RESTAURANT_INFO.name}. All rights reserved.</p>
-          <div className="flex items-center gap-1 text-[#F6E27A] font-medium">
+          <div className="flex items-center gap-1 text-[#7B1E1E] font-medium">
             <span>Website Designed & Managed with</span>
             <Heart className="w-3.5 h-3.5 fill-current text-rose-500" />
-            <span>by <strong className="text-white font-bold">Aeronyx Tech (B.Pranav)</strong></span>
+            <span>by <strong className="text-[#1F1919] font-bold">Aeronyx Tech (B.Pranav)</strong></span>
           </div>
         </div>
       </div>

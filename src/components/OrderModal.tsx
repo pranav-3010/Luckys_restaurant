@@ -47,49 +47,49 @@ Please confirm my order!`;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative max-w-lg w-full roast-card p-6 sm:p-8 rounded-3xl border border-[#C8963E]/40 bg-[#161311] shadow-2xl max-h-[90vh] overflow-y-auto"
+          className="relative max-w-lg w-full bg-white p-6 sm:p-8 rounded-3xl border border-[#D4AF37] shadow-2xl max-h-[90vh] overflow-y-auto"
         >
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full text-[#A8988B] hover:text-white hover:bg-white/10 transition-colors"
+            className="absolute top-5 right-5 p-2 rounded-full text-[#6E5C5C] hover:text-[#1F1919] hover:bg-gray-100 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
 
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-2xl bg-[#C8963E]/20 border border-[#C8963E]/40 flex items-center justify-center text-[#F6E27A]">
+            <div className="w-10 h-10 rounded-2xl bg-[#E67E22]/15 border border-[#E67E22]/30 flex items-center justify-center text-[#E67E22]">
               <ShoppingBag className="w-5 h-5" />
             </div>
             <div>
-              <span className="block text-[10px] font-bold uppercase tracking-widest text-[#C8963E]">Quick Order Checkout</span>
-              <h3 className="text-lg font-bold font-serif-heading text-[#F6E27A]">{item.name}</h3>
+              <span className="block text-[10px] font-bold uppercase tracking-widest text-[#E67E22]">Quick Order Checkout</span>
+              <h3 className="text-lg font-bold font-serif-heading text-[#7B1E1E]">{item.name}</h3>
             </div>
           </div>
 
-          <div className="bg-[#0D0B0A] p-4 rounded-2xl border border-[#C8963E]/20 flex items-center justify-between mb-6">
+          <div className="bg-[#FAF6F0] p-4 rounded-2xl border border-gray-200 flex items-center justify-between mb-6">
             <div>
-              <span className="block text-xs text-[#A8988B]">Price per item</span>
-              <span className="text-base font-black text-white font-serif-heading">₹{item.price}</span>
+              <span className="block text-xs text-[#6E5C5C]">Price per item</span>
+              <span className="text-base font-black text-[#7B1E1E] font-serif-heading">₹{item.price}</span>
             </div>
 
-            <div className="flex items-center gap-3 bg-[#161311] border border-[#C8963E]/30 px-3 py-1.5 rounded-xl">
+            <div className="flex items-center gap-3 bg-white border border-gray-200 px-3 py-1.5 rounded-xl">
               <button
                 type="button"
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="text-lg font-bold text-[#F6E27A] px-2 hover:scale-110"
+                className="text-lg font-bold text-[#E67E22] px-2 hover:scale-110"
               >
                 -
               </button>
-              <span className="text-sm font-bold text-white w-4 text-center">{quantity}</span>
+              <span className="text-sm font-bold text-[#1F1919] w-4 text-center">{quantity}</span>
               <button
                 type="button"
                 onClick={() => setQuantity(quantity + 1)}
-                className="text-lg font-bold text-[#F6E27A] px-2 hover:scale-110"
+                className="text-lg font-bold text-[#E67E22] px-2 hover:scale-110"
               >
                 +
               </button>
@@ -98,15 +98,15 @@ Please confirm my order!`;
 
           <form onSubmit={handleSendToWhatsApp} className="space-y-4">
             <div>
-              <label className="block text-[11px] uppercase tracking-wider text-[#C8963E] font-bold mb-2">Order Type</label>
+              <label className="block text-[11px] uppercase tracking-wider text-[#7B1E1E] font-bold mb-2">Order Type</label>
               <div className="grid grid-cols-2 gap-3">
                 <button
                   type="button"
                   onClick={() => setOrderType('delivery')}
                   className={`flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all border ${
                     orderType === 'delivery'
-                      ? 'amber-gradient-btn border-transparent shadow-lg'
-                      : 'bg-[#0D0B0A] text-[#D4C5B9] border-[#C8963E]/30 hover:border-[#F6E27A]'
+                      ? 'orange-btn-bg text-white border-transparent shadow-lg'
+                      : 'bg-[#FAF6F0] text-[#4A3E3E] border-gray-200 hover:border-[#E67E22]'
                   }`}
                 >
                   <Truck className="w-4 h-4" /> Delivery
@@ -117,8 +117,8 @@ Please confirm my order!`;
                   onClick={() => setOrderType('takeaway')}
                   className={`flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all border ${
                     orderType === 'takeaway'
-                      ? 'amber-gradient-btn border-transparent shadow-lg'
-                      : 'bg-[#0D0B0A] text-[#D4C5B9] border-[#C8963E]/30 hover:border-[#F6E27A]'
+                      ? 'orange-btn-bg text-white border-transparent shadow-lg'
+                      : 'bg-[#FAF6F0] text-[#4A3E3E] border-gray-200 hover:border-[#E67E22]'
                   }`}
                 >
                   <Store className="w-4 h-4" /> Pick-up
@@ -128,31 +128,31 @@ Please confirm my order!`;
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#C8963E] font-bold mb-1">Your Name *</label>
+                <label className="block text-[11px] uppercase tracking-wider text-[#7B1E1E] font-bold mb-1">Your Name *</label>
                 <div className="relative">
-                  <User className="w-4 h-4 text-[#7C7167] absolute left-3 top-1/2 -translate-y-1/2" />
+                  <User className="w-4 h-4 text-[#9E8E8E] absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
                     required
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
                     placeholder="e.g. Kalyan Ram"
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#0D0B0A] border border-[#C8963E]/30 text-xs text-white placeholder-[#7C7167] focus:border-[#F6E27A] focus:outline-none"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#FAF6F0] border border-gray-200 text-xs text-[#1F1919] placeholder-[#9E8E8E] focus:border-[#E67E22] focus:outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#C8963E] font-bold mb-1">Phone Number *</label>
+                <label className="block text-[11px] uppercase tracking-wider text-[#7B1E1E] font-bold mb-1">Phone Number *</label>
                 <div className="relative">
-                  <Phone className="w-4 h-4 text-[#7C7167] absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Phone className="w-4 h-4 text-[#9E8E8E] absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="tel"
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+91 82228 66693"
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#0D0B0A] border border-[#C8963E]/30 text-xs text-white placeholder-[#7C7167] focus:border-[#F6E27A] focus:outline-none"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#FAF6F0] border border-gray-200 text-xs text-[#1F1919] placeholder-[#9E8E8E] focus:border-[#E67E22] focus:outline-none"
                   />
                 </div>
               </div>
@@ -160,36 +160,36 @@ Please confirm my order!`;
 
             {orderType === 'delivery' && (
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#C8963E] font-bold mb-1">Delivery Address *</label>
+                <label className="block text-[11px] uppercase tracking-wider text-[#7B1E1E] font-bold mb-1">Delivery Address *</label>
                 <div className="relative">
-                  <MapPin className="w-4 h-4 text-[#7C7167] absolute left-3 top-3" />
+                  <MapPin className="w-4 h-4 text-[#9E8E8E] absolute left-3 top-3" />
                   <textarea
                     required
                     rows={2}
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     placeholder="Flat No, Street / Colony in Kompally / Nearby Area"
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#0D0B0A] border border-[#C8963E]/30 text-xs text-white placeholder-[#7C7167] focus:border-[#F6E27A] focus:outline-none resize-none"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#FAF6F0] border border-gray-200 text-xs text-[#1F1919] placeholder-[#9E8E8E] focus:border-[#E67E22] focus:outline-none resize-none"
                   />
                 </div>
               </div>
             )}
 
             <div>
-              <label className="block text-[11px] uppercase tracking-wider text-[#C8963E] font-bold mb-1">Special Notes</label>
+              <label className="block text-[11px] uppercase tracking-wider text-[#7B1E1E] font-bold mb-1">Special Notes</label>
               <input
                 type="text"
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 placeholder="Spice level preference, extra raita, etc..."
-                className="w-full px-3 py-2 rounded-xl bg-[#0D0B0A] border border-[#C8963E]/30 text-xs text-white placeholder-[#7C7167] focus:border-[#F6E27A] focus:outline-none"
+                className="w-full px-3 py-2 rounded-xl bg-[#FAF6F0] border border-gray-200 text-xs text-[#1F1919] placeholder-[#9E8E8E] focus:border-[#E67E22] focus:outline-none"
               />
             </div>
 
-            <div className="pt-4 border-t border-white/10 space-y-3">
+            <div className="pt-4 border-t border-gray-100 space-y-3">
               <div className="flex items-center justify-between text-xs">
-                <span className="text-[#A8988B]">Total Bill Amount:</span>
-                <span className="text-xl font-black text-[#F6E27A] font-serif-heading">₹{totalPrice}</span>
+                <span className="text-[#6E5C5C]">Total Bill Amount:</span>
+                <span className="text-xl font-black text-[#7B1E1E] font-serif-heading">₹{totalPrice}</span>
               </div>
 
               <button

@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { CategoryHighlightsSection } from './components/CategoryHighlightsSection';
 import { MenuSection } from './components/MenuSection';
 import { AboutSection } from './components/AboutSection';
 import { GallerySection } from './components/GallerySection';
+import { EventsSection } from './components/EventsSection';
 import { ReviewsSection } from './components/ReviewsSection';
 import { ReservationSection } from './components/ReservationSection';
 import { ContactSection } from './components/ContactSection';
@@ -26,44 +28,50 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0908] text-[#F3ECE6]">
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+    <LanguageProvider>
+      <div className="min-h-screen bg-[#FAF6F0] text-[#1F1919]">
+        <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
 
-      <main>
-        <HeroSection
-          onExploreMenu={() => scrollToSection('menu')}
-          onReserveTable={() => scrollToSection('reservation')}
+        <main>
+          <HeroSection
+            onExploreMenu={() => scrollToSection('menu')}
+            onReserveTable={() => scrollToSection('reservation')}
+          />
+
+          <CategoryHighlightsSection
+            onSelectCategory={(category) => {
+              setSelectedMenuCategory(category);
+            }}
+          />
+
+          <MenuSection
+            initialCategory={selectedMenuCategory}
+            onSelectItem={(item) => setSelectedOrderItem(item)}
+          />
+
+          <AboutSection />
+
+          <GallerySection />
+
+          <EventsSection
+            onReserveTable={() => scrollToSection('reservation')}
+          />
+
+          <ReviewsSection />
+
+          <ReservationSection />
+
+          <ContactSection />
+        </main>
+
+        <OrderModal
+          item={selectedOrderItem}
+          onClose={() => setSelectedOrderItem(null)}
         />
 
-        <CategoryHighlightsSection
-          onSelectCategory={(category) => {
-            setSelectedMenuCategory(category);
-          }}
-        />
-
-        <MenuSection
-          initialCategory={selectedMenuCategory}
-          onSelectItem={(item) => setSelectedOrderItem(item)}
-        />
-
-        <AboutSection />
-
-        <GallerySection />
-
-        <ReviewsSection />
-
-        <ReservationSection />
-
-        <ContactSection />
-      </main>
-
-      <OrderModal
-        item={selectedOrderItem}
-        onClose={() => setSelectedOrderItem(null)}
-      />
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

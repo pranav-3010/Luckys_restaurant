@@ -42,17 +42,17 @@ export const CategoryHighlightsSection: React.FC<CategoryHighlightsProps> = ({ o
   ];
 
   return (
-    <section id="highlights" className="py-24 relative bg-[#0B0908] border-y border-[#C8963E]/20">
+    <section id="highlights" className="py-24 relative bg-[#FAF6F0] border-y border-[#D4AF37]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-[11px] font-bold uppercase tracking-widest text-[#C8963E] block mb-1">
+          <span className="text-[11px] font-bold uppercase tracking-widest text-[#E67E22] block mb-1">
             Our Culinary Highlights
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black uppercase font-serif-heading gold-gradient-text tracking-wide">
+          <h2 className="text-3xl sm:text-5xl font-black uppercase font-serif-heading gold-heading-text tracking-wide">
             Signature Experiences
           </h2>
-          <div className="w-16 h-1 bg-[#C8963E] mx-auto mt-3 rounded-full" />
+          <div className="w-16 h-1 bg-[#E67E22] mx-auto mt-3 rounded-full" />
         </div>
 
         {/* 4 Photo Cards Grid */}
@@ -69,27 +69,27 @@ export const CategoryHighlightsSection: React.FC<CategoryHighlightsProps> = ({ o
                 const el = document.getElementById('menu');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="roast-card group relative rounded-3xl overflow-hidden cursor-pointer border border-[#C8963E]/30 aspect-[3/4] bg-[#14110E] flex flex-col justify-end"
+              className="roast-card group relative rounded-3xl overflow-hidden cursor-pointer border border-gray-200 aspect-[3/4] bg-white flex flex-col justify-end shadow-md hover:shadow-xl transition-all"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-85"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1F1919]/90 via-[#1F1919]/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="relative z-10 p-6 space-y-2">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#F6E27A] block">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#E67E22] block">
                   {item.subtitle}
                 </span>
-                <h3 className="text-xl font-black font-serif-heading text-white group-hover:text-[#F6E27A] transition-colors leading-tight">
+                <h3 className="text-xl font-black font-serif-heading text-white group-hover:text-[#E67E22] transition-colors leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-xs text-[#D4C5B9] font-light leading-relaxed">
+                <p className="text-xs text-[#E6DAD0] font-light leading-relaxed">
                   {item.desc}
                 </p>
 
-                <div className="pt-2 text-[11px] font-bold uppercase text-[#F6E27A] tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <div className="pt-2 text-[11px] font-bold uppercase text-[#E67E22] tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                   <span>Explore Dish &rarr;</span>
                 </div>
               </div>
