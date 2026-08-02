@@ -278,7 +278,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                 onClick={() => scrollToCategory('all')}
                 className={`px-4 py-2 sm:px-5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                   selectedSubCategory === 'all'
-                    ? 'bg-[#1A1615] text-white shadow-md'
+                    ? 'bg-[#58111A] text-white shadow-md'
                     : 'bg-[#F5EBE0] text-[#4A3E3E] hover:bg-white'
                 }`}
               >
@@ -291,7 +291,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                   onClick={() => scrollToCategory(cat.id)}
                   className={`px-4 py-2 sm:px-5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                     selectedSubCategory === cat.id
-                      ? 'bg-[#1A1615] text-white shadow-md'
+                      ? 'bg-[#58111A] text-white shadow-md'
                       : 'bg-[#F5EBE0] text-[#4A3E3E] hover:bg-white'
                   }`}
                 >
@@ -350,12 +350,12 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
                           {quantityInCart === 0 ? (
                             <button
                               onClick={() => handleAddToCart(item)}
-                              className="w-full py-2.5 sm:py-3 bg-white hover:bg-[#1A1615] hover:text-white border border-[#E6DBC5] text-[#C88A3B] hover:border-[#1A1615] font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-sm text-center active:scale-98"
+                              className="w-full py-2.5 sm:py-3 bg-white hover:bg-[#58111A] hover:text-white border border-[#E6DBC5] text-[#C88A3B] hover:border-[#58111A] font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-sm text-center active:scale-98"
                             >
                               ADD
                             </button>
                           ) : (
-                            <div className="w-full py-2 bg-[#1A1615] text-[#7DCE9F] border border-[#1A1615] font-bold text-xs uppercase tracking-widest flex items-center justify-between px-3 shadow-sm">
+                            <div className="w-full py-2 bg-[#58111A] text-[#7DCE9F] border border-[#58111A] font-bold text-xs uppercase tracking-widest flex items-center justify-between px-3 shadow-sm">
                               <button
                                 onClick={() => handleUpdateQuantity(item.id, -1)}
                                 className="hover:text-white transition-colors cursor-pointer text-base font-black px-2 py-0.5"
