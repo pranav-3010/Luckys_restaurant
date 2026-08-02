@@ -14,11 +14,11 @@ export const FeatureGridSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-[#FAF3E0] border-b border-[#E6DBC5] select-none">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <section className="py-12 bg-[#FAF3E0] border-b border-[#E6DBC5] select-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 
         {/* Top Row: 2 Asymmetric Feature Cards (Crisp Sharp Corners, Matching ROAST Layout) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {/* Card 1: Menu (58% width, tall ratio) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,21 +26,21 @@ export const FeatureGridSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             onClick={() => scrollToSection('menu')}
-            className="md:col-span-7 group relative rounded-none overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-[16/11] bg-black border border-[#E6DBC5] shadow-lg hover:shadow-2xl transition-all"
+            className="md:col-span-7 group relative rounded-none overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-[16/11] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
               src={realBiryaniImg}
               alt="C/o Rajahmundry Menu"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-8 sm:p-12">
-              <h3 className="text-4xl sm:text-6xl md:text-7xl roast-display-heading text-white mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-10">
+              <h3 className="text-3xl sm:text-5xl font-black font-sans text-white tracking-tight leading-none mb-2">
                 Menu
               </h3>
-              <p className="text-xs sm:text-base text-[#E6DAD0] font-light mb-4 uppercase tracking-wider">
+              <p className="text-xs sm:text-sm text-[#E6DAD0] font-light mb-4 uppercase tracking-wider">
                 Digital Menu & Bar Card
               </p>
-              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
+              <div className="inline-flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>EXPLORE &rarr;</span>
               </div>
             </div>
@@ -53,21 +53,21 @@ export const FeatureGridSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             onClick={() => scrollToSection('events')}
-            className="md:col-span-5 group relative rounded-none overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-square bg-black border border-[#E6DBC5] shadow-lg hover:shadow-2xl transition-all"
+            className="md:col-span-5 group relative rounded-none overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-square bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
               src={realCocktailImg}
               alt="Events & Bar"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-8 sm:p-12">
-              <h3 className="text-4xl sm:text-6xl md:text-7xl roast-display-heading text-white mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-10">
+              <h3 className="text-3xl sm:text-5xl font-black font-sans text-white tracking-tight leading-none mb-2">
                 Events & Bar
               </h3>
-              <p className="text-xs sm:text-base text-[#E6DAD0] font-light mb-4 uppercase tracking-wider">
+              <p className="text-xs sm:text-sm text-[#E6DAD0] font-light mb-4 uppercase tracking-wider">
                 Live IPL, Music & Craft Spirits
               </p>
-              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
+              <div className="inline-flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>EXPLORE &rarr;</span>
               </div>
             </div>
@@ -75,7 +75,7 @@ export const FeatureGridSection: React.FC = () => {
         </div>
 
         {/* Bottom Row: 2 Distinct Aspect Cards (Reservation & Visit Us - Sharp Corners) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Card 3: Reservation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -83,21 +83,21 @@ export const FeatureGridSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             onClick={() => scrollToSection('reservation')}
-            className="group relative rounded-none overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-lg hover:shadow-2xl transition-all"
+            className="group relative rounded-none overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
               src={heroImg}
               alt="Reservation"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-8 sm:p-10">
-              <h3 className="text-3xl sm:text-5xl md:text-6xl roast-display-heading text-white mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-8">
+              <h3 className="text-2xl sm:text-4xl font-black font-sans text-white tracking-tight leading-none mb-2">
                 Reservation
               </h3>
-              <p className="text-xs sm:text-sm text-[#E6DAD0] font-light mb-3 uppercase tracking-wider">
+              <p className="text-xs text-[#E6DAD0] font-light mb-3 uppercase tracking-wider">
                 Rooftop & AC Lounge Table Booking
               </p>
-              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
+              <div className="inline-flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest border-b-2 border-white pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>BOOK TABLE &rarr;</span>
               </div>
             </div>
@@ -110,21 +110,21 @@ export const FeatureGridSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
             onClick={() => scrollToSection('contact')}
-            className="group relative rounded-none overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-lg hover:shadow-2xl transition-all"
+            className="group relative rounded-none overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
               src={realInteriorVisitUsImg}
               alt="Visit C/o Rajahmundry Kompally"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-8 sm:p-10">
-              <h3 className="text-3xl sm:text-5xl md:text-6xl roast-display-heading text-white mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 sm:p-8">
+              <h3 className="text-2xl sm:text-4xl font-black font-sans text-white tracking-tight leading-none mb-2">
                 Visit Us
               </h3>
-              <p className="text-xs sm:text-sm text-[#E6DAD0] font-light mb-3 uppercase tracking-wider">
+              <p className="text-xs text-[#E6DAD0] font-light mb-3 uppercase tracking-wider">
                 5th Floor, Santa Sriram Estates, Kompally
               </p>
-              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#F6E27A] uppercase tracking-widest border-b-2 border-[#F6E27A] pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
+              <div className="inline-flex items-center gap-2 text-xs font-bold text-[#F6E27A] uppercase tracking-widest border-b-2 border-[#F6E27A] pb-1 w-max group-hover:text-[#F6E27A] group-hover:border-[#F6E27A] transition-colors">
                 <span>FIND LOCATION &rarr;</span>
               </div>
             </div>
