@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import realBiryaniImg from '../assets/real_mutton_curry_biryani.jpg';
+import luckysBiryaniMenuCardImg from '../assets/luckys_biryani_menu_card.jpg';
 import realCocktailImg from '../assets/real_bar_cocktail_drink.jpg';
 import realReservationInteriorImg from '../assets/real_reservation_interior.jpg';
 import luckysFacadeImg from '../assets/luckys_exterior_facade.jpg';
@@ -25,7 +25,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
 
         {/* Top Row: 2 Asymmetric Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          {/* Card 1: Menu */}
+          {/* Card 1: Menu - Official Hyderabadi Biryani Feast Platter Photo */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
             className="md:col-span-7 group relative rounded-none overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-[16/11] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
-              src={realBiryaniImg}
+              src={luckysBiryaniMenuCardImg}
               alt="Lucky's Restaurant Menu"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
