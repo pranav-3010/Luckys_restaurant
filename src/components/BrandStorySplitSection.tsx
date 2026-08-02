@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
+import starterPlatterImg from '../assets/luckys_starter_platter.jpg';
 import luckysFacadeImg from '../assets/luckys_exterior_facade.jpg';
 
 interface BrandStorySplitSectionProps {
@@ -22,7 +22,7 @@ export const BrandStorySplitSection: React.FC<BrandStorySplitSectionProps> = ({ 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* Left Column (58% width on Desktop): Official Lucky's Restaurant Illuminated Facade Photo ABOVE Aritaku Fish Photo */}
+          {/* Left Column (58% width on Desktop): Official Lucky's Restaurant Illuminated Facade Photo ABOVE Starter Platter Photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -39,11 +39,11 @@ export const BrandStorySplitSection: React.FC<BrandStorySplitSectionProps> = ({ 
               />
             </div>
 
-            {/* Second Picture: Aritaku Chepala Fry */}
+            {/* Second Picture: Signature Starter Platter */}
             <div className="relative aspect-[16/10] rounded-none overflow-hidden border border-[#E6DBC5] shadow-lg">
               <img
-                src={realFishImg}
-                alt="Traditional Aritaku Chepala Fry"
+                src={starterPlatterImg}
+                alt="Signature Starter Platter - Lucky's Restaurant Suchitra"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
