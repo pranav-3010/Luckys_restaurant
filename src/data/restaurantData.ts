@@ -72,7 +72,10 @@ export const RESTAURANT_INFO = {
 export const MENU_CATEGORIES = [
   { id: 'all', labelEN: 'All Items', labelTE: 'అన్నీ' },
   { id: 'luckys-specials', labelEN: 'Lucky’s Signature Kababs', subtitle: 'Smoky Angara Kababs & Tandoori Starters', labelTE: 'అంగారా కబాబ్స్' },
-  { id: 'mandi-specials', labelEN: 'Mutton & Chicken Mandi', subtitle: 'Mutton Juicy Mandi & Fried Chicken Mandi', labelTE: 'మండి స్పెషల్స్' },
+  { id: 'chicken-mandi', labelEN: 'Chicken Mandi Specials', subtitle: 'Al Faham, Fried, Masala, Juicy, Broasted & BBQ Mandis', labelTE: 'చికెన్ మండి స్పెషల్స్' },
+  { id: 'mutton-mandi', labelEN: 'Mutton Mandi Specials', subtitle: 'Turkish, Ghee Roast, Fried, Juicy & Afghani Mutton Mandis', labelTE: 'మటన్ మండి స్పెషల్స్' },
+  { id: 'prawns-mandi', labelEN: 'Prawns Mandi Specials', subtitle: 'Fried Prawns Mandi Half & Full Platters', labelTE: 'ప్రాన్స్ మండి స్పెషల్స్' },
+  { id: 'fish-mandi', labelEN: 'Fish Mandi Specials', subtitle: 'Crispy Tawa Fried Fish Mandi', labelTE: 'ఫిష్ మండి స్పెషల్స్' },
   { id: 'hyderabadi-biryani', labelEN: 'Hyderabadi Biryani', subtitle: 'Authentic Hyderabadi Dum & Fry Piece Biryani', labelTE: 'హైదరాబాదీ బిర్యానీ' },
   { id: 'rajahmundry-taluka', labelEN: 'C/o Rajahmundry Taluka', subtitle: 'Godavari Regional Starters & Specials', labelTE: 'రాజమండ్రి తాలూకా' },
   { id: 'yekadaina-yeppudaina', labelEN: 'Yekadaina Yeppudaina', subtitle: 'Evergreen Anytime Favorites & Snacks', labelTE: 'ఎక్కడైనా ఎప్పుడైనా' },
@@ -121,7 +124,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Al Faham Mandi [1 Piece]",
     description: "Arabian Mandi rice topped with 1 piece of smoky charcoal-grilled Al Faham chicken, cashews, raisins, mayonnaise & spicy Mandi chutney.",
     price: 453.60,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false,
     isChefSpecial: true,
     image: luckysMandiPlatterImg
@@ -131,7 +134,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Al Faham Mandi [2 Pieces]",
     description: "Arabian Mandi rice served with 2 pieces of charcoal-grilled Al Faham chicken, nuts, garnishes & signature Mandi soup.",
     price: 838.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false,
     isChefSpecial: true
   },
@@ -140,7 +143,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Al Faham Mandi [3 Pieces]",
     description: "Arabian Mandi rice feast with 3 pieces of smoky Al Faham chicken, roasted cashews, fried onions & spicy chutney (Serves 3).",
     price: 1213.20,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -148,7 +151,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Al Faham Mandi [4 Pieces]",
     description: "Grand Arabian Mandi platter with 4 full pieces of charcoal Al Faham chicken, extra Mandi rice, soup & accompaniments (Serves 4).",
     price: 1710.00,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
 
@@ -158,7 +161,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Turkish Mandi [1 Piece]",
     description: "Authentic Turkish style spiced slow-roasted tender mutton shank served over aromatic long-grain Mandi rice.",
     price: 606.00,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false,
     isChefSpecial: true
   },
@@ -167,7 +170,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Turkish Mandi [2 Pieces]",
     description: "Two pieces of succulent Turkish spiced mutton shanks over fragrant Mandi rice with cashews, raisins & spicy soup.",
     price: 1075.20,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false,
     isChefSpecial: true
   },
@@ -176,7 +179,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Turkish Mandi [3 Pieces]",
     description: "Three tender Turkish mutton shanks served over a large platter of Mandi rice with garlic dip & Mandi gravy (Serves 3).",
     price: 1533.60,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
   {
@@ -184,7 +187,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Turkish Mandi [4 Pieces]",
     description: "Royal Turkish Mutton Mandi platter featuring 4 slow-cooked shanks, aromatic basmati rice & festive garnishes (Serves 4).",
     price: 1999.20,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
 
@@ -194,7 +197,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Fried Chicken Mandi [1 Piece]",
     description: "Crispy golden fried marinated chicken piece served over spiced Mandi basmati rice with fried onions & gravy.",
     price: 412.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -202,7 +205,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Fried Chicken Mandi [2 Pieces]",
     description: "Two crispy golden fried chicken pieces served over aromatic Mandi rice with cashews & hot Mandi soup.",
     price: 812.40,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -210,7 +213,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Fried Chicken Mandi [3 Pieces]",
     description: "Three crispy fried chicken pieces over a generous portion of Mandi rice with salad & mayonnaise dip.",
     price: 1078.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -218,7 +221,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Fried Chicken Mandi [4 Pieces]",
     description: "Platter of Mandi rice served with 4 crunchy fried chicken pieces, roasted nuts & signature Mandi sauces.",
     price: 1318.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
 
@@ -228,7 +231,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Masala Mandi [1 Piece]",
     description: "Tender chicken cooked in rich spicy Hyderabadi masalas served over aromatic Mandi rice.",
     price: 440.40,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -236,7 +239,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Masala Mandi [2 Pieces]",
     description: "Two pieces of masala spiced chicken served over fragrant Mandi basmati rice with gravy & soup.",
     price: 838.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -244,7 +247,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Masala Mandi [3 Pieces]",
     description: "Three masala marinated chicken pieces served over a Mandi rice platter with fried cashews & spicy chutney.",
     price: 1078.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -252,7 +255,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Masala Mandi [4 Pieces]",
     description: "Family platter of 4 masala chicken pieces over spiced Mandi rice with accompaniments.",
     price: 1558.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
 
@@ -262,7 +265,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Ghee Roast Mandi [1 Piece]",
     description: "Melt-in-mouth mutton shank roasted in pure desi ghee & coastal aromatic spices served over Mandi rice.",
     price: 578.40,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false,
     isChefSpecial: true
   },
@@ -273,7 +276,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Fried Mandi [1 Piece]",
     description: "Crispy spiced fried mutton piece served over aromatic Mandi basmati rice with cashews & gravy.",
     price: 550.80,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
   {
@@ -281,7 +284,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Fried Mandi [2 Pieces]",
     description: "Two crispy fried mutton pieces served over Mandi rice with caramelized onions & spicy Mandi soup.",
     price: 1033.20,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
   {
@@ -289,7 +292,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Fried Mandi [3 Pieces]",
     description: "Three spiced fried mutton pieces over a large Mandi rice platter with roasted nuts & garlic dip.",
     price: 1461.60,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
   {
@@ -297,7 +300,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Fried Mandi [4 Pieces]",
     description: "Feast platter of 4 fried mutton pieces served over aromatic Mandi rice with full garnishes.",
     price: 1930.80,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
 
@@ -307,7 +310,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Juicy Mandi [1 Piece]",
     description: "Lucky's signature slow-steamed juicy mutton shank cooked with fragrant Arabian spices over Mandi rice.",
     price: 578.40,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false,
     isChefSpecial: true
   },
@@ -316,7 +319,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Juicy Mandi [2 Pieces]",
     description: "Two ultra-tender juicy mutton shanks over fragrant Mandi rice topped with cashews & raisins.",
     price: 1060.80,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false,
     isChefSpecial: true
   },
@@ -325,7 +328,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Juicy Mandi [3 Pieces]",
     description: "Three succulent juicy mutton shanks served over a Mandi rice platter with spicy chutney & soup.",
     price: 1489.20,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
   {
@@ -333,7 +336,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Juicy Mandi [4 Pieces]",
     description: "Grand family Mandi feast featuring 4 melt-in-mouth mutton shanks over aromatic Mandi rice.",
     price: 1930.80,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
 
@@ -343,7 +346,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Juicy Mandi [1 Piece]",
     description: "Steamed tender juicy chicken leg piece infused with mild Arabian spices served over Mandi rice.",
     price: 412.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -351,7 +354,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Juicy Mandi [2 Pieces]",
     description: "Two steamed juicy chicken pieces served over Mandi rice with roasted nuts & garlic sauce.",
     price: 854.40,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -359,7 +362,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Juicy Mandi [3 Pieces]",
     description: "Three tender juicy chicken pieces over a Mandi rice platter served with spicy chutney & Mandi soup.",
     price: 1185.60,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -367,7 +370,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Juicy Mandi [4 Pieces]",
     description: "Four juicy steamed chicken pieces served over a large Mandi basmati rice platter.",
     price: 1654.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
 
@@ -377,7 +380,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Afghani Mandi [1 Piece]",
     description: "Creamy cashew & black pepper marinated Afghani mutton shank slow-roasted over Mandi rice.",
     price: 514.80,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
   {
@@ -385,7 +388,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Afghani Mandi [2 Pieces]",
     description: "Two pieces of creamy Afghani spiced mutton shanks over fragrant Arabian Mandi rice.",
     price: 958.80,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
   {
@@ -393,7 +396,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Afghani Mandi [3 Pieces]",
     description: "Three creamy Afghani mutton shanks served over a Mandi rice platter with cashews & garlic dip.",
     price: 1318.80,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
   {
@@ -401,7 +404,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Mutton Afghani Mandi [4 Pieces]",
     description: "Platter of 4 Afghani mutton shanks served over aromatic Mandi basmati rice.",
     price: 1678.80,
-    category: "mandi-specials",
+    category: "mutton-mandi",
     isVeg: false
   },
 
@@ -411,7 +414,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Broasted Mandi [1 Piece]",
     description: "Crispy pressure-fried broasted chicken piece served over spiced Arabian Mandi rice.",
     price: 442.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -419,7 +422,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Broasted Mandi [2 Pieces]",
     description: "Two crunchy broasted chicken pieces served over Mandi basmati rice with garlic dip.",
     price: 838.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -427,7 +430,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Broasted Mandi [3 Pieces]",
     description: "Three broasted chicken pieces over a Mandi rice platter with hot soup & condiments.",
     price: 1078.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -435,7 +438,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Broasted Mandi [4 Pieces]",
     description: "Four crispy broasted chicken pieces served over a large Mandi rice platter.",
     price: 1390.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
 
@@ -445,7 +448,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Barbeque Mandi [1 Piece]",
     description: "Smoky sweet-spicy BBQ glazed chicken piece served over fragrant Mandi basmati rice.",
     price: 453.60,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -453,7 +456,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Barbeque Mandi [2 Pieces]",
     description: "Two BBQ grilled chicken pieces served over Mandi rice with caramelized onions & dip.",
     price: 838.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -461,7 +464,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Barbeque Mandi [3 Pieces]",
     description: "Three BBQ grilled chicken pieces over a Mandi rice platter with roasted cashews & chutney.",
     price: 1186.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
   {
@@ -469,7 +472,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Chicken Barbeque Mandi [4 Pieces]",
     description: "Four BBQ glazed chicken pieces served over a full Mandi basmati rice platter.",
     price: 1558.80,
-    category: "mandi-specials",
+    category: "chicken-mandi",
     isVeg: false
   },
 
@@ -479,7 +482,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Prawns Fried Mandi [Half, Serves 1]",
     description: "Golden fried marinated tiger prawns served over aromatic Mandi basmati rice with spicy chutney.",
     price: 550.80,
-    category: "mandi-specials",
+    category: "prawns-mandi",
     isVeg: false
   },
   {
@@ -487,7 +490,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Prawns Fried Mandi [Full, Serves 3]",
     description: "Grand Mandi platter topped with crispy fried prawns, roasted cashews, fried onions & Mandi soup.",
     price: 1102.80,
-    category: "mandi-specials",
+    category: "prawns-mandi",
     isVeg: false,
     isChefSpecial: true
   },
@@ -498,7 +501,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Fried Fish Mandi [1 Piece]",
     description: "Crispy tawa fried spiced fish fillet served over aromatic Arabian Mandi basmati rice.",
     price: 550.80,
-    category: "mandi-specials",
+    category: "fish-mandi",
     isVeg: false
   },
   {

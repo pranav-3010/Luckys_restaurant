@@ -61,11 +61,13 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
   const totalCartCount = cartItems.reduce((sum, ci) => sum + ci.quantity, 0);
 
 
+  const mandiCategoryIds = ['chicken-mandi', 'mutton-mandi', 'prawns-mandi', 'fish-mandi'];
+
   const getVisibleCategories = () => {
     if (activeTab === 'cocktails') {
-      return MENU_CATEGORIES.filter(c => c.id === 'mandi-specials');
+      return MENU_CATEGORIES.filter(c => mandiCategoryIds.includes(c.id));
     }
-    return MENU_CATEGORIES.filter(c => c.id !== 'all' && c.id !== 'mandi-specials');
+    return MENU_CATEGORIES.filter(c => c.id !== 'all' && !mandiCategoryIds.includes(c.id));
   };
 
   const visibleCategories = getVisibleCategories();
