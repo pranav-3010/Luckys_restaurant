@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, Users, Send, CheckCircle, MapPin } from 'lucide-react';
+import { Calendar, Clock, Users, Send, CheckCircle, MapPin, ChevronDown } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export const ReservationSection: React.FC = () => {
@@ -54,7 +54,7 @@ Please confirm my table reservation!`;
           </p>
         </div>
 
-        {/* Reservation Card (Matching ROAST Container Theme) */}
+        {/* Reservation Card (Rock-Solid Clean Dropdowns) */}
         <div className="bg-[#FAF5ED] p-6 sm:p-10 border border-[#E6DBC5] shadow-xl rounded-none">
           {submitted ? (
             <div className="p-8 bg-white border border-[#E6DBC5] text-center space-y-4">
@@ -85,7 +85,7 @@ Please confirm my table reservation!`;
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     placeholder="Enter your name"
-                    className="w-full px-4 py-3.5 bg-white border border-[#E6DBC5] text-sm text-[#1F1919] placeholder-gray-400 focus:border-[#1A1615] focus:outline-none transition-colors font-sans"
+                    className="w-full px-4 py-3.5 bg-white border border-[#E6DBC5] text-sm text-[#1F1919] placeholder-gray-400 focus:border-[#1A1615] focus:outline-none transition-colors font-sans rounded-none"
                   />
                 </div>
 
@@ -99,86 +99,97 @@ Please confirm my table reservation!`;
                     value={formState.phone}
                     onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     placeholder="Enter phone number"
-                    className="w-full px-4 py-3.5 bg-white border border-[#E6DBC5] text-sm text-[#1F1919] placeholder-gray-400 focus:border-[#1A1615] focus:outline-none transition-colors font-sans"
+                    className="w-full px-4 py-3.5 bg-white border border-[#E6DBC5] text-sm text-[#1F1919] placeholder-gray-400 focus:border-[#1A1615] focus:outline-none transition-colors font-sans rounded-none"
                   />
                 </div>
               </div>
 
               {/* Form Row 2: Guests, Date & Time */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {/* Guests Dropdown */}
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-[#1F1919] mb-2">
                     Guests
                   </label>
                   <div className="relative">
-                    <Users className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <Users className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <select
                       value={formState.guests}
                       onChange={(e) => setFormState({ ...formState, guests: e.target.value })}
-                      className="w-full pl-10 pr-4 py-3.5 bg-white border border-[#E6DBC5] text-xs font-bold text-[#1F1919] focus:border-[#1A1615] focus:outline-none cursor-pointer font-sans"
+                      className="w-full pl-10 pr-9 py-3.5 bg-white border border-[#E6DBC5] text-xs font-bold text-[#1F1919] focus:border-[#1A1615] focus:outline-none appearance-none cursor-pointer font-sans rounded-none"
                     >
-                      <option value="1 Person">1 Person</option>
+                      <option value="1 Guest">1 Guest</option>
                       <option value="2 Guests">2 Guests</option>
-                      <option value="4 Guests">4 Guests (Family)</option>
+                      <option value="3 Guests">3 Guests</option>
+                      <option value="4 Guests">4 Guests</option>
+                      <option value="5 Guests">5 Guests</option>
                       <option value="6 Guests">6 Guests</option>
                       <option value="Large Group (8+)">Large Group (8+)</option>
                     </select>
+                    <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
                 </div>
 
+                {/* Date Input */}
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-[#1F1919] mb-2">
                     Preferred Date
                   </label>
                   <div className="relative">
-                    <Calendar className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <Calendar className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <input
                       type="text"
                       value={formState.date}
                       onChange={(e) => setFormState({ ...formState, date: e.target.value })}
                       placeholder="Today / Tomorrow"
-                      className="w-full pl-10 pr-4 py-3.5 bg-white border border-[#E6DBC5] text-xs text-[#1F1919] placeholder-gray-400 focus:border-[#1A1615] focus:outline-none font-sans"
+                      className="w-full pl-10 pr-4 py-3.5 bg-white border border-[#E6DBC5] text-xs text-[#1F1919] placeholder-gray-400 focus:border-[#1A1615] focus:outline-none font-sans rounded-none"
                     />
                   </div>
                 </div>
 
+                {/* Time Slot Dropdown */}
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-[#1F1919] mb-2">
                     Time Slot
                   </label>
                   <div className="relative">
-                    <Clock className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <Clock className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <select
                       value={formState.time}
                       onChange={(e) => setFormState({ ...formState, time: e.target.value })}
-                      className="w-full pl-10 pr-4 py-3.5 bg-white border border-[#E6DBC5] text-xs font-bold text-[#1F1919] focus:border-[#1A1615] focus:outline-none cursor-pointer font-sans"
+                      className="w-full pl-10 pr-9 py-3.5 bg-white border border-[#E6DBC5] text-xs font-bold text-[#1F1919] focus:border-[#1A1615] focus:outline-none appearance-none cursor-pointer font-sans rounded-none"
                     >
-                      <option value="1:00 PM">1:00 PM (Lunch)</option>
-                      <option value="3:00 PM">3:00 PM</option>
-                      <option value="7:30 PM">7:30 PM (Dinner)</option>
-                      <option value="8:30 PM">8:30 PM</option>
-                      <option value="10:00 PM">10:00 PM (Night Bar)</option>
+                      <option value="12:30 PM">12:30 PM (Lunch)</option>
+                      <option value="1:30 PM">1:30 PM (Lunch)</option>
+                      <option value="2:30 PM">2:30 PM (Lunch)</option>
+                      <option value="7:00 PM">7:00 PM (Dinner)</option>
+                      <option value="8:00 PM">8:00 PM (Dinner)</option>
+                      <option value="8:30 PM">8:30 PM (Dinner)</option>
+                      <option value="9:30 PM">9:30 PM (Late Dinner)</option>
+                      <option value="10:30 PM">10:30 PM (Night Bar)</option>
                     </select>
+                    <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
                 </div>
               </div>
 
-              {/* Form Row 3: Seating Preference */}
+              {/* Form Row 3: Seating Preference Dropdown */}
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-[#1F1919] mb-2">
                   Seating Area Preference
                 </label>
                 <div className="relative">
-                  <MapPin className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <MapPin className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                   <select
                     value={formState.seating}
                     onChange={(e) => setFormState({ ...formState, seating: e.target.value })}
-                    className="w-full pl-10 pr-4 py-3.5 bg-white border border-[#E6DBC5] text-xs font-bold text-[#1F1919] focus:border-[#1A1615] focus:outline-none cursor-pointer font-sans"
+                    className="w-full pl-10 pr-9 py-3.5 bg-white border border-[#E6DBC5] text-xs font-bold text-[#1F1919] focus:border-[#1A1615] focus:outline-none appearance-none cursor-pointer font-sans rounded-none"
                   >
                     <option value="5th Floor Rooftop Open Air Lounge">5th Floor Rooftop Open Air Lounge</option>
                     <option value="Indoor AC Family Dining Area">Indoor AC Family Dining Area</option>
                     <option value="High Bar Counter Seating">High Bar Counter Seating</option>
                   </select>
+                  <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
               </div>
 
@@ -192,7 +203,7 @@ Please confirm my table reservation!`;
                   value={formState.requests}
                   onChange={(e) => setFormState({ ...formState, requests: e.target.value })}
                   placeholder="Special requests or food preferences (e.g. Birthday celebration, High chair needed)"
-                  className="w-full px-4 py-3.5 bg-white border border-[#E6DBC5] text-xs text-[#1F1919] placeholder-gray-400 focus:border-[#1A1615] focus:outline-none resize-none font-sans"
+                  className="w-full px-4 py-3.5 bg-white border border-[#E6DBC5] text-xs text-[#1F1919] placeholder-gray-400 focus:border-[#1A1615] focus:outline-none resize-none font-sans rounded-none"
                 />
               </div>
 
