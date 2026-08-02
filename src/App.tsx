@@ -3,6 +3,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { TickerBanner } from './components/TickerBanner';
+import { FeatureGridSection } from './components/FeatureGridSection';
 import { CategoryHighlightsSection } from './components/CategoryHighlightsSection';
 import { MenuSection } from './components/MenuSection';
 import { AboutSection } from './components/AboutSection';
@@ -40,6 +41,8 @@ export function App() {
           />
 
           <TickerBanner />
+
+          <FeatureGridSection />
 
           <CategoryHighlightsSection
             onSelectCategory={(category) => {
