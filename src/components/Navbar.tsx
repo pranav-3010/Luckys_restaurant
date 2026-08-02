@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, PhoneCall, MapPin, Globe } from 'lucide-react';
+import { Menu, X, PhoneCall, MapPin } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
-import { useLanguage } from '../context/LanguageContext';
 
 interface NavbarProps {
   onNavigateToExplore?: (sectionId?: string) => void;
@@ -10,7 +9,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onNavigateToExplore }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateToExplore }) => {
                 Lucky’s Restaurant
               </h1>
               <span className="text-[9px] font-bold tracking-widest text-[#F6E27A] uppercase block mt-1">
-                {language === 'EN' ? 'Suchitra, Hyderabad' : 'సుచిత్ర, హైదరాబాద్'}
+                Suchitra, Hyderabad
               </span>
             </div>
           </button>
@@ -92,15 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateToExplore }) => {
 
           {/* Right Action Buttons */}
           <div className="flex items-center gap-3">
-            {/* Language Switcher */}
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 text-[#F6E27A] text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
-              title="Toggle Language"
-            >
-              <Globe className="w-3.5 h-3.5" />
-              <span>{language === 'EN' ? 'TELUGU' : 'ENGLISH'}</span>
-            </button>
+            {/* Direct Call Button */}
 
             {/* Direct Call Button */}
             <a

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Globe } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import luckysMandiPlatterImg from '../assets/luckys_mandi_platter.jpg';
 import luckysBiryaniFeastImg from '../assets/luckys_biryani_feast.jpg';
 import luckysStarterDishImg from '../assets/luckys_starter_dish.jpg';
 import luckysAngaraChickenPlatterImg from '../assets/luckys_angara_chicken_platter.jpg';
-import { useLanguage } from '../context/LanguageContext';
 
 interface HeroProps {
   onExploreMenu: () => void;
@@ -13,28 +12,22 @@ interface HeroProps {
 }
 
 export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
-  const { language, toggleLanguage } = useLanguage();
-
   const slides = [
     {
       image: luckysMandiPlatterImg,
       taglineEN: "Lucky's Signature Arabian Mandi Platter Suchitra",
-      taglineTE: 'లక్కీస్ సిగ్నేచర్ అరేబియన్ మండి ప్లాటర్',
     },
     {
       image: luckysBiryaniFeastImg,
       taglineEN: "Lucky's Special Hyderabadi Dum & Fry Piece Biryani Feast",
-      taglineTE: 'లక్కీస్ స్పెషల్ హైదరాబాదీ దమ్ & ఫ్రై పీస్ బిర్యానీ',
     },
     {
       image: luckysStarterDishImg,
       taglineEN: "Lucky's Special Spicy Chicken & Tandoori Starters",
-      taglineTE: 'లక్కీస్ స్పెషల్ స్పైసీ చికెన్ స్టార్టర్స్',
     },
     {
       image: luckysAngaraChickenPlatterImg,
       taglineEN: "Lucky's Signature Smoky Angara Chicken Kabab Platter",
-      taglineTE: 'లక్కీస్ సిగ్నేచర్ అంగారా చికెన్ కబాబ్స్',
     },
   ];
 
@@ -74,17 +67,6 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
         {/* Minimal gradient text backdrop strips for legibility */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 to-transparent pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
-      </div>
-
-      {/* Top Bar: Language Toggle Switcher */}
-      <div className="relative z-10 pt-6 sm:pt-10 px-4 sm:px-6 flex items-center justify-end max-w-7xl mx-auto w-full">
-        <button
-          onClick={toggleLanguage}
-          className="px-3.5 py-1.5 rounded-full bg-black/80 border border-[#D4AF37]/60 text-[11px] sm:text-xs font-bold text-[#F6E27A] backdrop-blur-md hover:bg-[#D4AF37] hover:text-black transition-all flex items-center gap-1.5 shadow-2xl active:scale-95 cursor-pointer"
-        >
-          <Globe className="w-3.5 h-3.5" />
-          <span>{language === 'EN' ? 'TELUGU (తెలుగు)' : 'ENGLISH'}</span>
-        </button>
       </div>
 
       {/* CENTER RESTAURANT NAME ONLY - LUCKY'S RESTAURANT SUCHITRA */}
