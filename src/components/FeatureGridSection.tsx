@@ -58,7 +58,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            onClick={() => scrollToSection('menu')}
+            onClick={() => scrollToSection('mandi')}
             className="md:col-span-5 group relative rounded-none overflow-hidden cursor-pointer aspect-[4/3] sm:aspect-square bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img

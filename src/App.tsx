@@ -21,7 +21,7 @@ export function App() {
   }, [currentPage]);
 
   const navigateToExplore = (sectionId?: string) => {
-    if (sectionId === 'events' || sectionId === 'cocktails') {
+    if (sectionId === 'events' || sectionId === 'cocktails' || sectionId === 'mandi' || sectionId === 'arabian-mandi') {
       setExploreInitialTab('cocktails');
     } else if (sectionId === 'reservation' || sectionId === 'reservations') {
       setExploreInitialTab('reservations');
@@ -60,22 +60,22 @@ export function App() {
               <Footer />
             </>
           ) : (
-            /* DEDICATED SEPARATE EXPLORE & ORDERING PAGE VIEW (ROAST STYLE) */
-            <>
-              <ExplorePage
-                onBackToHome={navigateToHome}
-                onSelectItem={(item) => setSelectedOrderItem(item)}
-                initialTab={exploreInitialTab}
-              />
-              <Footer />
-            </>
+            /* EXPLORE & ORDER PAGE VIEW */
+            <ExplorePage
+              onBackToHome={navigateToHome}
+              onSelectItem={(item) => setSelectedOrderItem(item)}
+              initialTab={exploreInitialTab}
+            />
+          )}
+
+          {/* Quick Item Order Modal */}
+          {selectedOrderItem && (
+            <OrderModal
+              item={selectedOrderItem}
+              onClose={() => setSelectedOrderItem(null)}
+            />
           )}
         </main>
-
-        <OrderModal
-          item={selectedOrderItem}
-          onClose={() => setSelectedOrderItem(null)}
-        />
       </div>
     </LanguageProvider>
   );

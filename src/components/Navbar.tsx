@@ -1,32 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Globe, PhoneCall } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { Menu, X, PhoneCall, MapPin, Globe } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
+import { useLanguage } from '../context/LanguageContext';
 
 interface NavbarProps {
-  onOpenOrderModal: () => void;
-  onNavigateToExplore: (sectionId?: string) => void;
+  onNavigateToExplore?: (sectionId?: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenOrderModal, onNavigateToExplore }) => {
-  const { language, toggleLanguage } = useLanguage();
+export const Navbar: React.FC<NavbarProps> = ({ onNavigateToExplore }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      if (window.scrollY > 40) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (id: string) => {
-    onNavigateToExplore(id);
+  const handleNavClick = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+    if (onNavigateToExplore) {
+      onNavigateToExplore(sectionId);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 select-none ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 select-none font-sans ${
         isScrolled
           ? 'bg-[#161312]/95 backdrop-blur-md shadow-2xl py-3 border-b border-white/10'
           : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5'
@@ -59,10 +71,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOrderModal, onNavigateToEx
               MENU
             </button>
             <button
-              onClick={() => handleNavClick('cocktails')}
+              onClick={() => handleNavClick('mandi')}
               className="text-xs font-bold uppercase tracking-[0.2em] text-white/90 hover:text-[#7DCE9F] transition-colors cursor-pointer"
             >
-              COCKTAILS & BAR
+              ARABIAN MANDI
             </button>
             <button
               onClick={() => handleNavClick('reservations')}
@@ -99,19 +111,61 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOrderModal, onNavigateToEx
               <span>CALL NOW</span>
             </a>
 
-            {/* Order Online Button */}
+            {/* Mobile Hamburger Toggle */}
             <button
-              onClick={onOpenOrderModal}
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#7DCE9F] bg-[#7DCE9F] hover:bg-[#68b988] text-[#161312] text-xs font-black tracking-wider shadow-lg cursor-pointer transition-all hover:scale-105"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-white hover:text-[#7DCE9F] focus:outline-none cursor-pointer"
             >
-              <ShoppingBag className="w-4 h-4" />
-              <span className="hidden sm:inline">ORDER ONLINE</span>
-              <span className="sm:hidden">ORDER</span>
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
         </div>
       </div>
+
+      {/* Mobile Drawer Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-[#161312] border-b border-white/10 px-6 py-6 space-y-4 shadow-2xl animate-fadeIn">
+          <button
+            onClick={() => handleNavClick('menu')}
+            className="block w-full text-left text-sm font-bold uppercase tracking-widest text-white hover:text-[#7DCE9F] py-2 border-b border-white/5 cursor-pointer"
+          >
+            MENU
+          </button>
+          <button
+            onClick={() => handleNavClick('mandi')}
+            className="block w-full text-left text-sm font-bold uppercase tracking-widest text-white hover:text-[#7DCE9F] py-2 border-b border-white/5 cursor-pointer"
+          >
+            ARABIAN MANDI
+          </button>
+          <button
+            onClick={() => handleNavClick('reservations')}
+            className="block w-full text-left text-sm font-bold uppercase tracking-widest text-white hover:text-[#7DCE9F] py-2 border-b border-white/5 cursor-pointer"
+          >
+            RESERVATIONS
+          </button>
+          <button
+            onClick={() => handleNavClick('locations')}
+            className="block w-full text-left text-sm font-bold uppercase tracking-widest text-white hover:text-[#7DCE9F] py-2 cursor-pointer"
+          >
+            LOCATION
+          </button>
+
+          <div className="pt-2 flex items-center justify-between">
+            <a
+              href={`tel:${RESTAURANT_INFO.phone}`}
+              className="flex items-center gap-2 text-xs font-bold text-[#7DCE9F]"
+            >
+              <PhoneCall className="w-4 h-4" />
+              <span>{RESTAURANT_INFO.phone}</span>
+            </a>
+            <span className="text-[10px] text-gray-400 flex items-center gap-1">
+              <MapPin className="w-3 h-3 text-[#F6E27A]" />
+              <span>Suchitra, Hyd</span>
+            </span>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

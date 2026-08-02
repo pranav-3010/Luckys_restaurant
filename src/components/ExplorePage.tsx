@@ -92,7 +92,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
   const navTabs: { id: 'menu' | 'cocktails' | 'reservations' | 'locations'; label: string }[] = [
     { id: 'menu', label: 'MENU' },
-    { id: 'cocktails', label: 'COCKTAILS & BAR' },
+    { id: 'cocktails', label: 'ARABIAN MANDI' },
     { id: 'reservations', label: 'RESERVATIONS' },
     { id: 'locations', label: 'LOCATION' },
   ];
