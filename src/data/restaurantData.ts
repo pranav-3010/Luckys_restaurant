@@ -99,7 +99,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "LUCKY’S SPECIAL ANGARA KABAB",
     description: "Chef's signature smoky, juicy Angara Kabab marinated in secret red spice blend, charcoal grilled & served with mint chutney.",
     price: 449.00,
-    category: "luckys-specials",
+    category: "starters",
     isVeg: false,
     isSpicy: true,
     isChefSpecial: true,
@@ -110,7 +110,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "CHICKEN BANJARA KEBAB (8 PIECES)",
     description: "Eight juicy boneless chicken morsels marinated in coriander, mint, green chili & tandoori smoked.",
     price: 429.00,
-    category: "luckys-specials",
+    category: "starters",
     isVeg: false,
     isChefSpecial: true
   },
@@ -492,534 +492,208 @@ export const MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true
   },
 
+  // 13. FRIED FISH MANDI
   {
-    id: "y13",
-    name: "MIRYALA MAMSAM VEPUDU",
-    description: "Tender mutton chunks wok-roasted with crushed black pepper (Miryalu) & ghee.",
-    price: 569.00,
-    category: "yekadaina-yeppudaina",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "y14",
-    name: "GONGURA MAMSAM VEPUDU",
-    description: "Mutton roast infused with tangy sour sorrel leaves (Gongura) & red chili masala.",
-    price: 569.00,
-    category: "yekadaina-yeppudaina",
-    isVeg: false,
-    isSpicy: true
-  },
-  {
-    id: "y15",
-    name: "PACHI CHINTAKAYA FISH KEBAB",
-    description: "Fresh fish fillets marinated in raw green tamarind (Pachi Chintakaya) paste & charcoal grilled.",
-    price: 539.00,
-    category: "yekadaina-yeppudaina",
-    isVeg: false,
-    isChefSpecial: true
-  },
-  {
-    id: "y16",
-    name: "APOLLO FISH",
-    description: "Crispy fried boneless fish fillets tossed in spicy garlic soy sauce & fried curry leaves.",
-    price: 539.00,
-    category: "yekadaina-yeppudaina",
-    isVeg: false,
-    isSpicy: true
-  },
-  {
-    id: "y17",
-    name: "NALLAKARAM ROYYALA VEPUDU",
-    description: "Fresh river prawns tossed in dark roasted black chili powder (Nallakaram) & curry leaves.",
-    price: 569.00,
-    category: "yekadaina-yeppudaina",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "y18",
-    name: "LOOSE PRAWNS",
-    description: "Crispy batter-fried prawns tossed with finely chopped garlic, green chilies & spring onions.",
-    price: 569.00,
-    category: "yekadaina-yeppudaina",
+    id: "mandi-fish-fried-1",
+    name: "Fried Fish Mandi [1 Piece]",
+    description: "Crispy tawa fried spiced fish fillet served over aromatic Arabian Mandi basmati rice.",
+    price: 550.80,
+    category: "fish-mandi",
     isVeg: false
   },
 
-  // 3. VEDIGHA GHATUGHA (6 ITEMS)
-  {
-    id: "vg1",
-    name: "BROWN GARLIC SOUP",
-    description: "Rich, aromatic slow-roasted brown garlic broth infused with fresh herbs & crushed black pepper.",
-    price: 175.00,
-    category: "vedigha-ghatugha",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "vg2",
-    name: "MIRIYALA RASAM / KODI",
-    description: "Traditional spicy Andhra black pepper rasam simmered with garlic, cumin, tomato & tender chicken extract.",
-    price: 175.00,
-    category: "vedigha-ghatugha",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "vg3",
-    name: "KOTHIMEERA SOUP (BROCCOLI/CHICKEN)",
-    description: "Fresh green coriander infused clear soup simmered with garden broccoli florets or chicken strips.",
-    price: 175.00,
-    category: "vedigha-ghatugha",
-    isVeg: true
-  },
-  {
-    id: "vg4",
-    name: "CORN SOUP (VEG/CHICKEN)",
-    description: "Creamy sweet corn soup broth flavored with white pepper, sesame oil & choice of veg or chicken.",
-    price: 175.00,
-    category: "vedigha-ghatugha",
-    isVeg: true
-  },
-  {
-    id: "vg5",
-    name: "MANCHOW (VEG/CHICKEN)",
-    description: "Classic spicy Indo-Chinese manchow soup loaded with mushrooms, garlic, soy broth & crispy fried noodles.",
-    price: 175.00,
-    category: "vedigha-ghatugha",
-    isVeg: true,
-    isSpicy: true
-  },
-  {
-    id: "vg6",
-    name: "MUTTON MARAG",
-    description: "Hyderabadi royal rich mutton bone broth simmered for hours with cashew, cream, cardamom, black pepper & ghee.",
-    price: 249.00,
-    category: "vedigha-ghatugha",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true,
-    image: realBiryaniImg
-  },
+  // ==================== STARTERS ====================
+  { id: "str-1", name: "Baby Corn Manchuria", description: "Crispy fried baby corn tossed in spicy Indo-Chinese manchurian sauce.", price: 315.60, category: "starters", isVeg: true },
+  { id: "str-2", name: "Chilli Mushroom", description: "Fresh mushrooms tossed with bell peppers, green chilies & soy sauce.", price: 315.60, category: "starters", isVeg: true },
+  { id: "str-3", name: "Chilli Paneer", description: "Cubes of cottage cheese wok-tossed with chili, garlic & peppers.", price: 315.60, category: "starters", isVeg: true },
+  { id: "str-4", name: "Crispy Corn", description: "Crunchy sweet corn kernels fried & seasoned with pepper & herbs.", price: 315.60, category: "starters", isVeg: true },
+  { id: "str-5", name: "Crispy Veg", description: "Assorted farm fresh vegetables fried crisp with aromatic spices.", price: 315.60, category: "starters", isVeg: true },
+  { id: "str-6", name: "Gobi Manchuria", description: "Crispy cauliflower florets tossed in tangy Manchurian gravy.", price: 274.80, category: "starters", isVeg: true },
+  { id: "str-7", name: "Mushroom Manchuria", description: "Crispy button mushrooms sautéed in garlic chili Manchurian sauce.", price: 238.00, category: "starters", isVeg: true },
+  { id: "str-8", name: "Paneer Majestic", description: "Hyderabadi style dry paneer strips fried & cooked in yogurt & curry leaves.", price: 315.60, category: "starters", isVeg: true },
+  { id: "str-9", name: "Paneer 65", description: "Spicy South Indian style deep-fried paneer with chili & curry leaves.", price: 315.60, category: "starters", isVeg: true },
+  { id: "str-10", name: "Veg Manchurian", description: "Fried vegetable balls tossed in sweet, sour & spicy sauce.", price: 199.00, category: "starters", isVeg: true },
+  { id: "str-11", name: "Veg Spring Roll", description: "Crispy pastry rolls stuffed with shredded vegetables & noodles.", price: 315.60, category: "starters", isVeg: true },
+  { id: "str-12", name: "Chicken 65 Shawarma", description: "Spicy Chicken 65 wrapped in soft rumali bread with mayonnaise & pickled veggies.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-13", name: "Chicken 65", description: "Classic Indo-Chinese spicy deep-fried chicken quick snack.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-14", name: "Chicken 777", description: "Crispy fried chicken on the outside & succulent juicy on the inside.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-15", name: "Chicken Drumstick", description: "Crispy fried chicken drumsticks coated in sweet & spicy sauce.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-16", name: "Chicken Lollipop", description: "Crispy French-trimmed chicken wings tossed in garlic Szechuan sauce.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-17", name: "Chicken Majestic", description: "Thin chicken strips cooked in buttermilk, green chilies & mint.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-18", name: "Chicken Manchuria", description: "Tender chicken morsels tossed in tangy Manchurian garlic sauce.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-19", name: "Chicken Manchurian", description: "Crispy fried chicken pieces in slightly sweet, sour & hot Manchurian sauce.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-20", name: "Chicken Shawarma Salad", description: "Shredded chicken shawarma meat served over crisp fresh salad greens.", price: 226.80, category: "starters", isVeg: false },
+  { id: "str-21", name: "Chicken Spring Roll [3 Pieces]", description: "Crispy fried rolls filled with seasoned minced chicken & vegetables.", price: 412.80, category: "starters", isVeg: false },
+  { id: "str-22", name: "Chilli Chicken", description: "Crispy batter fried chicken tossed in spicy chili sauce with bell peppers.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-23", name: "Dragon Chicken", description: "Spicy & tangy cashew-rich dragon chicken stir-fried with red chilies.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-24", name: "Fried Chicken", description: "Crunchy golden fried marinated chicken pieces.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-25", name: "Ginger Chicken", description: "Yummy ginger flavored chicken stir-fry with soy & chili.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-26", name: "Golden Chicken", description: "Deep-fried golden battered chicken tenders served with chili dip.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-27", name: "Pepper Chicken", description: "South Indian style black pepper roasted spicy chicken.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-28", name: "Chicken Banjara Kebab [8 Pieces]", description: "Eight boneless chicken morsels marinated in green mint paste & tandoori grilled.", price: 619.20, category: "starters", isVeg: false, isChefSpecial: true },
+  { id: "str-29", name: "Chicken Seekh Kebab [Half, 4 Pieces]", description: "Skewered spiced minced chicken kebabs cooked in charcoal clay oven.", price: 330.00, category: "starters", isVeg: false },
+  { id: "str-30", name: "Chicken Tikka [Half, 4 Pieces]", description: "Classic tandoori spiced marinated chicken tikka pieces.", price: 315.60, category: "starters", isVeg: false },
+  { id: "str-31", name: "Fish Tikka [Half]", description: "Succulent fish fillets marinated in tandoori masalas & grilled.", price: 315.60, category: "starters", isVeg: false },
+  { id: "str-32", name: "Kalmi Kabab [Half, 2 Pieces]", description: "Tender chicken drumsticks marinated in rich cashew cream & spices.", price: 315.60, category: "starters", isVeg: false },
+  { id: "str-33", name: "Murgh Malai Kabab [Half, 4 Pieces]", description: "Melt-in-mouth chicken tikka marinated in cream, cheese & cardamom.", price: 315.60, category: "starters", isVeg: false },
+  { id: "str-34", name: "Prawns Tikka [Half, 10 Pieces]", description: "Ten juicy tiger prawns marinated in tandoori spices & roasted.", price: 330.00, category: "starters", isVeg: false },
+  { id: "str-35", name: "Reshmi Chicken Kebab [Half, 4 Pieces]", description: "Silky smooth minced chicken kebabs favoured with saffron & white pepper.", price: 315.60, category: "starters", isVeg: false },
+  { id: "str-36", name: "Tandoori Chicken", description: "Whole chicken leg & chest marinated in yogurt & Kashmiri chili, roasted in tandoor.", price: 427.20, category: "starters", isVeg: false },
+  { id: "str-37", name: "Tangdi Kebab", description: "Juicy chicken drumsticks marinated in rich tandoori masalas.", price: 274.80, category: "starters", isVeg: false },
+  { id: "str-38", name: "Egg Manchuria & Chilli", description: "Crispy boiled egg cubes tossed in spicy chili Manchurian sauce.", price: 238.00, category: "starters", isVeg: false },
 
-  // 4. NUVVA-NENA (6 ITEMS)
-  {
-    id: "nn1",
-    name: "ANNAM (PLAIN/GHEE/PERUGU)",
-    description: "Steamed Sona Masoori rice served choice of plain, aromatic pure cow ghee, or soothing fresh curd with mango pickle.",
-    price: 159.00,
-    category: "nuvva-nena",
-    isVeg: true
-  },
-  {
-    id: "nn2",
-    name: "PAPPUCHARU ANNAM",
-    description: "Homestyle Godavari Pappucharu (spiced lentil stew) mixed with hot rice & ghee, served with fried chili.",
-    price: 249.00,
-    category: "nuvva-nena",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "nn3",
-    name: "AVAKAI MUDDAPAPPU ANNAM",
-    description: "Iconic combination of thick yellow lentil dahl (Mudda Pappu), fiery spicy Andhra mango pickle (Avakai) & pure ghee rice.",
-    price: 249.00,
-    category: "nuvva-nena",
-    isVeg: true,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "nn4",
-    name: "RAGI SANGATI / BAGARA ANNAM",
-    description: "Nutritious finger millet ball (Ragi Sangati) or aromatic tempered mint & spice Bagara rice.",
-    price: 249.00,
-    category: "nuvva-nena",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "nn5",
-    name: "FRIED RICE / NOODLES (REGULAR / BANDI STYLE)",
-    description: "Wok-tossed street bandi style or regular fried rice/noodles with choice of Veg, Egg, Chicken or Mix.",
-    price: 369.00,
-    category: "nuvva-nena",
-    isVeg: false,
-    isSpicy: true
-  },
-  {
-    id: "nn6",
-    name: "AVAKAI FRIED RICE / NOODLES",
-    description: "Fiery wok-tossed fried rice or noodles flavored with spicy Andhra Avakai pickle paste & choice of Veg, Chicken or Mix.",
-    price: 379.00,
-    category: "nuvva-nena",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
+  // ==================== CURRIES ====================
+  { id: "cur-1", name: "Dal Fry", description: "Yellow lentils tempered with ghee, cumin seeds & garlic.", price: 260.40, category: "curries", isVeg: true },
+  { id: "cur-2", name: "Dal Tadka", description: "Classic yellow dal with aromatic double tadka of mustard, garlic & red chilies.", price: 274.80, category: "curries", isVeg: true },
+  { id: "cur-3", name: "Kadai Paneer", description: "Cottage cheese cooked with bell peppers, tomatoes & freshly pounded kadai spices.", price: 385.20, category: "curries", isVeg: true },
+  { id: "cur-4", name: "Kaju Paneer Curry", description: "Rich cashew nut & cottage cheese curry cooked in creamy tomato onion gravy.", price: 481.20, category: "curries", isVeg: true },
+  { id: "cur-5", name: "Malai Kofta Curry", description: "Fried paneer & potato dumplings simmered in rich creamy cashew gravy.", price: 550.80, category: "curries", isVeg: true },
+  { id: "cur-6", name: "Paneer Butter Masala", description: "Cubes of paneer cooked in velvety rich butter tomato gravy.", price: 385.20, category: "curries", isVeg: true },
+  { id: "cur-7", name: "Paneer Do Pyaza", description: "Paneer cooked with onions added in two stages for sweet aromatic crunch.", price: 385.20, category: "curries", isVeg: true },
+  { id: "cur-8", name: "Paneer Tikka Masala", description: "Grilled tandoori paneer tikka simmered in spicy tomato gravy.", price: 508.80, category: "curries", isVeg: true },
+  { id: "cur-9", name: "Afghani Chicken Curry", description: "Chicken cooked in rich creamy white cashew & poppy seed gravy with mild pepper.", price: 226.80, category: "curries", isVeg: false },
+  { id: "cur-10", name: "Butter Chicken Masala", description: "Tender tandoori chicken cooked in silky smooth butter tomato gravy.", price: 214.80, category: "curries", isVeg: false },
+  { id: "cur-11", name: "Chicken Achari", description: "Chicken curry infused with tangy pickling spices & green chilies.", price: 226.80, category: "curries", isVeg: false },
+  { id: "cur-12", name: "Chicken Chatpata", description: "Spicy & tangy spicy chicken gravy with onion capsicum masala.", price: 214.80, category: "curries", isVeg: false },
+  { id: "cur-13", name: "Chicken Fry", description: "Hyderabadi style dry roasted spicy chicken fry with curry leaves.", price: 226.80, category: "curries", isVeg: false },
+  { id: "cur-14", name: "Chicken Lababdar", description: "Mughlai style chicken curry cooked with grated paneer & rich tomatoes.", price: 466.80, category: "curries", isVeg: false },
+  { id: "cur-15", name: "Chicken Shahi Korma", description: "Royal chicken curry simmered in fragrant almond & cashew gravy.", price: 274.80, category: "curries", isVeg: false },
+  { id: "cur-16", name: "Chicken Tikka Masala", description: "Smoky tandoori chicken tikka pieces in thick spicy gravy.", price: 286.80, category: "curries", isVeg: false },
+  { id: "cur-17", name: "Dum Ka Chicken Curry", description: "Slow-cooked dum chicken curry in sealed pot with aromatic spices.", price: 238.80, category: "curries", isVeg: false },
+  { id: "cur-18", name: "Egg Bhurji", description: "Spiced scrambled eggs cooked with chopped onions, tomatoes & green chilies.", price: 274.80, category: "curries", isVeg: false },
+  { id: "cur-19", name: "Egg Masala Curries", description: "Hard-boiled eggs simmered in rich spicy onion tomato curry.", price: 274.80, category: "curries", isVeg: false },
+  { id: "cur-20", name: "Hyderabadi Chicken Masala", description: "Traditional spicy Hyderabadi chicken gravy with roasted coconut & sesame.", price: 226.80, category: "curries", isVeg: false },
+  { id: "cur-21", name: "Kadhai Chicken", description: "Chicken stir-fried with crushed spices, onions & capsicum.", price: 226.80, category: "curries", isVeg: false },
+  { id: "cur-22", name: "Murgh Musallam", description: "Rich Mughlai whole chicken gravy cooked with minced meat & boiled eggs.", price: 286.80, category: "curries", isVeg: false },
+  { id: "cur-23", name: "Telangana Chicken Curry", description: "Rustic spicy Telangana style chicken curry cooked with red chili paste.", price: 214.80, category: "curries", isVeg: false },
 
-  // 5. RAJAHMUNDRY RE-REMIX (5 ITEMS)
-  {
-    id: "rrr1",
-    name: "BAGARA ANNAM (CHICKEN / MUTTON DALCHA / NATUKODI)",
-    description: "Aromatic Bagara rice served with rich choice of spicy Telangana chicken curry, slow-cooked Mutton Dalcha or country Natukodi pulusu.",
-    price: 449.00,
-    category: "rajahmundry-re-remix",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true,
-    image: realBiryaniImg
-  },
-  {
-    id: "rrr2",
-    name: "GODAVARI SPL FRIED RICE (VEG / CHICKEN)",
-    description: "Chef's signature Godavari spiced special fried rice loaded with caramelized onions, cashews & choice of veg or chicken.",
-    price: 449.00,
-    category: "rajahmundry-re-remix",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rrr3",
-    name: "RAGI SANGATI (CHICKEN / NATUKODI / MUTTON)",
-    description: "Traditional hot ragi sangati served with fiery spicy country Natukodi chicken, spicy mutton gravy or chicken fry.",
-    price: 449.00,
-    category: "rajahmundry-re-remix",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rrr4",
-    name: "PAPPU CHARU ANNAM (CHICKEN FRY / MUTTON FRY)",
-    description: "Comforting Pappucharu rice & ghee served alongside crispy Guntur Chicken Fry or spicy Mutton Fry.",
-    price: 419.00,
-    category: "rajahmundry-re-remix",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rrr5",
-    name: "GHEE RICE WITH CHEPALA PULUSU",
-    description: "Steaming hot pure cow ghee rice served with authentic sour & spicy Godavari tamarind river fish curry (Chepala Pulusu).",
-    price: 449.00,
-    category: "rajahmundry-re-remix",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true,
-    image: realFishImg
-  },
+  // ==================== FRIED RICE AND NOODLES ====================
+  { id: "fr-1", name: "Chicken Hakka Noodles", description: "Classic wok-tossed noodles with chicken strips & fresh vegetables.", price: 202.80, category: "fried-rice-noodles", isVeg: false },
+  { id: "fr-2", name: "Chicken Soft Noodles", description: "Soft wheat noodles tossed with chicken, soy sauce & spring onions.", price: 202.80, category: "fried-rice-noodles", isVeg: false },
+  { id: "fr-3", name: "Egg Noodles", description: "Wok-tossed noodles with scrambled eggs & crisp veggies.", price: 177.60, category: "fried-rice-noodles", isVeg: false },
+  { id: "fr-4", name: "Mixed Non Veg Noodles [Chicken Prawn Egg]", description: "Loaded noodles tossed with chicken, prawns, egg & spicy sauces.", price: 228.00, category: "fried-rice-noodles", isVeg: false },
+  { id: "fr-5", name: "Schezwan Veg Noodles", description: "Spicy Szechuan sauce tossed vegetable noodles.", price: 177.60, category: "fried-rice-noodles", isVeg: true },
+  { id: "fr-6", name: "Veg Soft Noodles", description: "Stir-fried soft noodles with carrots, cabbage & bell peppers.", price: 150.00, category: "fried-rice-noodles", isVeg: true },
+  { id: "fr-7", name: "Chicken Fried Rice [Serves 1]", description: "Aromatic basmati rice wok-fried with chicken, egg & dark soy.", price: 260.40, category: "fried-rice-noodles", isVeg: false },
+  { id: "fr-8", name: "Curd Rice [Serves 1]", description: "Comforting South Indian rice mixed with fresh curd, mustard & curry leaves.", price: 228.00, category: "fried-rice-noodles", isVeg: true },
+  { id: "fr-9", name: "Egg Fried Rice [Serves 1]", description: "Fluffy basmati rice tossed with scrambled egg & veggies.", price: 228.00, category: "fried-rice-noodles", isVeg: false },
+  { id: "fr-10", name: "Jeera Rice [Serves 1]", description: "Fragrant long-grain basmati rice tempered with cumin seeds & ghee.", price: 260.40, category: "fried-rice-noodles", isVeg: true },
+  { id: "fr-11", name: "Mix Non Veg Fried Rice [Serves 1, Chicken Prawn Egg]", description: "Deluxe fried rice loaded with chicken, juicy prawns & egg.", price: 260.40, category: "fried-rice-noodles", isVeg: false },
+  { id: "fr-12", name: "Mix Veg Fried Rice [Serves 1]", description: "Basmati rice wok-fried with diced garden vegetables.", price: 232.80, category: "fried-rice-noodles", isVeg: true },
+  { id: "fr-13", name: "Mutton Fried Rice [Serves 1]", description: "Flavorful fried rice tossed with tender mutton pieces.", price: 357.60, category: "fried-rice-noodles", isVeg: false },
+  { id: "fr-14", name: "Schezwan Chicken Fried Rice [Serves 1]", description: "Spicy Schezwan sauce tossed chicken fried rice.", price: 274.80, category: "fried-rice-noodles", isVeg: false },
+  { id: "fr-15", name: "Schezwan Veg Fried Rice [Serves 1]", description: "Fiery Schezwan sauce fried rice with farm vegetables.", price: 228.00, category: "fried-rice-noodles", isVeg: true },
+  { id: "fr-16", name: "Veg Fried Rice [Serves 1]", description: "Classic vegetable fried rice seasoned with pepper.", price: 205.20, category: "fried-rice-noodles", isVeg: true },
 
-  // 6. RAJU GARI VINDHURI (18 ITEMS)
-  {
-    id: "rgv1",
-    name: "VEG PULAV (ULAVACHARU / AVAKAYA)",
-    description: "Fragrant rice cooked with mixed vegetables in rich Ulavacharu (horsegram broth) or fiery Avakaya mango pickle.",
-    price: 369.00,
-    category: "raju-gari-vindhuri",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv2",
-    name: "PANEER PULAV (PACHI MIRCHI / PANDU MIRCHI)",
-    description: "Soft cottage cheese cubes cooked with aromatic long-grain rice and choice of raw green chili or red Pandumirchi paste.",
-    price: 419.00,
-    category: "raju-gari-vindhuri",
-    isVeg: true,
-    isSpicy: true
-  },
-  {
-    id: "rgv3",
-    name: "MASALA VANKAYA PULAV",
-    description: "Traditional Godavari style stuffed baby brinjal (Gutthi Vankaya) cooked with fragrant spiced pulao rice & ghee.",
-    price: 419.00,
-    category: "raju-gari-vindhuri",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv4",
-    name: "CHICKEN BIRYANI / FRY PIECE",
-    description: "Hyderabadi Dum Chicken Biryani or spicy Rajahmundry fried chicken piece layered over dum spiced rice.",
-    price: 419.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isChefSpecial: true,
-    image: realBiryaniImg
-  },
-  {
-    id: "rgv5",
-    name: "ULAVACHARU KODI PULAV / BIRYANI",
-    description: "Signature combination of horsegram broth (Ulavacharu) infused spiced chicken pulao or dum biryani.",
-    price: 429.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv6",
-    name: "AVAKAI KODI PULAV / BIRYANI",
-    description: "Fiery spicy Andhra mango pickle (Avakai) infused tender chicken pulao or dum biryani.",
-    price: 449.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isSpicy: true
-  },
-  {
-    id: "rgv7",
-    name: "KODI PULAV (PACHIMIRCHI / PANDUMIRCHI)",
-    description: "Juicy bone-in chicken cooked in choice of fresh raw green chili or spicy red Pandumirchi paste & ghee pulao rice.",
-    price: 449.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv8",
-    name: "REDDY GARI REKKA BIRYANI",
-    description: "Royal Rayalaseema style crispy fried chicken wings (Rekkalu) layered over fiery spiced dum biryani rice.",
-    price: 479.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv9",
-    name: "MUTTON FRY PIECE PULAV / BIRYANI",
-    description: "Tender bone-in mutton fry pieces cooked in roasted spices & ghee layered with aromatic pulao or biryani rice.",
-    price: 539.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv10",
-    name: "GONGURA MAMSAM PULAV",
-    description: "Tender mutton cooked with tangy sorrel leaves (Gongura) and pure cow ghee pulao rice.",
-    price: 549.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isSpicy: true
-  },
-  {
-    id: "rgv11",
-    name: "NALLI GOSHT",
-    description: "Royal slow-cooked mutton shank (Nalli) in rich marrow gravy served over royal spiced biryani rice.",
-    price: 699.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv12",
-    name: "VISTARAKU POTLAM PULAV (CHICKEN / MUTTON / PRAWN)",
-    description: "Fragrant pulao cooked with choice of Chicken, Mutton or Prawns, wrapped and steamed in traditional vistaraku leaf parcel.",
-    price: 459.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv13",
-    name: "ARITAKU POTLAM KHEEMA PULAV",
-    description: "Spicy minced mutton kheema pulao wrapped in toasted banana leaf parcel with ghee & caramelized onions.",
-    price: 559.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv14",
-    name: "RAVULAPALEM ROYYALA PULAV / BIRYANI",
-    description: "Fresh Ravulapalem Godavari river prawns wok-tossed with crushed pepper and dum biryani rice.",
-    price: 559.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv15",
-    name: "CHITTIMUTYALU PULAV (PANEER / MUSHROOM)",
-    description: "Traditional aromatic short-grain Chittimutyalu rice pulao cooked with cottage cheese or button mushrooms & ghee.",
-    price: 439.00,
-    category: "raju-gari-vindhuri",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "rgv16",
-    name: "CHITTIMUTYALU FRY PIECE PULAV (CHICKEN / MUTTON / PRAWN)",
-    description: "Aromatic tiny-grain Chittimutyalu rice cooked in ghee with choice of fried Chicken, Mutton or River Prawns.",
-    price: 459.00,
-    category: "raju-gari-vindhuri",
-    isVeg: false,
-  },
-  {
-    id: "sc4",
-    name: "PANDUMIRCHI FIERY MARGARITA",
-    description: "Smoked Tequila, Pandumirchi chili rim, fresh lime juice & agave syrup.",
-    price: 499.00,
-    category: "signature-cocktails",
-    isVeg: true,
-    isSpicy: true,
-    isChefSpecial: true
-  },
-  {
-    id: "sc5",
-    name: "GONGURA SPICED MOJITO",
-    description: "White Rum muddled with sorrel leaf Gongura extract, fresh mint, lime wedges & sparkling soda.",
-    price: 449.00,
-    category: "signature-cocktails",
-    isVeg: true,
-    isSpicy: true
-  },
+  // ==================== SOUP ====================
+  { id: "soup-1", name: "Cream Of Tomato Soup", description: "Rich creamy tomato soup served with golden buttered croutons.", price: 192.00, category: "soup", isVeg: true },
+  { id: "soup-2", name: "Veg Hot & Sour Soup", description: "Spicy & sour broth with shredded vegetables, ginger & soy.", price: 192.00, category: "soup", isVeg: true },
+  { id: "soup-3", name: "Veg Lemon Coriander Soup", description: "Refreshing clear vegetable broth flavoured with lemon juice & fresh cilantro.", price: 192.00, category: "soup", isVeg: true },
+  { id: "soup-4", name: "Veg Manchow Soup", description: "Indo-Chinese garlic vegetable soup served with crispy fried noodles.", price: 192.00, category: "soup", isVeg: true },
+  { id: "soup-5", name: "Veg Sweet Corn Soup", description: "Comforting thick soup made with sweet corn kernels & vegetables.", price: 192.00, category: "soup", isVeg: true },
 
-  // 12. WINE & BUBBLES (4 ITEMS)
-  {
-    id: "wb1",
-    name: "SULA SHIRAZ RED WINE (GLASS / BOTTLE)",
-    description: "Rich Indian red wine with notes of dark berries, pepper & oak.",
-    price: 449.00,
-    category: "wines",
-    isVeg: true
-  },
-  {
-    id: "wb2",
-    name: "SULA SAUVIGNON BLANC WHITE WINE",
-    description: "Crisp, refreshing dry white wine with aromas of green apple & citrus.",
-    price: 449.00,
-    category: "wines",
-    isVeg: true
-  },
-  {
-    id: "wb3",
-    name: "JACOB'S CREEK CABERNET",
-    description: "Premium Australian full-bodied red wine with plum & spice character.",
-    price: 599.00,
-    category: "wines",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "wb4",
-    name: "PROSECCO SPARKLING WINE",
-    description: "Italian sparkling bubbly wine with delicate green apple & floral notes.",
-    price: 699.00,
-    category: "wines",
-    isVeg: true,
-    isChefSpecial: true
-  },
+  // ==================== ZAFRANI BIRYANI ====================
+  { id: "bir-1", name: "Chicken Biryani [Jumbo, Serves 6]", description: "Grand jumbo pack Hyderabadi Dum Chicken Biryani served with gravy, raita & Double Ka Meetha.", price: 1309.20, category: "zafrani-biryani", isVeg: false, isChefSpecial: true, image: realBiryaniImg },
+  { id: "bir-2", name: "Chicken Biryani [Single, Serves 1] With Double Ka Meetha", description: "Single portion Hyderabadi Chicken Dum Biryani served with sweet Double Ka Meetha dessert.", price: 398.40, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-3", name: "Chicken Dum Biryani [Serves 1]", description: "Traditional saffron infused Hyderabadi Chicken Dum Biryani with Mirchi Ka Salan.", price: 260.40, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-4", name: "Hyderabadi Chicken Dum Biryani [Family Pack, Serves 4]", description: "Family pack Hyderabadi Dum Chicken Biryani with boiled eggs & raita.", price: 922.80, category: "zafrani-biryani", isVeg: false, isChefSpecial: true },
+  { id: "bir-5", name: "Hyderabadi Chicken Dum Biryani [Serves 1]", description: "Classic single portion Hyderabadi Dum Biryani with tender chicken piece.", price: 262.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-6", name: "Hyderabadi Zafrani Chicken Biryani [Full, Serves 1]", description: "Royal saffron Zafrani Dum Biryani cooked with pure ghee & secret aromatic spices.", price: 478.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-7", name: "Biryani Rice", description: "Aromatic basmati Dum Biryani rice cooked with saffron, ghee & whole spices.", price: 219.60, category: "zafrani-biryani", isVeg: true },
+  { id: "bir-8", name: "Boneless Chicken Biryani [Full, Serves 1]", description: "Flavorful Dum Biryani rice served with boneless chicken masala pieces.", price: 442.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-9", name: "Chicken 65 Biryani [Serves 1]", description: "Aromatic Biryani rice topped with spicy deep-fried Chicken 65 pieces.", price: 310.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-10", name: "Chicken Biryani [Mini, Serves 1]", description: "Mini portion Hyderabadi Chicken Dum Biryani.", price: 298.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-11", name: "Chicken Fry Piece Biryani [Full, Serves 1]", description: "Hyderabadi Biryani rice served with crispy spicy fried chicken pieces.", price: 466.80, category: "zafrani-biryani", isVeg: false, isChefSpecial: true },
+  { id: "bir-12", name: "Chicken Lollipop Biryani [Full, Serves 1]", description: "Dum Biryani rice topped with crispy fried chicken lollipops.", price: 466.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-13", name: "Chicken Mughlai Biryani [Serves 1]", description: "Boneless chicken Mughlai gravy & boiled egg served over Biryani rice.", price: 334.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-14", name: "Extra Chicken Piece Only [1 Piece]", description: "Single piece of tender Hyderabadi dum chicken.", price: 177.60, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-15", name: "Extra Mutton Dum Piece", description: "Single melt-in-mouth slow cooked Mutton dum piece.", price: 177.50, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-16", name: "Fish Biryani", description: "Biryani rice served with spiced tawa fried fish fillet.", price: 478.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-17", name: "Fish Biryani [Single, Serves 1]", description: "Single portion Fish Biryani.", price: 298.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-18", name: "Hyderabadi Mutton Biryani [Single, Serves 1]", description: "Single portion authentic Hyderabadi Dum Mutton Biryani.", price: 322.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-19", name: "Hyderabadi Mutton Dum Biryani [Family Pack, Serves 3]", description: "Family pack of tender Mutton Dum Biryani with raita & salan.", price: 1198.80, category: "zafrani-biryani", isVeg: false, isChefSpecial: true },
+  { id: "bir-20", name: "Hyderabadi Mutton Dum Biryani [Full, Serves 1]", description: "Full portion succulent Mutton Dum Biryani.", price: 550.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-21", name: "Mixed Non Veg Biryani [Serves 2]", description: "Royal platter with boneless chicken, mutton & prawns biryani.", price: 579.60, category: "zafrani-biryani", isVeg: false, isChefSpecial: true },
+  { id: "bir-22", name: "Mutton Fry Piece Biryani [Full, Serves 1]", description: "Biryani rice topped with spicy fried mutton pieces.", price: 586.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-23", name: "Mutton Keema Biryani [Full, Serves 1]", description: "Aromatic Biryani rice served with spicy minced mutton keema masala.", price: 598.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-24", name: "Mutton Keema Biryani [Single]", description: "Single portion spicy Mutton Keema Biryani.", price: 358.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-25", name: "Prawns Biryani [16 Pieces, Serves 2]", description: "Large prawns biryani platter with 16 spiced prawns.", price: 674.40, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-26", name: "Prawns Biryani [8 Pieces, Serves 1]", description: "Single portion Prawns Biryani with 8 prawns.", price: 398.40, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-27", name: "Prawns Biryani [Full, Serves 1]", description: "Full portion spiced Prawns Biryani.", price: 564.00, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-28", name: "Chicken Majestic Biryani [Full]", description: "Biryani rice served with spicy Chicken Majestic strips.", price: 598.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-29", name: "Mutton Biryani [Jumbo Pack]", description: "Jumbo pack Mutton Dum Biryani for 6 persons.", price: 1678.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-30", name: "Egg Biryani [Serves 1]", description: "Fluffy Biryani rice served with two spiced boiled eggs.", price: 238.80, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-31", name: "Egg Biryani [Full]", description: "Full portion Egg Dum Biryani.", price: 389.00, category: "zafrani-biryani", isVeg: false },
+  { id: "bir-32", name: "Kaju Paneer Biryani [Serves 1]", description: "Aromatic Veg Biryani rice loaded with fried cashews & paneer cubes.", price: 346.80, category: "zafrani-biryani", isVeg: true },
+  { id: "bir-33", name: "Paneer Biryani [Serves 1]", description: "Dum Biryani rice served with marinated paneer masala.", price: 334.80, category: "zafrani-biryani", isVeg: true },
+  { id: "bir-34", name: "Veg Biryani [Family Pack, Serves 3]", description: "Family pack Veg Dum Biryani loaded with garden vegetables.", price: 799.20, category: "zafrani-biryani", isVeg: true },
+  { id: "bir-35", name: "Veg Biryani [Full, Serves 1]", description: "Full portion vegetable Dum Biryani.", price: 442.80, category: "zafrani-biryani", isVeg: true },
+  { id: "bir-36", name: "Veg Biryani [Serves 1]", description: "Single portion Veg Biryani.", price: 260.40, category: "zafrani-biryani", isVeg: true },
+  { id: "bir-37", name: "Veg Pulao [Serves 1]", description: "Fragrant basmati rice cooked with whole green spices & veggies.", price: 260.40, category: "zafrani-biryani", isVeg: true },
 
-  // 13. VODKA & PREMIUM SPIRITS (3 ITEMS)
-  {
-    id: "vp1",
-    name: "GREY GOOSE VODKA (60ML)",
-    description: "Ultra-premium French wheat vodka distilled for exceptionally smooth taste.",
-    price: 549.00,
-    category: "vodka-spirits",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "vp2",
-    name: "ABSOLUT VODKA (60ML)",
-    description: "Classic Swedish pure vodka crafted from winter wheat.",
-    price: 399.00,
-    category: "vodka-spirits",
-    isVeg: true
-  },
-  {
-    id: "vp3",
-    name: "SMIRNOFF GREEN APPLE (60ML)",
-    description: "Crisp green apple flavored triple distilled vodka.",
-    price: 299.00,
-    category: "vodka-spirits",
-    isVeg: true
-  },
+  // ==================== SHAWARMA AND FRENCH FRIES ====================
+  { id: "shw-1", name: "Extra Mayonnaise", description: "Creamy egg garlic mayonnaise dip.", price: 60.00, category: "shawarma-french-fries", isVeg: false },
+  { id: "shw-2", name: "Chicken Shawarma Special", description: "Special rumali wrap filled with shaved grilled chicken & mayonnaise.", price: 249.00, category: "shawarma-french-fries", isVeg: false },
+  { id: "shw-3", name: "French Fries Shawarma", description: "Crispy french fries stuffed inside chicken shawarma roll.", price: 205.20, category: "shawarma-french-fries", isVeg: false },
+  { id: "shw-4", name: "French Fries [Medium]", description: "Crispy salted potato french fries.", price: 136.80, category: "shawarma-french-fries", isVeg: true },
+  { id: "shw-5", name: "Grilled Chicken Shawarma With Salad", description: "Juicy grilled chicken shawarma wrap served with fresh side salad.", price: 229.00, category: "shawarma-french-fries", isVeg: false },
+  { id: "shw-6", name: "Special Grilled Chicken 65 Shawarma", description: "Spicy Chicken 65 wrapped in shawarma bread.", price: 249.00, category: "shawarma-french-fries", isVeg: false },
 
-  // 14. CRAFT & BOTTLED BEERS (4 ITEMS)
-  {
-    id: "cb1",
-    name: "CORONA EXTRA (BOTTLE)",
-    description: "Chilled Mexican lager served with fresh lime wedge.",
-    price: 349.00,
-    category: "beers",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "cb2",
-    name: "HEINEKEN PREMIUM (BOTTLE)",
-    description: "Classic Dutch premium malt lager.",
-    price: 299.00,
-    category: "beers",
-    isVeg: true
-  },
-  {
-    id: "cb3",
-    name: "BUDWEISER MAGNUM (BOTTLE)",
-    description: "Strong super-premium lager beer.",
-    price: 279.00,
-    category: "beers",
-    isVeg: true
-  },
-  {
-    id: "cb4",
-    name: "KINGFISHER ULTRA (BOTTLE)",
-    description: "Smooth premium Indian lager.",
-    price: 249.00,
-    category: "beers",
-    isVeg: true
-  },
+  // ==================== ROTI / NAAN ====================
+  { id: "rt-1", name: "Alu Paratha", description: "Whole wheat flatbread stuffed with spiced potato mash.", price: 69.00, category: "roti-naan", isVeg: true },
+  { id: "rt-2", name: "Butter Roti", description: "Clay oven baked whole wheat roti brushed with butter.", price: 40.80, category: "roti-naan", isVeg: true },
+  { id: "rt-3", name: "Gobi Paratha", description: "Tandoori flatbread stuffed with spiced grated cauliflower.", price: 69.00, category: "roti-naan", isVeg: true },
+  { id: "rt-4", name: "Masala Kulcha", description: "Soft leavened bread stuffed with spicy potato & onion filling.", price: 69.00, category: "roti-naan", isVeg: true },
+  { id: "rt-5", name: "Plain Kulcha", description: "Soft tandoori flatbread garnished with coriander.", price: 60.00, category: "roti-naan", isVeg: true },
+  { id: "rt-6", name: "Plain Naan", description: "Classic tandoori refined flour naan.", price: 45.00, category: "roti-naan", isVeg: true },
+  { id: "rt-7", name: "Tandoori Roti", description: "Traditional whole wheat bread baked in clay tandoor.", price: 30.00, category: "roti-naan", isVeg: true },
 
-  // 15. WHISKY, RUM & TEQUILA (4 ITEMS)
-  {
-    id: "wrt1",
-    name: "BLACK LABEL 12 YRS (60ML)",
-    description: "Iconic Johnnie Walker 12 Year aged Scotch whisky with smoky oak finish.",
-    price: 499.00,
-    category: "whisky-rum",
-    isVeg: true,
-    isChefSpecial: true
-  },
-  {
-    id: "wrt2",
-    name: "JAMESON IRISH WHISKEY (60ML)",
-    description: "Triple-distilled smooth Irish whiskey.",
-    price: 449.00,
-    category: "whisky-rum",
-    isVeg: true
-  },
-  {
-    id: "wrt3",
-    name: "BACARDI WHITE RUM (60ML)",
-    description: "Classic Cuban light white rum.",
-    price: 299.00,
-    category: "whisky-rum",
-    isVeg: true
-  },
-  {
-    id: "wrt4",
-    name: "DON JULIO BLANCO TEQUILA (SHOT)",
-    description: "Ultra-premium 100% blue agave Mexican tequila shot.",
-    price: 599.00,
-    category: "whisky-rum",
-    isVeg: true,
-    isChefSpecial: true
-  }
+  // ==================== SALADS ====================
+  { id: "sal-1", name: "Green Salad", description: "Fresh sliced cucumber, tomatoes, carrots, onions & lemon wedges.", price: 177.60, category: "salads", isVeg: true },
+  { id: "sal-2", name: "Onion Salad", description: "Crisp sliced raw onions served with green chilies & lemon.", price: 177.60, category: "salads", isVeg: true },
+
+  // ==================== FISH ====================
+  { id: "fsh-1", name: "Fish Pakoda", description: "Crispy batter-fried spiced fish fritters served with mint chutney.", price: 550.80, category: "fish", isVeg: false, image: realFishImg },
+  { id: "fsh-2", name: "Fish Tikka Kebab", description: "Tandoori marinated fish cubes grilled over charcoal coals.", price: 550.80, category: "fish", isVeg: false },
+
+  // ==================== COMBOS ====================
+  { id: "cmb-1", name: "Chicken Tikka [200 G] With Salad", description: "High protein meal combining 200g lean grilled chicken tikka with fresh fiber-rich salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-2", name: "Hariyali Chicken Tikka [200 G] With Salad", description: "200g green herb grilled chicken tikka served with crisp salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-3", name: "Lasooni Chicken Tikka [200 G] With Salad", description: "200g garlic-infused grilled chicken tikka paired with fresh salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-4", name: "Chicken Kasturi Tikka [200 G] With Salad", description: "Aromatic fenugreek marinated chicken tikka served with fresh salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-5", name: "Chicken Tikka [150 G] With 3 Eggs And Salad", description: "Protein pack of 150g grilled chicken tikka, 3 eggs & salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-6", name: "Hariyali Tikka [150 G] With 3 Eggs And Salad", description: "150g Hariyali chicken tikka, 3 protein-rich eggs & salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-7", name: "Lasooni Tikka [150 G] With 3 Eggs And Salad", description: "Garlic chicken tikka served with 3 eggs & crisp salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-8", name: "Chicken Tikka [2 Pcs] With Hariyali Tikka [2 Pcs] And Salad", description: "Duo of classic tikka & Hariyali tikka with fresh salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-9", name: "Chicken Tikka [2 Pcs] With Malai Tikka [2 Pcs] And Salad", description: "Classic grilled tikka & cream malai tikka served with salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-10", name: "Hariyali Tikka [2 Pcs] With Lasooni Tikka [2 Pcs] And Salad", description: "Herb tikka & garlic lasooni tikka served with salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-11", name: "Reshmi Kebab [2 Pcs] With Chicken Tikka [2 Pcs] And Salad", description: "Soft reshmi kebabs & chicken tikka paired with fresh salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-12", name: "Kasturi Tikka [2 Pcs] With Chicken Tikka [2 Pcs] And Salad", description: "Kasturi tikka & classic chicken tikka served with fresh salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-13", name: "Fish Tikka [200 G] With Salad", description: "200g grilled fish tikka served with fresh fiber-rich salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-14", name: "Ajwain Fish Tikka [200 G] With Salad", description: "Ajwain carom seed marinated grilled fish tikka with crisp salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-15", name: "Lasooni Fish Tikka [200 G] With Salad", description: "Garlic fish tikka paired with crisp refreshing salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-16", name: "Fish Tikka [150 G] With 3 Egg Whites And Salad", description: "Lean fish tikka served with 3 egg whites & fresh salad.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-17", name: "Chicken Tikka [200 G] With Salad And Lime Water", description: "Grilled chicken tikka served with salad & refreshing lime water.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-18", name: "Hariyali Chicken Tikka [200 G] With Salad And Lime Water", description: "Green herb chicken tikka paired with salad & lime water.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-19", name: "Lasooni Chicken Tikka [200 G] With Salad And Lime Water", description: "Garlic chicken tikka served with salad & fresh lime water.", price: 360.00, category: "combos", isVeg: false },
+  { id: "cmb-20", name: "Chicken Kasturi Tikka [200 G] With Salad And Lime Water", description: "Aromatic kasturi tikka with fresh salad & lime water.", price: 360.00, category: "combos", isVeg: false },
+
+  // ==================== HALEEM ====================
+  { id: "hal-1", name: "Mutton Haleem Spl", description: "Authentic Hyderabadi slow-cooked pounded Mutton Haleem garnished with ghee, fried onions, cashews & lime.", price: 298.80, category: "haleem", isVeg: false, isChefSpecial: true },
+  { id: "hal-2", name: "Chicken Haleem", description: "Rich pounded Chicken Haleem slow-cooked with wheat, lentils & ghee.", price: 262.80, category: "haleem", isVeg: false },
+  { id: "hal-3", name: "Chicken Haleem With Coke [200 Ml]", description: "Delicious Chicken Haleem served with 200ml chilled Coca-Cola.", price: 286.80, category: "haleem", isVeg: false },
+
+  // ==================== ICE CREAM ====================
+  { id: "ice-1", name: "Butterscotch Ice Cream", description: "Rich creamy butterscotch ice cream scoop with crunchy praline bits.", price: 172.80, category: "ice-cream", isVeg: true },
+  { id: "ice-2", name: "Chocolate Ice Cream", description: "Indulgent rich dark chocolate ice cream scoop.", price: 172.80, category: "ice-cream", isVeg: true },
+  { id: "ice-3", name: "Vanilla Ice Cream", description: "Classic Madagascar vanilla bean ice cream scoop.", price: 172.80, category: "ice-cream", isVeg: true },
+
+  // ==================== DESSERTS ====================
+  { id: "des-1", name: "Apricot Delight", description: "Hyderabadi special Khubani stewed apricots topped with fresh cream.", price: 274.80, category: "desserts", isVeg: true, isChefSpecial: true },
+  { id: "des-2", name: "Double Ka Meetha", description: "Traditional Hyderabadi fried bread sweet soaked in saffron cardamom milk.", price: 199.00, category: "desserts", isVeg: true },
+  { id: "des-3", name: "Gulab Jamun", description: "Soft fried milk solids soaked in warm rose cardamom syrup.", price: 118.80, category: "desserts", isVeg: true },
+  { id: "des-4", name: "Kadhu Ka Kheer", description: "Traditional Hyderabadi bottle gourd pudding cooked with sago & khoya.", price: 118.80, category: "desserts", isVeg: true },
+  { id: "des-5", name: "Qurbani Ka Meetha", description: "Authentic stewed dried apricot dessert topped with chopped almonds.", price: 274.80, category: "desserts", isVeg: true }
 ];
 
 export const EVENTS = [
