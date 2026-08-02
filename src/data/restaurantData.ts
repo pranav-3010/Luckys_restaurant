@@ -68,6 +68,7 @@ export const MENU_CATEGORIES = [
   { id: 'all', labelEN: 'All Items', labelTE: 'అన్నీ' },
   { id: 'rajahmundry-taluka', labelEN: 'C/o Rajahmundry Taluka', subtitle: 'Authentic Rajahmundry Starters & Specials', labelTE: 'రాజమండ్రి తాలూకా' },
   { id: 'yekadaina-yeppudaina', labelEN: 'Yekadaina Yeppudaina', subtitle: 'Evergreen Anytime Favorites & Snacks', labelTE: 'ఎక్కడైనా ఎప్పుడైనా' },
+  { id: 'vedigha-ghatugha', labelEN: 'Vedigha Ghatugha', subtitle: 'Hot & Spicy Soups, Rasam & Mutton Marag', labelTE: 'వేడిగా ఘాటుగా' },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -413,6 +414,63 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 569.00,
     category: "yekadaina-yeppudaina",
     isVeg: false
+  },
+
+  // 3. VEDIGHA GHATUGHA (6 SOUPS & RASAM ITEMS)
+  {
+    id: "vg1",
+    name: "BROWN GARLIC SOUP",
+    description: "Rich, aromatic slow-roasted brown garlic broth infused with fresh herbs & crushed black pepper.",
+    price: 175.00,
+    category: "vedigha-ghatugha",
+    isVeg: true,
+    isChefSpecial: true
+  },
+  {
+    id: "vg2",
+    name: "MIRIYALA RASAM / KODI",
+    description: "Traditional spicy Andhra black pepper rasam simmered with garlic, cumin, tomato & tender chicken extract.",
+    price: 175.00,
+    category: "vedigha-ghatugha",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true
+  },
+  {
+    id: "vg3",
+    name: "KOTHIMEERA SOUP (BROCCOLI/CHICKEN)",
+    description: "Fresh green coriander infused clear soup simmered with garden broccoli florets or chicken strips.",
+    price: 175.00,
+    category: "vedigha-ghatugha",
+    isVeg: true
+  },
+  {
+    id: "vg4",
+    name: "CORN SOUP (VEG/CHICKEN)",
+    description: "Creamy sweet corn soup broth flavored with white pepper, sesame oil & choice of veg or chicken.",
+    price: 175.00,
+    category: "vedigha-ghatugha",
+    isVeg: true
+  },
+  {
+    id: "vg5",
+    name: "MANCHOW (VEG/CHICKEN)",
+    description: "Classic spicy Indo-Chinese manchow soup loaded with mushrooms, garlic, soy broth & crispy fried noodles.",
+    price: 175.00,
+    category: "vedigha-ghatugha",
+    isVeg: true,
+    isSpicy: true
+  },
+  {
+    id: "vg6",
+    name: "MUTTON MARAG",
+    description: "Hyderabadi royal rich mutton bone broth simmered for hours with cashew, cream, cardamom, black pepper & ghee.",
+    price: 249.00,
+    category: "vedigha-ghatugha",
+    isVeg: false,
+    isSpicy: true,
+    isChefSpecial: true,
+    image: realBiryaniImg
   }
 ];
 
