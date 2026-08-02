@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import realFishImg from '../assets/real_aritaku_fish_parcels.jpg';
+import real3dWallLogo from '../assets/real_3d_wall_logo.jpg';
 
 export const BrandStorySplitSection: React.FC = () => {
   const scrollToMenu = () => {
@@ -15,22 +16,40 @@ export const BrandStorySplitSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* Left Column (58% width on Desktop): Aritaku Fish Photo */}
+          {/* Left Column (58% width on Desktop): 3D Wall Logo Image ABOVE Aritaku Fish Photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 relative aspect-[16/11] rounded-none overflow-hidden border border-[#E6DBC5] shadow-2xl"
+            className="lg:col-span-7 space-y-6"
           >
-            <img
-              src={realFishImg}
-              alt="Traditional Aritaku Chepala Fry"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
+            {/* Top Image: Official 3D Backlit C/o Rajahmundry Logo Wall */}
+            <div className="relative aspect-[16/11] rounded-none overflow-hidden border border-[#E6DBC5] shadow-xl">
+              <img
+                src={real3dWallLogo}
+                alt="Official C/o Rajahmundry 3D Wall Logo"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute bottom-4 left-4 right-4 p-3 glass-dark-panel rounded-none border border-white/40">
+                <span className="block text-xs font-bold text-[#1F1919] uppercase tracking-wider">Official C/o Rajahmundry 3D Wall Landmark</span>
+              </div>
+            </div>
+
+            {/* Second Image: Aritaku Chepala Fry */}
+            <div className="relative aspect-[16/10] rounded-none overflow-hidden border border-[#E6DBC5] shadow-lg">
+              <img
+                src={realFishImg}
+                alt="Traditional Aritaku Chepala Fry"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute bottom-4 left-4 right-4 p-3 glass-dark-panel rounded-none border border-white/40">
+                <span className="block text-xs font-bold text-[#1F1919] uppercase tracking-wider">Authentic Banana Leaf Aritaku Chepala Fry</span>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Right Column (42% width on Desktop): Bigger Headline & Story */}
+          {/* Right Column (42% width on Desktop): Headline & Story */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -43,7 +62,7 @@ export const BrandStorySplitSection: React.FC = () => {
               WHERE GODAVARI HERITAGE MEETS HYDERABAD NIGHTLIFE
             </span>
 
-            {/* Bigger ROAST Display Headline (General Sans 800) */}
+            {/* ROAST Display Headline (General Sans 800) */}
             <h2 className="text-3xl sm:text-5xl md:text-6xl roast-display-heading text-[#1F1919] leading-[1.1] my-4">
               Experience Hyderabad's Premier Rajahmundry Kitchen & Rooftop Bar
             </h2>
