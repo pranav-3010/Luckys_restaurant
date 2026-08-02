@@ -4,20 +4,17 @@ import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="py-16 sm:py-24 relative bg-[#F5EBE0] select-none font-sans">
+    <section id="contact" className="py-12 sm:py-16 relative bg-[#F5EBE0] select-none font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (General Sans 800) */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-2">
+        {/* Section Header (General Sans 800 - WITHOUT DESCRIPTION) */}
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-1">
           <span className="eyebrow-text block text-xs sm:text-sm">
             5TH FLOOR ROOFTOP LOCATION
           </span>
           <h2 className="text-3xl sm:text-5xl font-black font-sans uppercase text-[#1F1919] tracking-tight">
             LOCATION & CONTACT
           </h2>
-          <p className="text-xs sm:text-base text-[#6E5C5C] font-light leading-relaxed">
-            Visit C/o Rajahmundry on the 5th Floor of Santa Sriram Estates, Kompally, Hyderabad.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">

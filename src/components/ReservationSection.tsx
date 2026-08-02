@@ -38,20 +38,17 @@ Please confirm my table reservation!`;
   };
 
   return (
-    <section id="reservation" className="py-16 sm:py-24 relative bg-[#F5EBE0] select-none font-sans">
+    <section id="reservation" className="py-12 sm:py-16 relative bg-[#F5EBE0] select-none font-sans">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (General Sans 800) */}
-        <div className="text-center mb-10 space-y-2">
+        {/* Section Header (General Sans 800 - WITHOUT DESCRIPTION) */}
+        <div className="text-center mb-8 space-y-1">
           <span className="eyebrow-text block text-xs sm:text-sm">
             5TH FLOOR ROOFTOP & AC LOUNGE
           </span>
           <h2 className="text-3xl sm:text-5xl font-black font-sans uppercase text-[#1F1919] tracking-tight">
             TABLE RESERVATION
           </h2>
-          <p className="text-xs sm:text-base text-[#6E5C5C] font-light max-w-xl mx-auto leading-relaxed">
-            Reserve your table for an authentic Godavari feast or rooftop cocktail experience at C/o Rajahmundry, Kompally.
-          </p>
         </div>
 
         {/* Reservation Card (Rock-Solid Clean Dropdowns) */}
