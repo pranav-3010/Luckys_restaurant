@@ -10,9 +10,10 @@ import { useLanguage } from '../context/LanguageContext';
 interface HeroProps {
   onExploreMenu: () => void;
   onReserveTable: () => void;
+  onOpenLocation?: () => void;
 }
 
-export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
+export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu, onOpenLocation }) => {
   const { language, toggleLanguage } = useLanguage();
 
   const slides = [
@@ -107,15 +108,17 @@ export const HeroSection: React.FC<HeroProps> = ({ onExploreMenu }) => {
       {/* Bottom Bar: OUR LOCATIONS | Down Arrow (v) | ORDER ONLINE */}
       <div className="relative z-10 pb-6 sm:pb-8 px-4 sm:px-12 flex items-center justify-between">
         {/* Left: OUR LOCATIONS */}
-        <motion.a
-          href="#locations"
+        <motion.button
+          onClick={() => {
+            if (onOpenLocation) onOpenLocation();
+          }}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-[11px] sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest text-white hover:text-[#F6E27A] underline underline-offset-4 sm:underline-offset-8 transition-colors cursor-pointer drop-shadow-lg"
         >
           OUR LOCATIONS
-        </motion.a>
+        </motion.button>
 
         {/* Center: Down Arrow Circle Button (v) */}
         <motion.button

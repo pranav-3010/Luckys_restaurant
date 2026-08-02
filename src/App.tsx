@@ -47,6 +47,7 @@ export function App() {
               <HeroSection
                 onExploreMenu={() => navigateToExplore('menu')}
                 onReserveTable={() => navigateToExplore('reservations')}
+                onOpenLocation={() => navigateToExplore('locations')}
               />
 
               <TickerBanner />
