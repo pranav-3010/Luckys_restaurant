@@ -37,7 +37,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
       return [...prev, { item, quantity: 1 }];
     });
     onSelectItem(item);
-    setIsCartOpen(true);
+    // Silent add to cart without auto-opening cart drawer
   };
 
   const handleUpdateQuantity = (itemId: string, delta: number) => {
@@ -306,49 +306,72 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
                   {/* Product Cards Grid for this Category */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {categoryItems.map((item) => (
-                      <div
-                        key={item.id}
-                        className="bg-[#FAF5ED] border border-[#E6DBC5]/80 p-5 rounded-none shadow-sm hover:shadow-xl transition-all flex flex-col justify-between space-y-4 group"
-                      >
-                        {/* Square Image */}
-                        <div className="relative aspect-square w-full bg-white overflow-hidden border border-[#E6DBC5]/40 flex items-center justify-center p-2">
-                          <img
-                            src={item.image || MENU_ITEMS[0].image}
-                            alt={item.name}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          />
-                        </div>
+                    {categoryItems.map((item) => {
+                      const itemInCart = cartItems.find(ci => ci.item.id === item.id);
+                      const quantityInCart = itemInCart ? itemInCart.quantity : 0;
 
-                        {/* ADD Button */}
-                        <button
-                          onClick={() => handleAddToCart(item)}
-                          className="w-full py-3 bg-white hover:bg-[#1A1615] hover:text-white border border-[#E6DBC5] text-[#C88A3B] hover:border-[#1A1615] font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-sm text-center"
+                      return (
+                        <div
+                          key={item.id}
+                          className="bg-[#FAF5ED] border border-[#E6DBC5]/80 p-5 rounded-none shadow-sm hover:shadow-xl transition-all flex flex-col justify-between space-y-4 group"
                         >
-                          ADD
-                        </button>
-
-                        {/* Title & Veg Badge */}
-                        <div className="space-y-2 pt-1">
-                          <div className="flex items-center gap-2">
-                            <h3 className="text-lg font-black font-sans text-[#1F1919] leading-snug">
-                              {item.name}
-                            </h3>
-                            <span className={`shrink-0 w-4 h-4 rounded-sm border flex items-center justify-center p-0.5 ${item.isVeg ? 'border-emerald-600 bg-emerald-50' : 'border-rose-600 bg-rose-50'}`}>
-                              <span className={`w-2 h-2 rounded-full ${item.isVeg ? 'bg-emerald-600' : 'bg-rose-600'}`} />
-                            </span>
+                          {/* Square Image */}
+                          <div className="relative aspect-square w-full bg-white overflow-hidden border border-[#E6DBC5]/40 flex items-center justify-center p-2">
+                            <img
+                              src={item.image || MENU_ITEMS[0].image}
+                              alt={item.name}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
                           </div>
 
-                          <div className="text-sm font-black text-[#1F1919] font-sans">
-                            ₹{item.price.toFixed(2)}
-                          </div>
+                          {/* ADD / Quantity Stepper Button */}
+                          {quantityInCart === 0 ? (
+                            <button
+                              onClick={() => handleAddToCart(item)}
+                              className="w-full py-3 bg-white hover:bg-[#1A1615] hover:text-white border border-[#E6DBC5] text-[#C88A3B] hover:border-[#1A1615] font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-sm text-center"
+                            >
+                              ADD
+                            </button>
+                          ) : (
+                            <div className="w-full py-2 bg-[#1A1615] text-[#7DCE9F] border border-[#1A1615] font-bold text-xs uppercase tracking-widest flex items-center justify-between px-4 shadow-sm">
+                              <button
+                                onClick={() => handleUpdateQuantity(item.id, -1)}
+                                className="hover:text-white transition-colors cursor-pointer text-base font-black px-1"
+                              >
+                                -
+                              </button>
+                              <span>{quantityInCart} IN CART</span>
+                              <button
+                                onClick={() => handleUpdateQuantity(item.id, 1)}
+                                className="hover:text-white transition-colors cursor-pointer text-base font-black px-1"
+                              >
+                                +
+                              </button>
+                            </div>
+                          )}
 
-                          <p className="text-xs text-[#6E5C5C] font-normal leading-relaxed font-sans line-clamp-3">
-                            {item.description}
-                          </p>
+                          {/* Title & Veg Badge */}
+                          <div className="space-y-2 pt-1">
+                            <div className="flex items-center gap-2">
+                              <h3 className="text-lg font-black font-sans text-[#1F1919] leading-snug">
+                                {item.name}
+                              </h3>
+                              <span className={`shrink-0 w-4 h-4 rounded-sm border flex items-center justify-center p-0.5 ${item.isVeg ? 'border-emerald-600 bg-emerald-50' : 'border-rose-600 bg-rose-50'}`}>
+                                <span className={`w-2 h-2 rounded-full ${item.isVeg ? 'bg-emerald-600' : 'bg-rose-600'}`} />
+                              </span>
+                            </div>
+
+                            <div className="text-sm font-black text-[#1F1919] font-sans">
+                              ₹{item.price.toFixed(2)}
+                            </div>
+
+                            <p className="text-xs text-[#6E5C5C] font-normal leading-relaxed font-sans line-clamp-3">
+                              {item.description}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </section>
               );
