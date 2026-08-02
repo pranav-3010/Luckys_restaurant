@@ -4,6 +4,7 @@ import { Search, User, ShoppingBag, ArrowLeft, ChevronLeft, ChevronRight } from 
 import { MENU_CATEGORIES, MENU_ITEMS } from '../data/restaurantData';
 import { ReservationSection } from './ReservationSection';
 import { ContactSection } from './ContactSection';
+import { LoginModal } from './LoginModal';
 import type { MenuItem } from '../types';
 
 interface ExplorePageProps {
@@ -21,6 +22,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [cartCount] = useState<number>(0);
+  const [isLoginOpen, setIsLoginOpen] = useState<boolean>(false);
 
   const isBarCategory = (catId: string) => {
     return ['signature-cocktails', 'wines', 'vodka-spirits', 'beers', 'whisky-rum'].includes(catId);
@@ -61,6 +63,9 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
   return (
     <div className="min-h-screen bg-[#F5EBE0] text-[#1F1919] select-none font-sans">
+
+      {/* Login Modal Popup */}
+      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
 
       {/* 1. TOP ROAST BLACK NAVBAR */}
       <header className="sticky top-0 z-50 bg-[#161312] text-white py-4 px-4 sm:px-8 shadow-xl border-b border-white/10">
@@ -122,7 +127,7 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
             })}
           </nav>
 
-          {/* Right: Search Input Bar, Profile Icon & Cart Pill Button */}
+          {/* Right: Search Input Bar, Profile Icon (Triggers Login Modal) & Cart Pill Button */}
           <div className="flex items-center gap-3">
             <div className="relative hidden sm:block">
               <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -135,8 +140,13 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               />
             </div>
 
-            <button className="p-2 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-all cursor-pointer">
-              <User className="w-5 h-5" />
+            {/* PROFILE USER ICON - TRIGGERS LOGIN / SIGNUP MODAL */}
+            <button
+              onClick={() => setIsLoginOpen(true)}
+              className="p-2 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-all cursor-pointer relative group"
+              title="Login / Signup"
+            >
+              <User className="w-5 h-5 group-hover:text-[#7DCE9F] transition-colors" />
             </button>
 
             <button className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-wider cursor-pointer transition-all">
