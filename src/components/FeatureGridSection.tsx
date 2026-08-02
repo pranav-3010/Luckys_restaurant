@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import luckysBiryaniMenuCardImg from '../assets/luckys_biryani_menu_card.jpg';
 import luckysMandiPlatterImg from '../assets/luckys_mandi_platter.jpg';
-import realReservationInteriorImg from '../assets/real_reservation_interior.jpg';
+import luckysReservationInteriorImg from '../assets/luckys_reservation_interior.jpg';
 import luckysFacadeImg from '../assets/luckys_exterior_facade.jpg';
 
 interface FeatureGridSectionProps {
@@ -92,7 +92,7 @@ export const FeatureGridSection: React.FC<FeatureGridSectionProps> = ({ onNaviga
             className="group relative rounded-none overflow-hidden cursor-pointer aspect-[16/9] sm:aspect-[16/10] bg-black border border-[#E6DBC5] shadow-md hover:shadow-2xl transition-all"
           >
             <img
-              src={realReservationInteriorImg}
+              src={luckysReservationInteriorImg}
               alt="Lucky's Restaurant Dining Room Reservation"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
             />
