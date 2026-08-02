@@ -16,7 +16,7 @@ export const BrandStorySplitSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* Left Column (58% width on Desktop): 3D Wall Logo Image ABOVE Aritaku Fish Photo */}
+          {/* Left Column (58% width on Desktop): 3D Wall Logo Image ABOVE Aritaku Fish Photo (Clean, No Text Overlays) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -31,9 +31,6 @@ export const BrandStorySplitSection: React.FC = () => {
                 alt="Official C/o Rajahmundry 3D Wall Logo"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute bottom-4 left-4 right-4 p-3 glass-dark-panel rounded-none border border-white/40">
-                <span className="block text-xs font-bold text-[#1F1919] uppercase tracking-wider">Official C/o Rajahmundry 3D Wall Landmark</span>
-              </div>
             </div>
 
             {/* Second Image: Aritaku Chepala Fry */}
@@ -43,9 +40,6 @@ export const BrandStorySplitSection: React.FC = () => {
                 alt="Traditional Aritaku Chepala Fry"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute bottom-4 left-4 right-4 p-3 glass-dark-panel rounded-none border border-white/40">
-                <span className="block text-xs font-bold text-[#1F1919] uppercase tracking-wider">Authentic Banana Leaf Aritaku Chepala Fry</span>
-              </div>
             </div>
           </motion.div>
 

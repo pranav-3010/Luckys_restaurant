@@ -71,11 +71,6 @@ export const AboutSection: React.FC = () => {
                 alt="C/o Rajahmundry Rooftop Dining Experience"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 glass-dark-panel rounded-none border border-white/40">
-                <span className="block text-sm font-bold text-[#1F1919] uppercase tracking-wider">5th Floor Santa Sriram Estates Lounge</span>
-                <span className="block text-xs text-[#7B1E1E]">Hyderabad's Premier Andhra Kitchen & Bar</span>
-              </div>
             </div>
           </motion.div>
         </div>
