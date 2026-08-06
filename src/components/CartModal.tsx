@@ -15,6 +15,8 @@ interface CartModalProps {
   cartItems: CartItem[];
   onUpdateQuantity: (itemId: string, delta: number) => void;
   onClearCart: () => void;
+  tableNumber?: string;
+  onTableNumberChange?: (table: string) => void;
 }
 
 export const CartModal: React.FC<CartModalProps> = ({
@@ -23,8 +25,11 @@ export const CartModal: React.FC<CartModalProps> = ({
   cartItems,
   onUpdateQuantity,
   onClearCart,
+  tableNumber = '1',
+  onTableNumberChange,
 }) => {
-  const [orderType, setOrderType] = useState<'delivery' | 'takeaway'>('delivery');
+  const [orderType, setOrderType] = useState<'dine-in' | 'delivery' | 'takeaway'>('dine-in');
+  const [selectedTable, setSelectedTable] = useState<string>(tableNumber);
   const [address, setAddress] = useState('');
   const [couponCode, setCouponCode] = useState('');
   const [appliedDiscount, setAppliedDiscount] = useState<number>(0);
@@ -52,23 +57,30 @@ export const CartModal: React.FC<CartModalProps> = ({
       .map(ci => `• ${ci.item.name} x ${ci.quantity} = ₹${(ci.item.price * ci.quantity).toFixed(2)}`)
       .join('\n');
 
+    let orderTypeLabel = 'Home Delivery';
+    if (orderType === 'dine-in') {
+      orderTypeLabel = `Dine-In (Table #${selectedTable.padStart(2, '0')})`;
+    } else if (orderType === 'takeaway') {
+      orderTypeLabel = 'Takeaway / Pickup';
+    }
+
     const message =
-`🛒 *NEW ONLINE ORDER - Lucky's Restaurant Suchitra*
+`🛒 *NEW ORDER - Lucky's Restaurant Suchitra*
 --------------------------------------------------
-📦 *Order Type:* ${orderType === 'delivery' ? 'Home Delivery' : 'Takeaway / Pickup'}
-📍 *Address / Notes:* ${address || 'Not specified'}
+📍 *Branch:* Suchitra Road (Opp. HDFC Bank)
+📦 *Order Type:* ${orderTypeLabel}
+${orderType === 'dine-in' ? `🪑 *Table Number:* Table #${selectedTable.padStart(2, '0')}` : `📍 *Address/Notes:* ${address || 'Not specified'}`}
 --------------------------------------------------
 *ITEMS ORDERED:*
 ${itemsSummary}
 --------------------------------------------------
 💵 *Subtotal:* ₹${subtotal.toFixed(2)}
 🌾 *GST (5%):* ₹${gstTax.toFixed(2)}
-🛵 *Delivery Fee:* ₹${deliveryFee.toFixed(2)}
-🏷️ *Discount:* -₹${appliedDiscount.toFixed(2)}
+${orderType === 'delivery' ? `🛵 *Delivery Fee:* ₹${deliveryFee.toFixed(2)}\n` : ''}🏷️ *Discount:* -₹${appliedDiscount.toFixed(2)}
 --------------------------------------------------
 💰 *GRAND TOTAL:* ₹${grandTotal.toFixed(2)}
 --------------------------------------------------
-Please confirm my order and share payment link!`;
+Please confirm our table order!`;
 
     const whatsappUrl = `https://wa.me/${RESTAURANT_INFO.whatsapp}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -171,31 +183,65 @@ Please confirm my order and share payment link!`;
                   </button>
                 </div>
 
-                {/* Delivery / Takeaway Toggle */}
-                <div className="grid grid-cols-2 gap-2 bg-white p-1 border border-[#E6DBC5] rounded-none">
+                {/* Order Type Toggle: Dine-In / Delivery / Takeaway */}
+                <div className="grid grid-cols-3 gap-1 bg-white p-1 border border-[#E6DBC5] rounded-none text-center">
+                  <button
+                    type="button"
+                    onClick={() => setOrderType('dine-in')}
+                    className={`py-2 text-[11px] font-black uppercase tracking-tight transition-all cursor-pointer ${
+                      orderType === 'dine-in'
+                        ? 'bg-[#58111A] text-[#F6E27A] shadow-sm'
+                        : 'text-gray-600 hover:text-[#58111A]'
+                    }`}
+                  >
+                    🪑 Dine-In
+                  </button>
                   <button
                     type="button"
                     onClick={() => setOrderType('delivery')}
-                    className={`py-2 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                    className={`py-2 text-[11px] font-black uppercase tracking-tight transition-all cursor-pointer ${
                       orderType === 'delivery'
-                        ? 'bg-[#161312] text-[#7DCE9F] shadow-sm'
-                        : 'text-gray-500 hover:text-[#161312]'
+                        ? 'bg-[#58111A] text-[#F6E27A] shadow-sm'
+                        : 'text-gray-600 hover:text-[#58111A]'
                     }`}
                   >
-                    🛵 Home Delivery
+                    🛵 Delivery
                   </button>
                   <button
                     type="button"
                     onClick={() => setOrderType('takeaway')}
-                    className={`py-2 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                    className={`py-2 text-[11px] font-black uppercase tracking-tight transition-all cursor-pointer ${
                       orderType === 'takeaway'
-                        ? 'bg-[#161312] text-[#7DCE9F] shadow-sm'
-                        : 'text-gray-500 hover:text-[#161312]'
+                        ? 'bg-[#58111A] text-[#F6E27A] shadow-sm'
+                        : 'text-gray-600 hover:text-[#58111A]'
                     }`}
                   >
-                    🛍️ Takeaway / Pickup
+                    🛍️ Takeaway
                   </button>
                 </div>
+
+                {/* Dine-In Table Selection Box */}
+                {orderType === 'dine-in' && (
+                  <div className="bg-[#FAF5ED] p-3 border border-[#58111A] flex items-center justify-between gap-2">
+                    <span className="text-xs font-bold text-[#1F1919] uppercase tracking-wider flex items-center gap-1.5">
+                      <span>🪑 Your Table Number:</span>
+                    </span>
+                    <select
+                      value={selectedTable}
+                      onChange={(e) => {
+                        setSelectedTable(e.target.value);
+                        if (onTableNumberChange) onTableNumberChange(e.target.value);
+                      }}
+                      className="px-3 py-1.5 bg-white border border-[#58111A] text-xs font-black text-[#58111A] focus:outline-none cursor-pointer"
+                    >
+                      {Array.from({ length: 30 }, (_, i) => i + 1).map((num) => (
+                        <option key={num} value={num.toString()}>
+                          Table #{num.toString().padStart(2, '0')}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
 
                 {/* Items List */}
                 <div className="space-y-3 pt-2">

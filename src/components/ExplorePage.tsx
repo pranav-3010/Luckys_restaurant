@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Search, User, ShoppingBag, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, User, ShoppingBag, ArrowLeft, ChevronLeft, ChevronRight, QrCode, Table } from 'lucide-react';
 import { MENU_CATEGORIES, MENU_ITEMS } from '../data/restaurantData';
 import { ReservationSection } from './ReservationSection';
 import { ContactSection } from './ContactSection';
 import { LoginModal } from './LoginModal';
 import { CartModal, type CartItem } from './CartModal';
+import { TableQrModal } from './TableQrModal';
 import type { MenuItem } from '../types';
 
 interface ExplorePageProps {
@@ -24,7 +25,19 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isLoginOpen, setIsLoginOpen] = useState<boolean>(false);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+  const [isQrModalOpen, setIsQrModalOpen] = useState<boolean>(false);
   const [showMobileSearch, setShowMobileSearch] = useState<boolean>(false);
+  const [tableNumber, setTableNumber] = useState<string>('1');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const tParam = params.get('table') || params.get('t');
+      if (tParam) {
+        setTableNumber(tParam);
+      }
+    }
+  }, []);
 
   // Global Cart State
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -102,6 +115,13 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
       {/* Login Modal Popup */}
       <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
 
+      {/* Table QR Standee Generator Modal */}
+      <TableQrModal
+        isOpen={isQrModalOpen}
+        onClose={() => setIsQrModalOpen(false)}
+        defaultTable={tableNumber}
+      />
+
       {/* Cart Modal Drawer */}
       <CartModal
         isOpen={isCartOpen}
@@ -109,6 +129,8 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
         cartItems={cartItems}
         onUpdateQuantity={handleUpdateQuantity}
         onClearCart={handleClearCart}
+        tableNumber={tableNumber}
+        onTableNumberChange={(t) => setTableNumber(t)}
       />
 
       {/* 1. TOP MAROON NAVBAR - STICKY TOP */}
@@ -191,6 +213,16 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               />
             </div>
 
+            {/* TABLE QR MENU STANDEE BUTTON */}
+            <button
+              onClick={() => setIsQrModalOpen(true)}
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full border border-[#F6E27A]/40 bg-[#F6E27A]/15 hover:bg-[#F6E27A]/25 text-[#F6E27A] text-[11px] sm:text-xs font-bold tracking-wider cursor-pointer transition-all hover:border-[#F6E27A]"
+              title="Generate Table QR Code Standee"
+            >
+              <QrCode className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F6E27A]" />
+              <span className="hidden sm:inline">TABLE QR</span>
+            </button>
+
             {/* PROFILE USER ICON */}
             <button
               onClick={() => setIsLoginOpen(true)}
@@ -264,6 +296,22 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
 
       {/* 2. MAIN CONTENT AREA */}
       <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
+
+        {/* Table Seated Banner Notification */}
+        <div className="bg-[#58111A] text-[#F6E27A] p-3 px-4 rounded-none mb-6 border border-[#F6E27A]/40 shadow-lg flex items-center justify-between gap-3 text-xs sm:text-sm font-bold">
+          <div className="flex items-center gap-2">
+            <Table className="w-4 h-4 text-[#F6E27A] shrink-0" />
+            <span className="uppercase tracking-wider">
+              SEATED AT TABLE #{tableNumber.padStart(2, '0')} • LUCKY'S RESTAURANT SUCHITRA
+            </span>
+          </div>
+          <button
+            onClick={() => setIsQrModalOpen(true)}
+            className="underline hover:text-white transition-colors cursor-pointer text-[11px] uppercase tracking-wider shrink-0"
+          >
+            CHANGE / QR CODE
+          </button>
+        </div>
 
         {/* --- VIEW 1: MENU & COCKTAILS VIEW --- */}
         {(activeTab === 'menu' || activeTab === 'cocktails') && (
