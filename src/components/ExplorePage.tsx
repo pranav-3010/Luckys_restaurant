@@ -352,6 +352,25 @@ export const ExplorePage: React.FC<ExplorePageProps> = ({
               </button>
             </div>
 
+            {/* Search Empty State */}
+            {searchQuery.trim() !== '' && !visibleCategories.some(cat => MENU_ITEMS.some(i => i.category === cat.id && searchFilter(i))) && (
+              <div className="bg-white p-8 sm:p-12 border border-[#E6DBC5] text-center space-y-3 my-8 shadow-sm">
+                <div className="text-3xl sm:text-4xl">🔍</div>
+                <h3 className="text-lg sm:text-xl font-black font-sans uppercase text-[#1F1919]">
+                  No items found matching "{searchQuery}"
+                </h3>
+                <p className="text-xs text-[#6E5C5C]">
+                  Try searching for Kababs, Biryani, Mandi, Roti, or Drinks.
+                </p>
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="px-5 py-2 bg-[#58111A] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#7B1E1E] transition-colors cursor-pointer mt-2"
+                >
+                  CLEAR SEARCH
+                </button>
+              </div>
+            )}
+
             {/* CONTINUOUS SECTIONS DISPLAY FOR ACTIVE TAB */}
             {visibleCategories.map((category) => {
               const categoryItems = MENU_ITEMS.filter(
